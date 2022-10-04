@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>La Pizzaria</title>
+    <meta charset="utf-8">
+    <style>
+        #wrapper {
+            /* background-color: #FFFFFF; */
+            width: 80%;
+            margin: auto;
+            min-width: 800px;
+        }
+
+        nav {
+            margin-bottom: 15px;
+        }
+
+        /* make image float on the left-side */
+        #left-nav {
+            margin: 10px 30px 15px 10px;
+            float: left;
+        }
+
+        nav ul {
+            font-size: 20px;
+            font-weight: 600;
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 0px 5px 0px;
+            overflow: hidden;
+            /* background-color: #F5F5F5; */
+        }
+
+        nav li {
+            float: left;
+        }
+
+        /* Display menu in a horizontal block orientation */
+        nav li a {
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+        /* Change the link color to grey on hover */
+        nav li a:hover {
+            background-color: #F5F5F5;
+        }
+
+        footer {
+			font-size: 11px;
+            text-align: center;
+            background-color: #d1b38e;
+            color: #000000;
+            padding: 20px 10px 20px 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <!-- Make 2 versions of wrapper: small & big screen -->
+        <nav>
+            <div id="left-nav">
+                <a href="home.html"><img src="../images/logo.png" width="80" height="50" alt="logo"></a>
+            </div>
+            <ul>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="hotDeals.html">Hot Deals</a></li>
+                <li><a href="cart.html">Cart</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="aboutUs.html">About Us</a></li>
+            </ul>   
+        </nav>
+
+        <div>
+            <h2>Slideshow Banner</h2>
+            <h2>Left Banner</h2>
+            <h2>Right Banner</h2>
+        </div>
+    </div>
+    <footer>
+        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
+    </footer>
+</body>
+
+</html>
