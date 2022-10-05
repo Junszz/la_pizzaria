@@ -76,6 +76,7 @@ function updateCafePrice() {
             }
             else{
                 alert("The price for Double Cafe au Lait ($" + cafeNewDPrice + ") is not in the correct format.");
+                return false;
             }
         }
         else
@@ -92,11 +93,28 @@ function updateCafePrice() {
             }
             else{
                 alert("The price for Single Cafe au Lait ($" + cafeNewSPrice + ") is not in the correct format.");
+                return false;
             }
         }
         else
             return false;
     }
+
+    // case where both are not null
+    if(cafeNewSPrice && cafeNewDPrice) {
+        // Check format
+        var correctS = chkPrice(cafeNewSPrice);
+        var correctD = chkPrice(cafeNewDPrice);
+
+        if(correctS && correctD){
+            cafeSPrice = cafeNewSPrice;
+            cafeDPrice = cafeNewDPrice;
+            // print new price  
+            document.getElementById("cafeSNewPrice").textContent = cafeSPrice;
+            document.getElementById("cafeDNewPrice").textContent = cafeDPrice;
+        }
+    }
+
     
     // reset button to false
     cafeBox.checked = false;
@@ -150,6 +168,21 @@ function updateCappPrice() {
         }
         else
             return false;
+    }
+
+    // case where both are not null
+    if(cappNewSPrice && cappNewDPrice) {
+        // Check format
+        var correctS = chkPrice(cappNewSPrice);
+        var correctD = chkPrice(cappNewDPrice);
+
+        if(correctS && correctD){
+            cappSPrice = cappNewSPrice;
+            cappDPrice = cappNewDPrice;
+            // print new price  
+            document.getElementById("cappSNewPrice").textContent = cappSPrice;
+            document.getElementById("cappDNewPrice").textContent = cappDPrice;
+        }
     }
     
     // reset button to false
