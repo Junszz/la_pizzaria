@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Menu</title>
-    <script type = "text/javascript"  src = "menu.js" ></script>
+    <title>Daily Sales Report</title>
+    <script type = "text/javascript"  src = "report.js" ></script>
     <meta charset="utf-8">
     <style>
         a:link {
@@ -53,7 +53,6 @@
             padding: 5px 20px 20px 20px;
 			font-size: 13px;
         }
-
         .container {
             display: block;
             position: relative;
@@ -93,9 +92,7 @@
         }
 
         table {
-            margin: auto;
             width: auto;
-            padding: 0px 30px 0px 15px;
             height: 250px
         }
 
@@ -112,13 +109,15 @@
         } */
 
         th {
+            font-size: 20px;
+            text-align: left;
             padding: 15px;
             color:#342211;
         }
 
-        tr:nth-of-type(odd) {
+        /* tr:nth-of-type(odd) {
             background-color: #d1b38e;
-        }
+        } */
 
         th .larger {
             width : 20 px;
@@ -172,29 +171,19 @@
             </nav>
         </div>
         <div id="rightcolumn">
-            <div class="content">
-                <h2>Coffee at JavaJam</h2>
+            <div class="content">   
+                <h2>Click to generate daily sales report:</h2>
                 <table border="0">
                     <tr>
-                        <th style="background-color: #f5f5dd"><label class="container"><input type="checkbox" id="javaCheck" onclick="updateJavaPrice()"><span class="checkmark"></span></label></th>
-                        <th>Just Java</th>
-                        <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br>
-                            <strong>Endless Cup $ <span id="javaNewPrice">2.00</span> </strong>
-                        </td>
+                        <td style="background-color: #f5f5dd"><label class="container"><input type="checkbox" class="larger" id="productCheck" onclick="generateProduct()"><span class="checkmark"></span></label></td>
+                        <th>Total dollar and quantity sales by products</th>
                     </tr>
                     <tr>
-                        <th style="background-color: #f5f5dd"><label class="container"><input type="checkbox" id="cafeCheck" onclick="updateCafePrice()"><span class="checkmark"></span></label></th>
-                        <th>Cafe au Lait</th>
-                        <td>House blended coffee infused into a smooth, steamed milk.<br>
-                            <strong>Single $<span id="cafeSNewPrice">2.00</span> Double $<span id="cafeDNewPrice">3.00</span></strong>
-                        </td>
+                        <td style="background-color: #f5f5dd"><label class="container"><input type="checkbox" class="larger" id="catCheck" onclick="generateCat()"><span class="checkmark"></span></label></td>
+                        <th>Total dollar and quantity sales by categories</th>
                     </tr>
                     <tr>
-                        <th style="background-color: #f5f5dd"><label class="container"><input type="checkbox" id="cappCheck" onclick="updateCappPrice()"><span class="checkmark"></span></label></th>
-                        <th>Iced Cappuccino</th>
-                        <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
-                            <strong>Single $<span id="cappSNewPrice">4.75</span> Double $<span id="cappDNewPrice">5.75</span></strong>
-                        </td>
+                        <th colspan="2">Popular option of best selling product: </th>
                     </tr>
                 </table>
             </div>

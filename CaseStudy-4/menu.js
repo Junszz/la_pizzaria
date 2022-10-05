@@ -6,8 +6,8 @@ var cappSPrice = 4.75;
 var cappDPrice = 5.75;
 
 function chkPrice(num) {
-    // /^\d{3}-\d{4}$/
-    var ok = num.search(/^\d+\.\d{0,2}$/);
+    // must give 2 decimal places
+    var ok = num.search(/^\d+\.\d{2}$/);
 
     if (ok == 0) {
         return true;
@@ -117,10 +117,10 @@ function updateCappPrice() {
     }
 
     if(!correctS){
-        alert("The price for Single Cafe au Lait ($" + cappNewSPrice + ") is not in the correct format.");
+        alert("The price for Single Iced Cappucino ($" + cappNewSPrice + ") is not in the correct format.");
     }
     if(!correctD){
-        alert("The price for Double Cafe au Lait ($" + cappNewDPrice + ") is not in the correct format.");
+        alert("The price for Double Iced Cappucino ($" + cappNewDPrice + ") is not in the correct format.");
     }
     
     // reset button to false
