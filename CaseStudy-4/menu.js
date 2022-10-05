@@ -60,27 +60,42 @@ function updateCafePrice() {
     } 
 
     // Uncheck checkbox if user cancel
-    if(cafeNewSPrice == null || cafeNewDPrice == null){
+    if(cafeNewSPrice == null && cafeNewDPrice == null){
         cafeBox.checked = false;
         return false; // break operation here if cancelled
     }
 
     // Check format
-    var correctS = chkPrice(cafeNewSPrice);
-    var correctD = chkPrice(cafeNewDPrice);
+    if(cafeNewSPrice == null){
+        if(cafeNewDPrice){
+            var correctD = chkPrice(cafeNewDPrice);
 
-    if(correctS && correctD){
-        cafeSPrice = cafeNewSPrice;
-        cafeDPrice = cafeNewDPrice;
-        // print new price  
-        document.getElementById("cafeSNewPrice").textContent = cafeSPrice;
-        document.getElementById("cafeDNewPrice").textContent = cafeDPrice;
+            if(correctD){
+                cafeDPrice = cafeNewDPrice;
+                document.getElementById("cafeDNewPrice").textContent = cafeDPrice;
+            }
+            else{
+                alert("The price for Double Cafe au Lait ($" + cafeNewDPrice + ") is not in the correct format.");
+            }
+        }
+        else
+            return false;
     }
-    if(!correctS){
-        alert("The price for Single Cafe au Lait ($" + cafeNewSPrice + ") is not in the correct format.");
-    }
-    if(!correctD){
-        alert("The price for Double Cafe au Lait ($" + cafeNewDPrice + ") is not in the correct format.");
+    
+    if(cafeNewDPrice == null){
+        if(cafeNewSPrice){
+            var correctS = chkPrice(cafeNewSPrice);
+
+            if(correctS){
+                cafeSPrice = cafeNewSPrice;
+                document.getElementById("cafeSNewPrice").textContent = cafeSPrice;
+            }
+            else{
+                alert("The price for Single Cafe au Lait ($" + cafeNewSPrice + ") is not in the correct format.");
+            }
+        }
+        else
+            return false;
     }
     
     // reset button to false
@@ -99,28 +114,42 @@ function updateCappPrice() {
     } 
 
     // Uncheck checkbox if user cancel
-    if(cappNewSPrice == null || cappNewDPrice == null){
-        cafeBox.checked = false;
+    if(cappNewSPrice == null && cappNewDPrice == null){
+        cappBox.checked = false;
         return false; // break operation here if cancelled
     }
 
     // Check format
-    var correctS = chkPrice(cappNewSPrice);
-    var correctD = chkPrice(cappNewDPrice);
+    if(cappNewSPrice == null){
+        if(cappNewDPrice){
+            var correctD = chkPrice(cappNewDPrice);
 
-    if(correctS && correctD){
-        cappSPrice = cappNewSPrice;
-        cappDPrice = cappNewDPrice;
-        // print new price  
-        document.getElementById("cappSNewPrice").textContent = cappSPrice;
-        document.getElementById("cappDNewPrice").textContent = cappDPrice;
+            if(correctD){
+                cappDPrice = cappNewDPrice;
+                document.getElementById("cappDNewPrice").textContent = cappDPrice;
+            }
+            else{
+                alert("The price for Double Iced Cappucino ($" + cappNewDPrice + ") is not in the correct format.");
+            }
+        }
+        else
+            return false;
     }
+    
+    if(cappNewDPrice == null){
+        if(cappNewSPrice){
+            var correctS = chkPrice(cappNewSPrice);
 
-    if(!correctS){
-        alert("The price for Single Iced Cappucino ($" + cappNewSPrice + ") is not in the correct format.");
-    }
-    if(!correctD){
-        alert("The price for Double Iced Cappucino ($" + cappNewDPrice + ") is not in the correct format.");
+            if(correctS){
+                cappSPrice = cappNewSPrice;
+                document.getElementById("cappSNewPrice").textContent = cappSPrice;
+            }
+            else{
+                alert("The price for Single Iced Cappucino ($" + cappNewSPrice + ") is not in the correct format.");
+            }
+        }
+        else
+            return false;
     }
     
     // reset button to false
