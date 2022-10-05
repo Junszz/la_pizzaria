@@ -23,7 +23,7 @@ function updateJavaPrice() {
     // If the checkbox is checked
     if (javaBox.checked == true){
         // get new price
-        var javaNewPrice = prompt("Enter new price for Just Java \n", "");
+        var javaNewPrice = prompt("Enter new price for Just Java (Ex: 2.00)\n", "");
     } 
 
     // Uncheck checkbox if user cancel
@@ -55,8 +55,8 @@ function updateCafePrice() {
     // If the checkbox is checked
     if (cafeBox.checked == true){
         // get new price
-        var cafeNewSPrice = prompt("Enter new price for Single Cafe au Lait \n", "");
-        var cafeNewDPrice = prompt("Enter new price for Double Cafe au Lait \n", "");
+        var cafeNewSPrice = prompt("Enter new price for Single Cafe au Lait (Ex: 2.00)\n", "");
+        var cafeNewDPrice = prompt("Enter new price for Double Cafe au Lait (Ex: 2.00)\n", "");
     } 
 
     // Uncheck checkbox if user cancel
@@ -94,8 +94,8 @@ function updateCappPrice() {
     // If the checkbox is checked
     if (cappBox.checked == true){
         // get new price
-        var cappNewSPrice = prompt("Enter new price for Single Cappucino \n", "");
-        var cappNewDPrice = prompt("Enter new price for Double Cappucino \n", "");
+        var cappNewSPrice = prompt("Enter new price for Single Iced Cappucino (Ex: 2.00)\n", "");
+        var cappNewDPrice = prompt("Enter new price for Double Iced Cappucino (Ex: 2.00)\n", "");
     } 
 
     // Uncheck checkbox if user cancel
