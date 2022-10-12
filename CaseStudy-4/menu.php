@@ -1,11 +1,32 @@
 <!DOCTYPE html>
+<?php
+@ $db = new mysqli("localhost", "root", "", "javajam");
+
+if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+}
+
+$query = "SELECT coffeeid, coffeeprice FROM coffee";
+$result = $db->query($query);
+if(!$result) {
+    echo "Unable to fetch data";
+}
+$price = [];
+while ($row = $result->fetch_assoc()) {
+    $price[] = $row["coffeeprice"];
+  }
+
+$db->close();
+?>
+
 <html lang="en">
 
 <head>
     <title>Price Update</title>
     <script type = "text/javascript"  src = "menu.js" ></script>
     <meta charset="utf-8">
-    <style>
+    <style> 
         a:link {
             color: #704515;
         }
@@ -171,32 +192,54 @@
                 </ul>
             </nav>
         </div>
+        <!--
+            1. Embed PHP script
+            2. Add in text box, grey out the box when not selected
+         -->
         <div id="rightcolumn">
             <div class="content">
                 <h2>Coffee at JavaJam</h2>
-                <table border="0">
-                    <tr>
-                        <th style="background-color: #f5f5dd"><label class="container"><input type="checkbox" id="javaCheck" onclick="updateJavaPrice()"><span class="checkmark"></span></label></th>
-                        <th>Just Java</th>
-                        <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br>
-                            <strong>Endless Cup $ <span id="javaNewPrice">2.00</span> </strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="background-color: #f5f5dd"><label class="container"><input type="checkbox" id="cafeCheck" onclick="updateCafePrice()"><span class="checkmark"></span></label></th>
-                        <th>Cafe au Lait</th>
-                        <td>House blended coffee infused into a smooth, steamed milk.<br>
-                            <strong>Single $<span id="cafeSNewPrice">2.00</span> Double $<span id="cafeDNewPrice">3.00</span></strong>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th style="background-color: #f5f5dd"><label class="container"><input type="checkbox" id="cappCheck" onclick="updateCappPrice()"><span class="checkmark"></span></label></th>
-                        <th>Iced Cappuccino</th>
-                        <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
-                            <strong>Single $<span id="cappSNewPrice">4.75</span> Double $<span id="cappDNewPrice">5.75</span></strong>
-                        </td>
-                    </tr>
-                </table>
+                <form method="post" action="" id="form">
+                    <?php include('price_update.php')?>
+                    <table border="0">
+                        <tr>
+                            <th style="background-color: #f5f5dd"><input type="checkbox" name="updateJava"></th>
+                            <th>Just Java</th>
+                            <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br>
+                                <strong>Endless Cup $ <?php echo $price[0];?></strong>
+                            </td>
+                            <th>
+                                <input type="text" name="java" maxlength="6" size="6">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #f5f5dd"><input type="checkbox" name="updateCafe"></th>
+                            <th>Cafe au Lait</th>
+                            <td>House blended coffee infused into a smooth, steamed milk.<br>
+                                <strong>Single $<?php echo $price[1];?> Double $<?php echo $price[2];?></strong>
+                            </td>
+                            <th>
+                                <input type="text" name="cafes" maxlength="6" size="6">
+                                <br>
+                                <input type="text" name="cafed" maxlength="6" size="6">
+                            </th>
+                        </tr>
+                        <tr>
+                            <th style="background-color: #f5f5dd"><input type="checkbox" name="updateCapp"></th>
+                            <th>Iced Cappuccino</th>
+                            <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
+                                <strong>Single $<?php echo $price[3];?> Double $<?php echo $price[4];?></strong>
+                            </td>
+                            <th>
+                                <input type="text" name="capps" maxlength="6" size="6">
+                                <input type="text" name="cappd" maxlength="6" size="6">
+                            </th>
+                        </tr>
+                    </table>
+                    <br>
+                    <input type="reset" value="Clear">
+                    <input type="submit" value="Update">
+                </form>
             </div>
         </div>
         <footer><em>Copyright &copy; 2014 JavaJam Coffee House<br>
