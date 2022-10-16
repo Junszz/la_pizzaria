@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Case Study 3</title>
+    <script type = "text/javascript"  src = "javascript/validator.js" ></script>
+    <meta charset="utf-8">
+    <style>
+        a:link {
+            color: #704515;
+        }
+
+        a:visited {
+            color: #bea98e;
+        }
+
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            background-color: #e7e0ad;
+        }
+
+        #wrapper {
+            background-color: #e2d1b2;
+            width: 80%;
+            margin: auto;
+            min-width: 800px;
+        }
+
+        #leftcolumn {
+            float: left;
+            width: 150px;
+        }
+        
+        #leftcolumn li{
+            padding-bottom: 7px;
+        }
+
+        #rightcolumn {
+            margin-left: 155px;
+            background-color: #f5f5dd;
+            color: #7a503e;
+        }
+
+        header {
+            text-align: center;
+            background-color: #d1b38e;
+            color: #704515;
+            font-size: 150%;
+            padding: 10px 10px 10px 0px;
+        }
+
+        h2 {
+            color: #2d1929;
+        }
+
+        .content {
+            padding: 5px 30px 50px 40px;
+            font-size: 100%;
+        }
+
+        #floatright {
+            margin: 0px 200px 40px 30px;
+            float: left;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #d1b38e;
+            padding: 15px 5px 15px 0;
+        }
+
+        #email-link {
+            color: #704515;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav ul {
+            color: #7c5b3f;
+            list-style-type: none;
+            text-align: center;
+            padding-left: 0px;
+        }
+
+        label {
+            text-align: right;
+            float: left;
+            clear: left;
+            display: block;
+            padding: 0px 20px 0px 0px;
+            width: 120px;
+        }
+
+        input,
+        textarea {
+            margin-bottom: 10px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="images/header.png" width="450" height="80" id="floatupper" alt="Header">
+        </header>
+        <div id="leftcolumn">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><strong>Home</strong></a></li>
+                    <li><a href="menu.html"><strong>Menu</strong></a></li>
+                    <li><a href="music.html"><strong>Music</strong></a></li>
+                    <li><a href="jobs.html"><strong>Jobs</strong></a></li>
+                    <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
+                    <li><a href="salesReport.html"><strong>Daily Sales Report</strong></a></li>
+                </ul>
+        </div>
+        <div id="rightcolumn">
+            <div class="content">
+                <h2>Jobs at JavaJam</h2>
+                <form action="">
+                <p>Want to work at JavaJam? Fill out the form below to start your application. Required fields are
+                    marked with an asterisk *</p>
+                    
+                    <label for="name">*Name:</label>
+                        <input type="text" name="name" id="name" required
+                            placeholder="Enter your name here" />
+                    <label for="email">*E-mail:</label>
+                        <input type="email" name="email" id="email" required
+                            placeholder="Enter your Email-ID here">
+                    <label for="myDate">Start Date:</label>
+                        <input type="date" name="Date" id="Date">
+                    <label for="comments">*Experience:</label>
+                        <textarea type="textarea" name="comments" rows="4" cols="40" required
+                            placeholder="Enter your past experience here"></textarea>
+                    <input type="reset" value="Clear">
+                    <input type="submit" value="Apply Now">
+                </form>
+                <script type = "text/javascript"  src = "javascript/validator_r.js" ></script>
+            </div>
+        </div>
+        <footer>
+            <small><i>Copyright &copy; 2014 JavaJam Coffee House</i></small>
+            <a href="MeiTong@Lew.com" id="email-link">
+                <br> MeiTong@Lew.com
+            </a>
+        </footer>
+    </div>
+</body>
+
+</html>

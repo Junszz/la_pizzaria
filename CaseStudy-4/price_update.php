@@ -34,7 +34,7 @@ $db->close();
         /* visited link */
         a:visited {
             /* color: #0000FF; */
-            color: #704515;
+            color: #bea98e;
         }
 
         body {
@@ -179,16 +179,17 @@ $db->close();
 <body>
     <div id="wrapper">
         <header>
-            <img src="title.png" width="300" height="70" alt="title">
+            <img src="images/header.png" width="300" height="70" alt="title">
         </header>
         <div id="leftcolumn">
             <nav>
                 <ul>
-                    <!-- <li><a href="index.html"><strong>Home</strong></a></li> -->
-                    <li><a href="price_update.php"><strong>Product<br> Price <br>Update</strong></a></li>
-                    <br>
-                    <li><a href="salesReport.html"><strong>Daily<br>Sales<br>Report<br></strong></a></li>
-                    <!-- <li><a href="jobs.html"><strong>Jobs</strong></a></li> -->
+                <li><a href="index.html"><strong>Home</strong></a></li>
+                    <li><a href="menu.html"><strong>Menu</strong></a></li>
+                    <li><a href="music.html"><strong>Music</strong></a></li>
+                    <li><a href="jobs.html"><strong>Jobs</strong></a></li>
+                    <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
+                    <li><a href="salesReport.html"><strong>Daily Sales Report</strong></a></li>
                 </ul>
             </nav>
         </div>
