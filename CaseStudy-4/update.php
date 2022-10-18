@@ -91,7 +91,15 @@
             }
         }
 
-
+        $query = "SELECT coffeeid, coffeeprice FROM coffee";
+        $result = $db->query($query);
+        if(!$result) {
+            echo "Unable to fetch data";
+        }
+        $price = [];
+        while ($row = $result->fetch_assoc()) {
+            $price[] = $row["coffeeprice"];
+          }
 
     }
 ?>
