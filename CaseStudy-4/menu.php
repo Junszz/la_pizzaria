@@ -1,8 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!-- Fetch price once at start -->
+<?php
+@ $db = new mysqli("localhost", "root", "", "javajam");
+
+if (mysqli_connect_errno()) {
+    echo 'Error: Could not connect to database.  Please try again later.';
+    exit;
+}
+
+$query = "SELECT coffeeid, coffeeprice FROM coffee";
+$result = $db->query($query);
+if(!$result) {
+    echo "Unable to fetch data";
+}
+$price = [];
+while ($row = $result->fetch_assoc()) {
+    $price[] = $row["coffeeprice"];
+  }
+
+$db->close();
+?>
+
 <head>
-    <title>Case Study 3</title>
+    <title>Case Study 4</title>
     <script type = "text/javascript"  src = "javascript/menu.js" >
     </script>
     <meta charset="utf-8">
@@ -64,7 +86,7 @@
         #leftcolumn li{
             padding-bottom: 7px;
         }
-        
+
         #rightcolumn {
             margin-left: 155px;
             background-color: #f5f5dd;
@@ -123,8 +145,8 @@
         nav ul {
             color: #7c5b3f;
             list-style-type: none;
-            text-align: center;
-            padding-left: 0px;
+            text-align: left;
+            padding-left: 40px;
         }
     </style>
 </head>
@@ -138,7 +160,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html"><strong>Home</strong></a></li>
-                    <li><a href="menu.html"><strong>Menu</strong></a></li>
+                    <li><a href="menu.php"><strong>Menu</strong></a></li>
                     <li><a href="music.html"><strong>Music</strong></a></li>
                     <li><a href="jobs.html"><strong>Jobs</strong></a></li>
                     <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
@@ -153,11 +175,11 @@
                     <tr>
                         <th>Just Java</th>
                         <td>Regular house blend, decaffeinated coffee, or flavor of the day.
-                            <br>Endless Cup $2.00
+                            <br>Endless Cup $ <?php echo $price[0];?>
                         </td>
                         <!-- text box to enter number -->
                         <!-- update the subtotal once javaqty had been changed -->
-                        <td align="center"><input type="text" id="javaqty" onchange="java_subtotal()"
+                        <td align="center"><input type="text" id="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
                             size="3" maxlength="3"></td>
                         <!-- print computed values -->
                         <td id="output1">Subtotal:<br>$0</td> 
@@ -165,31 +187,29 @@
                     <tr>
                         <th>Cafe au Lait</th>
                         <td>House blended coffee infused into a smooth, steamed milk.
-                            <br><label> <input type = "radio"  name = "cafe" id = "singleCafe"   
-                                onclick = "updateCafePrice(2)" />
-                                Single $2.00 </label> 
-                            <br><label> <input type = "radio"  name = "cafe" id = "doubleCafe"  
-                                onclick = "updateCafePrice(3)" />
-                                Double $3.00 </label>
+                            <br>Single $ <?php echo $price[1];?> Double $ <?php echo $price[2];?>
                         </td>
                         <!-- update the subtotal once cafeqty had been changed -->
-                        <td align="center"><input type="text" id="cafeqty" onchange="cafe_subtotal()" 
-                            size="3" maxlength="3"></td>
+                        <td align="center">
+                            <input type="text" id="cafeSqty" onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                            size="3" maxlength="3">
+                            <input type="text" id="cafeDqty" onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                            size="3" maxlength="3">
+                        </td>
                         <td id="output2">Subtotal:<br>$0</td>
                     </tr>
                     <tr id="capp">
                         <th>Iced Cappuccino</th>
                         <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.
-                            <br><label> <input type = "radio"  name = "capp" id = "capp_single"   
-                                onclick = "updateCappPrice(4.75)" />
-                                Single $4.75 </label> 
-                            <br><label> <input type = "radio"  name = "capp" id = "capp_double"   
-                                onclick = "updateCappPrice(5.75)" />
-                                Double $5.75 </label>
+                            <br>Single $ <?php echo $price[3];?> Double $ <?php echo $price[4];?>
                         </td>
                         <!-- update the subtotal once cappqty had been changed -->
-                        <td align="center"><input type="text" id="cappqty" size="3" onchange="capp_subtotal()" onfocusout="capp_subtotal()"
-                            maxlength="3"></td>
+                        <td align="center">
+                            <input type="text" id="cappSqty" size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                            maxlength="3">
+                            <input type="text" id="cappDqty" size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                            maxlength="3">
+                        </td>
                         <!-- display the subtotal -->
                         <td id="output3">Subtotal:<br>$0</td>
                     </tr>

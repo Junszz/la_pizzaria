@@ -1,48 +1,17 @@
 // global var
-var cafe_price = null;
-var capp_price = null;
-var prev = null;
+var cafe_single_qty = null;
+var cafe_double_qty = null;
+var capp_single_qty = null;
+var capp_double_qty = null;
 var javaSubtotal = null;
 var cafeSubtotal = null;
 var cappSubtotal = null;
 
-function updateCafePrice(price) {
-  switch(price){
-    case 2:  //when single had been chosen
-      cafe_price = 2.00;
-      break;
-    case 3:  //when double had been chosen
-      cafe_price = 3.00;
-      break;
-  }
-  //when user changes the option from single to double or vice versa, the subtotal will be updated accordingly
-  if(prev != price){
-    cafe_subtotal();
-  }
-
-  prev = price;
-}
-
-function updateCappPrice(price) {
-  switch(price){
-    case 4.75:  //when single had been chosen
-      capp_price = 4.75;
-      break;
-    case 5.75:  //when double had been chosen
-      capp_price = 5.75;
-      break;
-  }
-  
-  //when user changes the option from single to double or vice versa, the subtotal will be updated accordingly
-  if(prev != price){
-    capp_subtotal();
-  }
-  prev = price;
-}
-
-function java_subtotal(){
+function java_subtotal(javaprice){
+  // console.log("Receive price from php: ");
+  // console.log(javaprice);
   var javaqty = document.getElementById("javaqty").value;
-  javaSubtotal = javaqty * 2;
+  javaSubtotal = javaqty * javaprice;
   
   //display java subtotal
   document.getElementById("output1").textContent = "Subtotal:\n" + '$' + javaSubtotal;
@@ -51,27 +20,48 @@ function java_subtotal(){
   total();
 }
 
-function cafe_subtotal(){
-  var cafeqty = document.getElementById("cafeqty").value;
+function cafe_subtotal(cafeSprice, cafeDprice){
+  var cafeSqty = document.getElementById("cafeSqty").value;
+  var cafeDqty = document.getElementById("cafeDqty").value;
 
-  if(cafe_price) {
-    cafeSubtotal = cafeqty * cafe_price;
-
-    //display cafe subtotal
-    document.getElementById("output2").textContent = "Subtotal:\n" + '$' + cafeSubtotal;
+  // var checking
+  if (cafeSqty > 0){
+    cafe_single_qty = cafeSqty;
   }
-  // call total func
+  if (cafeDqty > 0){
+    cafe_double_qty = cafeDqty;
+  }
+
+  cafeSubtotal = cafe_single_qty * cafeSprice + cafe_double_qty * cafeDprice;
+
+  // console.log(cafeSubtotal);
+
+  //display cafe subtotal
+  document.getElementById("output2").textContent = "Subtotal:\n" + '$' + cafeSubtotal;
+
+  // Update total price
   total();
 }
-function capp_subtotal(){
-  var cappqty = document.getElementById("cappqty").value;
 
-  if(capp_price) {
-    cappSubtotal = cappqty * capp_price;
+function capp_subtotal(cappSprice, cappDprice){
+  var cappSqty = document.getElementById("cappSqty").value;
+  var cappDqty = document.getElementById("cappDqty").value;
 
-    //display cappacino subtotal
-    document.getElementById("output3").textContent = "Subtotal:\n" + '$' + cappSubtotal;
+  // var checking
+  if (cappSqty > 0){
+    capp_single_qty = cappSqty;
   }
+  if (cappDqty > 0){
+    capp_double_qty = cappDqty;
+  }
+
+  cappSubtotal = capp_single_qty * cappSprice + cappDqty * cappDprice;
+
+  console.log(cappSubtotal);
+
+  //display cappacino subtotal
+  document.getElementById("output3").textContent = "Subtotal:\n" + '$' + cappSubtotal;
+
   // call total func
   total();
 }

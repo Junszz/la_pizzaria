@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+
+<!-- Fetch price once at start -->
 <?php
 @ $db = new mysqli("localhost", "root", "", "javajam");
 
@@ -185,7 +187,7 @@ $db->close();
             <nav>
                 <ul>
                 <li><a href="index.html"><strong>Home</strong></a></li>
-                    <li><a href="menu.html"><strong>Menu</strong></a></li>
+                    <li><a href="menu.php"><strong>Menu</strong></a></li>
                     <li><a href="music.html"><strong>Music</strong></a></li>
                     <li><a href="jobs.html"><strong>Jobs</strong></a></li>
                     <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
@@ -218,8 +220,8 @@ $db->close();
                             <th>Cafe au Lait</th>
                             <td>House blended coffee infused into a smooth, steamed milk.<br>
                                <strong>
-                                <input type = "radio"  name = "cafechoice" value = 'single' />Single <?php echo $price[1]?>
-                                <input type = "radio"  name = "cafechoice" value = 'double' />Double <?php echo $price[2]?>
+                                <input type = "radio"  name = "cafechoice" value = 'single' />Single $ <?php echo $price[1]?>
+                                <input type = "radio"  name = "cafechoice" value = 'double' />Double $ <?php echo $price[2]?>
                                 </strong>
                             </td>
                             <th>
@@ -231,8 +233,8 @@ $db->close();
                             <th>Iced Cappuccino</th>
                             <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
                                 <strong>
-                                    <input type = "radio"  name = "cappchoice" value = 'single' />Single <?php echo $price[3]?>
-                                    <input type = "radio"  name = "cappchoice" value = 'double' />Double <?php echo $price[4]?>
+                                    <input type = "radio"  name = "cappchoice" value = 'single' />Single $ <?php echo $price[3]?>
+                                    <input type = "radio"  name = "cappchoice" value = 'double' />Double $ <?php echo $price[4]?>
                                 </strong>
                             </td>
                             <th>
