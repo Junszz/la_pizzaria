@@ -170,53 +170,56 @@ $db->close();
         <div id="rightcolumn">
             <div class="content">
                 <h2>Coffee at JavaJam</h2>
-                
-                <table border="0">
-                    <tr>
-                        <th>Just Java</th>
-                        <td>Regular house blend, decaffeinated coffee, or flavor of the day.
-                            <br>Endless Cup $ <?php echo $price[0];?>
-                        </td>
-                        <!-- text box to enter number -->
-                        <!-- update the subtotal once javaqty had been changed -->
-                        <td align="center"><input type="text" id="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
-                            size="3" maxlength="3"></td>
-                        <!-- print computed values -->
-                        <td id="output1">Subtotal:<br>$0</td> 
-                    </tr>
-                    <tr>
-                        <th>Cafe au Lait</th>
-                        <td>House blended coffee infused into a smooth, steamed milk.
-                            <br>Single $ <?php echo $price[1];?> Double $ <?php echo $price[2];?>
-                        </td>
-                        <!-- update the subtotal once cafeqty had been changed -->
-                        <td align="center">
-                            <input type="text" id="cafeSqty" onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
-                            size="3" maxlength="3">
-                            <input type="text" id="cafeDqty" onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
-                            size="3" maxlength="3">
-                        </td>
-                        <td id="output2">Subtotal:<br>$0</td>
-                    </tr>
-                    <tr id="capp">
-                        <th>Iced Cappuccino</th>
-                        <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.
-                            <br>Single $ <?php echo $price[3];?> Double $ <?php echo $price[4];?>
-                        </td>
-                        <!-- update the subtotal once cappqty had been changed -->
-                        <td align="center">
-                            <input type="text" id="cappSqty" size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
-                            maxlength="3">
-                            <input type="text" id="cappDqty" size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
-                            maxlength="3">
-                        </td>
-                        <!-- display the subtotal -->
-                        <td id="output3">Subtotal:<br>$0</td>
-                    </tr>
-                    <tr>
-                        <td colspan="4" id="total">Total:$0 </td>
-                    </tr>
-                </table>
+                <form method="post" action="" id="form">
+                    <?php include('submit_order.php')?>
+                    <table border="0">
+                        <tr>
+                            <th>Just Java</th>
+                            <td>Regular house blend, decaffeinated coffee, or flavor of the day.
+                                <br>Endless Cup $ <?php echo $price[0];?>
+                            </td>
+                            <!-- text box to enter number -->
+                            <!-- update the subtotal once javaqty had been changed -->
+                            <td align="center"><input type="text" id="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
+                                size="3" maxlength="3"></td>
+                            <!-- print computed values -->
+                            <td id="output1">Subtotal:<br>$0</td> 
+                        </tr>
+                        <tr>
+                            <th>Cafe au Lait</th>
+                            <td>House blended coffee infused into a smooth, steamed milk.
+                                <br>Single $ <?php echo $price[1];?> Double $ <?php echo $price[2];?>
+                            </td>
+                            <!-- update the subtotal once cafeqty had been changed -->
+                            <td align="center">
+                                <input type="text" id="cafeSqty" name='cafeSqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                                size="3" maxlength="3">
+                                <input type="text" id="cafeDqty" name='cafeDqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                                size="3" maxlength="3">
+                            </td>
+                            <td id="output2">Subtotal:<br>$0</td>
+                        </tr>
+                        <tr id="capp">
+                            <th>Iced Cappuccino</th>
+                            <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.
+                                <br>Single $ <?php echo $price[3];?> Double $ <?php echo $price[4];?>
+                            </td>
+                            <!-- update the subtotal once cappqty had been changed -->
+                            <td align="center">
+                                <input type="text" id="cappSqty" size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                                maxlength="3">
+                                <input type="text" id="cappDqty" size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                                maxlength="3">
+                            </td>
+                            <!-- display the subtotal -->
+                            <td id="output3">Subtotal:<br>$0</td>
+                        </tr>
+                        <tr>
+                            <td colspan="4" id="total">Total:$0 </td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="Submit">
+                </form>
             </div>
         </div>
         <footer>
