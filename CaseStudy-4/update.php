@@ -46,7 +46,7 @@
                 }
 
                 if ($_POST['cafechoice'] == 'double'){
-                    // update single price
+                    // update double price
 
                     $new = number_format((float)$_POST['cafe'], 2, '.', '');
                     if($new > 0){
@@ -77,7 +77,7 @@
                 }
 
                 if ($_POST['cappchoice'] == 'double'){
-                    // update single price
+                    // update double price
 
                     $new = number_format((float)$_POST['capp'], 2, '.', '');
                     if($new > 0){
@@ -91,7 +91,15 @@
             }
         }
 
-
+        $query = "SELECT coffeeid, coffeeprice FROM coffee";
+        $result = $db->query($query);
+        if(!$result) {
+            echo "Unable to fetch data";
+        }
+        $price = [];
+        while ($row = $result->fetch_assoc()) {
+            $price[] = $row["coffeeprice"];
+          }
 
     }
 ?>

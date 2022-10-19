@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Case Study(Part 2)</title>
+    <meta charset="utf-8">
+    <style>
+        a:link {
+            color: #704515;
+        }
+
+        a:visited {
+            color: #bea98e;
+        }
+
+        table {
+            margin: auto;
+            border: 0px;
+            width: 500px;
+            height: 100px;
+            border-spacing: 0;
+        }
+
+        td {
+            padding: 5px;
+            font-family: Arial, sans-serif;
+            border-style: none;
+            text-align: left;
+        }
+
+        td strong {
+            color: #2d1929;
+        }
+        
+        th {
+            text-align: left;
+            padding: 5px;
+            font-family: Arial, sans-serif;
+            border-style: none;
+        }
+
+        tr:nth-of-type(odd) {
+            background-color: #d1b38e;
+        }
+
+        body {
+            font-family: Verdana, Arial, sans-serif;
+            background-color: #e7e0ad;
+        }
+
+        #wrapper {
+            background-color: #e2d1b2;
+            width: 80%;
+            margin: auto;
+            min-width: 800px;
+        }
+
+        #leftcolumn {
+            float: left;
+            width: 150px;
+        }
+
+        #leftcolumn li{
+            padding-bottom: 7px;
+        }
+
+        #rightcolumn {
+            margin-left: 155px;
+            background-color: #f5f5dd;
+            color: #7a503e;
+        }
+
+        header {
+            text-align: center;
+            background-color: #d1b38e;
+            color: #704515;
+            font-size: 150%;
+            padding: 10px 10px 10px 0px;
+        }
+
+        h2 {
+            color: #2d1929;
+        }
+
+        #month {
+            color: #2d1929;
+        }
+        .content {
+            padding: 5px 30px 15px 40px;
+            font-size: 100%;
+        }
+
+        #floatright {
+            margin: 0px 30px 0px 0px;
+            float: left;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #d1b38e;
+            padding: 15px 5px 15px 0;
+        }
+
+        #email-link {
+            color: #704515;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        nav a {
+            text-decoration: none;
+        }
+
+        nav ul {
+            color: #7c5b3f;
+            list-style-type: none;
+            text-align: left;
+            padding-left: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <img src="images/header.png" width="450" height="80" id="floatupper" alt="Header">
+        </header>
+        <div id="leftcolumn">
+            <nav>
+                <ul>
+                    <li><a href="index.html"><strong>Home</strong></a></li>
+                    <li><a href="menu.php"><strong>Menu</strong></a></li>
+                    <li><a href="music.html"><strong>Music</strong></a></li>
+                    <li><a href="jobs.html"><strong>Jobs</strong></a></li>
+                    <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
+                    <li><a href="salesReport.php"><strong>Daily Sales Report</strong></a></li>
+                </ul>
+        </div>
+        <div id="rightcolumn">
+            <div class="content">
+                <h2>Music at JavaJam</h2>
+                <p>The first Friday night each month at JavaJam is a special night. Join us from 8pm to 11pm for some
+                    music
+                    you won't want to miss.</p>
+                <table border="1">
+                    <tr id="month">
+                        <th colspan="2">JANUARY</th>
+                    </tr>
+                    <tr>
+                        <td> <img src="images/femalesinger_resize.jpg" width="80" height="100" id="floatright"
+                                alt="Lighthouse Island"></img></td>
+                        <td>Melaine Morris entertains with her melodic folk style.<br>
+                            <strong>CDs are available now!</strong>
+                        <audio controls>
+                            <source src="images/song_1.mp3" type="audio/mp3">
+                        </audio>
+                        </td>
+                    </tr>
+                    <tr id="month">
+                        <th colspan="2">FEBRUARY</th>
+                    </tr>
+                    <tr>
+                        <td> <img src="images/malesinger_resize.jpg" width="80" height="100" id="floatright"
+                                alt="Lighthouse Island"></img></td>
+                        <td>Tahoe Greg is back from his tour. New songs. New stories.<br>
+                            <strong>CDs are available now!</strong>
+                        <audio controls>
+                            <source src="images/song_2.mp3" type="audio/mp3">
+                        </audio>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <footer>
+            <small><i>Copyright &copy; 2014 JavaJam Coffee House</i></small>
+            <a href="MeiTong@Lew.com" id="email-link">
+                <br> MeiTong@Lew.com
+            </a>
+        </footer>
+    </div>
+
+</html>
