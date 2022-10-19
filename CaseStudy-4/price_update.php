@@ -185,7 +185,7 @@ $db->close();
                             <td>Regular house blend, decaffeinated coffee, or flavor of the day.<br>
                                 <strong>Endless Cup $ <?php echo $price[0];?></strong>
                             </td>
-                            <th>
+                            <th style="width:100px">
                                 <input type="text" name="java" id = "java_new" maxlength="6" size="6" onchange = "java_latest()">
                             </th>
                         </tr>
@@ -194,8 +194,8 @@ $db->close();
                             <th>Cafe au Lait</th>
                             <td>House blended coffee infused into a smooth, steamed milk.<br>
                                <strong>
-                                <input type = "radio"  name = "cafechoice" value = 'single' />Single $ <?php echo $price[1]?>
-                                <input type = "radio"  name = "cafechoice" value = 'double' />Double $ <?php echo $price[2]?>
+                                <input type = "radio"  id = 'cafechoice1' name = "cafechoice" value = 'single' />Single $ <?php echo $price[1]?>
+                                <input type = "radio"  id = 'cafechoice2' name = "cafechoice" value = 'double' />Double $ <?php echo $price[2]?>
                                 </strong>
                             </td>
                             <th>
@@ -207,8 +207,8 @@ $db->close();
                             <th>Iced Cappuccino</th>
                             <td>Sweetened espresso blended with icy-cold milk and served in a chilled glass.<br>
                                 <strong>
-                                    <input type = "radio"  name = "cappchoice" value = 'single' />Single $ <?php echo $price[3]?>
-                                    <input type = "radio"  name = "cappchoice" value = 'double' />Double $ <?php echo $price[4]?>
+                                    <input type = "radio" id = 'cappchoice1' name = "cappchoice" value = 'single' />Single $ <?php echo $price[3]?>
+                                    <input type = "radio" id = 'cappchoice2' name = "cappchoice" value = 'double' />Double $ <?php echo $price[4]?>
                                 </strong>
                             </td>
                             <th>
@@ -218,12 +218,15 @@ $db->close();
                     </table>
                     <br>
                     <input type="reset" value="Clear">
-                    <input type="submit" value="Update">
+                    <input type="submit" value="Update" onclick="update_success()">
                 </form>
             </div>
         </div>
-        <footer><em>Copyright &copy; 2014 JavaJam Coffee House<br>
-            <a href="mailto:JunZe@Siew.com" id="email-link">JunZe@Siew.com</a></em>
+        <footer>
+            <small><i>Copyright &copy; 2014 JavaJam Coffee House</i></small>
+            <a href="MeiTong@Lew.com" id="email-link">
+                <br> MeiTong@Lew.com
+            </a>
         </footer>
     </div>
 </body>

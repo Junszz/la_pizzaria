@@ -19,11 +19,11 @@ function java_subtotal(javaprice){
   if (javaqty>=0){
     javaSubtotal = javaqty * javaprice;
     //display java subtotal
-    document.getElementById("output1").textContent = "Subtotal:\n" + '$' + javaSubtotal;
+    document.getElementById("output1").textContent = "$" +javaSubtotal;
   }
   else {
     javaSubtotal = 0;
-    document.getElementById("output1").textContent = "Subtotal:\n" + '$' + javaSubtotal;
+    document.getElementById("output1").textContent = "$" +javaSubtotal;
     alert("Please insert valid quantity(i.e. larger than or equal to 0)");
     java.focus();
     java.value = '';
@@ -46,12 +46,12 @@ function cafe_subtotal(cafeSprice, cafeDprice){
     cafe_single_qty = cafeSqty;
     cafeSubtotal_single = cafe_single_qty * cafeSprice;
     cafeSubtotal = cafeSubtotal_single + cafeSubtotal_double;
-    document.getElementById("output2").textContent = "Subtotal:" + '$' + cafeSubtotal;
+    document.getElementById("output2").textContent = '$' + cafeSubtotal;
   }
   if (cafeSqty < 0){
     cafeSubtotal_single = 0;
     cafeSubtotal = cafeSubtotal_single + cafeSubtotal_double;
-    document.getElementById("output2").textContent = "Subtotal:" + '$' + cafeSubtotal;
+    document.getElementById("output2").textContent = '$' + cafeSubtotal;
     alert("Please insert valid quantity(i.e. larger than or equal to 0)");
     cafeS.focus();
     cafeS.value='';
@@ -60,12 +60,12 @@ function cafe_subtotal(cafeSprice, cafeDprice){
     cafe_double_qty = cafeDqty;
     cafeSubtotal_double = cafe_double_qty * cafeDprice;
     cafeSubtotal = cafeSubtotal_single + cafeSubtotal_double;
-    document.getElementById("output2").textContent = "Subtotal:" + '$' + cafeSubtotal;
+    document.getElementById("output2").textContent = '$' + cafeSubtotal;
   }
   if (cafeDqty < 0) {
     cafeSubtotal_double = 0;
     cafeSubtotal = cafeSubtotal_single + cafeSubtotal_double;
-    document.getElementById("output2").textContent = "Subtotal:" + '$' + cafeSubtotal;
+    document.getElementById("output2").textContent = '$' + cafeSubtotal;
     alert("Please insert valid quantity(i.e. larger than or equal to 0)");
     cafeD.focus();
     cafeD.value='';
@@ -85,12 +85,12 @@ function capp_subtotal(cappSprice, cappDprice){
     capp_single_qty = cappSqty;
     cappSubtotal_single = capp_single_qty * cappSprice;
     cappSubtotal = cappSubtotal_single + cappSubtotal_double;
-    document.getElementById("output3").textContent = "Subtotal:" + '$' + cappSubtotal;
+    document.getElementById("output3").textContent = '$' + cappSubtotal;
   }
   if (cappSqty < 0){
     cappSubtotal_single = 0;
     cappSubtotal = cappSubtotal_single + cappSubtotal_double;
-    document.getElementById("output3").textContent = "Subtotal:" + '$' + cappSubtotal;
+    document.getElementById("output3").textContent = '$' + cappSubtotal;
     alert("Please insert valid quantity(i.e. larger than or equal to 0)");
     cappS.focus();
     cappS.value='';
@@ -99,12 +99,12 @@ function capp_subtotal(cappSprice, cappDprice){
     capp_double_qty = cappDqty;
     cappSubtotal_double = capp_double_qty * cappDprice;
     cappSubtotal = cappSubtotal_single + cappSubtotal_double;
-    document.getElementById("output3").textContent = "Subtotal:" + '$' + cappSubtotal;
+    document.getElementById("output3").textContent = '$' + cappSubtotal;
   }
   if (cappDqty < 0) {
     cappSubtotal_double = 0;
     cappSubtotal = cappSubtotal_single + cappSubtotal_double;
-    document.getElementById("output3").textContent = "Subtotal:" + '$' + cappSubtotal;
+    document.getElementById("output3").textContent = '$' + cappSubtotal;
     alert("Please insert valid quantity(i.e. larger than or equal to 0)");
     cappD.focus();
     cappD.value='';

@@ -37,6 +37,14 @@
     $cappSqty = $quantity[3];
     $cappDqty = $quantity[4];
 
+    // Initialize var
+    $newjava = 0;
+    $newcafe_single = 0;
+    $newcafe_double = 0;
+    $newcapp_single = 0;
+    $newcafe_single = 0;
+    $newcapp_double = 0;
+
     // echo("Qty from database: ".$javaqty.','.$cafeSqty.','.$cafeDqty.','.$cappSqty.','.$cappDqty."<br>");
 
     if (isset($_POST['submit'])){
@@ -240,7 +248,7 @@
                             <td align="center"><input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
                                 size="3" maxlength="3"></td>
                             <!-- print computed values -->
-                            <td id="output1">Subtotal:<br>$0</td> 
+                            <td style="width: 100px">Subtotal:<br><span id="output1">$0</span></td> 
                         </tr>
                         <tr>
                             <th>Cafe au Lait</th>
@@ -254,7 +262,7 @@
                                 <input type="text" id="cafeDqty" name='cafeDqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
                                 size="3" maxlength="3">
                             </td>
-                            <td id="output2">Subtotal:<br>$0</td>
+                            <td>Subtotal:<br><span id="output2">$0</span></td>
                         </tr>
                         <tr id="capp">
                             <th>Iced Cappuccino</th>
@@ -269,7 +277,7 @@
                                 maxlength="3">
                             </td>
                             <!-- display the subtotal -->
-                            <td id="output3">Subtotal:<br>$0</td>
+                            <td>Subtotal:<br><span id="output3">$0</span></td>
                         </tr>
                         <tr>
                             <td colspan="4" id="total">Total:$0 </td>
