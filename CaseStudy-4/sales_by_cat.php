@@ -83,9 +83,6 @@
 
     // echo "Highest cat: ".$most_sold;
     // echo "Highest sales: ".$most_sales;
-    function generate_by_product(){
-
-    }
 ?>
 
 <head>
@@ -231,11 +228,9 @@
         }
 
         footer {
-			font-size: 11px;
             text-align: center;
             background-color: #d1b38e;
-            color: #000000;
-            padding: 20px 10px 20px 0px;
+            padding: 15px 5px 15px 0;
         }
 
         #email-link {
@@ -284,8 +279,11 @@
             </form>
 
         </div>
-        <footer><em>Copyright &copy; 2014 JavaJam Coffee House<br>
-            <a href="mailto:JunZe@Siew.com" id="email-link">JunZe@Siew.com</a></em>
+        <footer>
+            <small><i>Copyright &copy; 2014 JavaJam Coffee House</i></small>
+            <a href="MeiTong@Lew.com" id="email-link">
+                <br> MeiTong@Lew.com
+            </a>
         </footer>
     </div>
 </body>

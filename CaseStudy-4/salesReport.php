@@ -47,15 +47,39 @@
     $sales[1] = $quantity[1] * $price[1] + $quantity[2] * $price[2]; // Cafe total sales
     $sales[2] = $quantity[1] * $price[1]; // Single Cafe sales
     $sales[3] = $quantity[2] * $price[2]; // Double Cafe sales
-    $sales[4] = $quantity[3] * $price[3] + $quantity[4] * $price[4]; // Capp totall sales
+    $sales[4] = $quantity[3] * $price[3] + $quantity[4] * $price[4]; // Capp total sales
     $sales[5] = $quantity[3] * $price[3]; // Single Capp sales
     $sales[6] = $quantity[4] * $price[4]; // Double Capp sales
 
-    for ($x=0;$x<3;$x++){
-        if($count[$x] >= $highest_qty){
-            $highest_qty = $x;
+    // echo $sales[0].",".$sales[1].",".$sales[4]."<br>";
+
+    // get largest among the three
+    if ($sales[0] > $sales[1] && $sales[0] > $sales[4]){
+        $highest_qty = 0;
+    }
+    else if ($sales[1] > $sales[4] && $sales[1] > $sales[0]){
+        $highest_qty = 1;
+    }
+    else{
+        $highest_qty = 2;
+    }
+
+    // if two values are the same
+    if ($sales[0]==$sales[1] || $sales[0]==$sales[4] || $sales[1]==$sales[4]){
+        // echo "Two same total sales detected!";
+        // check qty
+        if ($count[0] > $count[1] && $count[0] > $count[2]){
+            $highest_qty = 0;
+        }
+        else if ($count[1] > $count[2] && $count[1] > $count[0]){
+            $highest_qty = 1;
+        }
+        else{
+            $highest_qty = 2;
         }
     }
+
+    // echo "Highest cat: ".$highest_qty;
 
     // If Java is the most popular
     if ($highest_qty == 0){
@@ -64,7 +88,7 @@
     }
     if($highest_qty == 1){
         $most_sold = $cat[1];
-        if ($sales[2] > $sales[3]){
+        if ($quantity[1] > $quantity[2]){
             $most_sales = $type[1]; // Single Cafe
         }
         else{
@@ -73,18 +97,12 @@
     }
     if($highest_qty == 2){
         $most_sold = $cat[3];
-        if ($sales[5] > $sales[6]){
+        if ($quantity[3] > $quantity[4]){
             $most_sales = $type[3]; // Single Capp
         }
         else{
             $most_sales = $type[4]; // Double Capp
         }
-    }
-
-    // echo "Highest cat: ".$most_sold;
-    // echo "Highest sales: ".$most_sales;
-    function generate_by_product(){
-
     }
 ?>
 
@@ -231,11 +249,9 @@
         }
 
         footer {
-			font-size: 11px;
             text-align: center;
             background-color: #d1b38e;
-            color: #000000;
-            padding: 20px 10px 20px 0px;
+            padding: 15px 5px 15px 0;
         }
 
         #email-link {
@@ -280,8 +296,11 @@
                 </table>
             </div>
         </div>
-        <footer><em>Copyright &copy; 2014 JavaJam Coffee House<br>
-            <a href="mailto:JunZe@Siew.com" id="email-link">JunZe@Siew.com</a></em>
+        <footer>
+            <small><i>Copyright &copy; 2014 JavaJam Coffee House</i></small>
+            <a href="MeiTong@Lew.com" id="email-link">
+                <br> MeiTong@Lew.com
+            </a>
         </footer>
     </div>
 </body>
