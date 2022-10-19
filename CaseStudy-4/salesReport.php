@@ -248,7 +248,7 @@
 <body>
     <div id="wrapper">
         <header>
-            <img src="images/header.png" width="300" height="70" alt="title">
+            <img src="images/header.png" width="450" height="80" alt="title">
         </header>
         <div id="leftcolumn">
             <nav>
