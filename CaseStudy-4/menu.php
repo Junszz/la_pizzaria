@@ -245,10 +245,10 @@
                             </td>
                             <!-- text box to enter number -->
                             <!-- update the subtotal once javaqty had been changed -->
-                            <td align="center"><input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
+                            <td style="text-align:center"><input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
                                 size="3" maxlength="3"></td>
                             <!-- print computed values -->
-                            <td style="width: 100px">Subtotal:<br><span id="output1">$0</span></td> 
+                            <td>Subtotal:<br><span id="output1">$0</span></td> 
                         </tr>
                         <tr>
                             <th>Cafe au Lait</th>
@@ -256,10 +256,10 @@
                                 <br>Single $ <?php echo $price[1];?> Double $ <?php echo $price[2];?>
                             </td>
                             <!-- update the subtotal once cafeqty had been changed -->
-                            <td align="center">
-                                <input type="text" id="cafeSqty" name='cafeSqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                            <td style="text-align:center">
+                                <input type="text" id="cafeSqty" name='cafeSqty' onchange="check_cafe_single(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
                                 size="3" maxlength="3">
-                                <input type="text" id="cafeDqty" name='cafeDqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                                <input type="text" id="cafeDqty" name='cafeDqty' onchange="check_cafe_double(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
                                 size="3" maxlength="3">
                             </td>
                             <td>Subtotal:<br><span id="output2">$0</span></td>
@@ -270,10 +270,10 @@
                                 <br>Single $ <?php echo $price[3];?> Double $ <?php echo $price[4];?>
                             </td>
                             <!-- update the subtotal once cappqty had been changed -->
-                            <td align="center">
-                                <input type="text" id="cappSqty" name='cappSqty' size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                            <td style="text-align:center">
+                                <input type="text" id="cappSqty" name='cappSqty' size="3" onchange="check_capp_single(<?php echo $price[3];?>, <?php echo $price[4];?>)"
                                 maxlength="3">
-                                <input type="text" id="cappDqty" name='cappDqty' size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                                <input type="text" id="cappDqty" name='cappDqty' size="3" onchange="check_capp_double(<?php echo $price[3];?>, <?php echo $price[4];?>)"
                                 maxlength="3">
                             </td>
                             <!-- display the subtotal -->

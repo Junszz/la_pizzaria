@@ -11,6 +11,14 @@ var cafeSubtotal_double = null;
 var cappSubtotal_single = null;
 var cappSubtotal_double = null;
 
+var cafeSqty = 0;
+var cafeDqty = 0;
+var g_cafeSprice = 0; 
+var g_cafeDprice = 0;
+var cappSqty = 0;
+var cappDqty = 0;
+var g_cappSprice = 0; 
+var g_cappDprice = 0;
 
 function java_subtotal(javaprice){
   var java = document.getElementById("javaqty");
@@ -23,7 +31,8 @@ function java_subtotal(javaprice){
     javaSubtotal = 0;
     document.getElementById("output1").textContent = "$" +javaSubtotal;
     java.focus();
-    java.value = '';}
+    java.value = '';
+  }
   else {
     if (javaqty>=0){
       javaSubtotal = javaqty * javaprice;
@@ -44,44 +53,49 @@ function java_subtotal(javaprice){
     
 }
 
-function cafeqty_check(){
+function check_cafe_single(cafeSprice, cafeDprice){
+  g_cafeSprice = cafeSprice;
+  g_cafeDprice = cafeDprice;
   var cafeS = document.getElementById("cafeSqty");
-  var cafeD = document.getElementById("cafeDqty");
-  var cafeSqty = cafeS.value;
-  var cafeDqty = cafeD.value;
+  cafeSqty = cafeS.value;
   var pos1 = cafeSqty.search(/^[0-9]+$/);
-  var pos2 = cafeDqty.search(/^[0-9]+$/);
 
-  if (pos1 )
-
-}
-
-function cafe_subtotal(cafeSprice, cafeDprice){
-  var cafeS = document.getElementById("cafeSqty");
-  var cafeD = document.getElementById("cafeDqty");
-  var cafeSqty = cafeS.value;
-  var cafeDqty = cafeD.value;
-  /* if (cafeS.value != 0){
-    var cafeSqty = cafeS.value;
+  if(pos1 != 0){
+    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
+    cafeS.focus();
+    cafeS.value = '';
+    cafeSqty = 0;
   }
   else{
-    var cafeSqty = 0;
+    console.log("Pass checking");
   }
-  var cafeDqty = cafeD.value;
+  cafe_subtotal();
+}
 
-  var pos1 = cafeSqty.search(/^[0-9]+$/);
+function check_cafe_double(cafeSprice, cafeDprice){
+  g_cafeSprice = cafeSprice;
+  g_cafeDprice = cafeDprice;
+  var cafeD = document.getElementById("cafeDqty");
+  cafeDqty = cafeD.value;
   var pos2 = cafeDqty.search(/^[0-9]+$/);
-  // var checking
-  if (pos1 != 0 || pos2 != 0){
-    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
-    cafeSubtotal = 0;
-    document.getElementById("output1").textContent = "$" +cafeSubtotal;
-    cafe.focus();
-    cafe.value = '';} */
 
+  if(pos2 != 0){
+    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
+    cafeD.focus();
+    cafeD.value = '';
+    cafeDqty = 0;
+  }
+  else{
+    console.log("Pass checking");
+  }
+  cafe_subtotal();
+}
+
+
+function cafe_subtotal(){
   if (cafeSqty >= 0){
     cafe_single_qty = cafeSqty;
-    cafeSubtotal_single = cafe_single_qty * cafeSprice;
+    cafeSubtotal_single = cafe_single_qty * g_cafeSprice;
     cafeSubtotal = cafeSubtotal_single + cafeSubtotal_double;
     document.getElementById("output2").textContent = '$' + cafeSubtotal;
   }
@@ -95,7 +109,7 @@ function cafe_subtotal(cafeSprice, cafeDprice){
   }
   if (cafeDqty >= 0){
     cafe_double_qty = cafeDqty;
-    cafeSubtotal_double = cafe_double_qty * cafeDprice;
+    cafeSubtotal_double = cafe_double_qty * g_cafeDprice;
     cafeSubtotal = cafeSubtotal_single + cafeSubtotal_double;
     document.getElementById("output2").textContent = '$' + cafeSubtotal;
   }
@@ -112,15 +126,48 @@ function cafe_subtotal(cafeSprice, cafeDprice){
   total();
 }
 
-function capp_subtotal(cappSprice, cappDprice){
+function check_capp_single(cappSprice, cappDprice){
+  g_cappSprice = cappSprice;
+  g_cappDprice = cappDprice;
   var cappS = document.getElementById("cappSqty");
-  var cappD = document.getElementById("cappDqty");
-  var cappSqty = cappS.value;
-  var cappDqty = cappD.value;
+  cappSqty = cappS.value;
+  var pos1 = cappSqty.search(/^[0-9]+$/);
 
+  if(pos1 != 0){
+    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
+    cappS.focus();
+    cappS.value = '';
+    cappSqty = 0;
+  }
+  else{
+    console.log("Pass checking");
+  }
+  capp_subtotal();
+}
+
+function check_capp_double(cappSprice, cappDprice){
+  g_cappSprice = cappSprice;
+  g_cappDprice = cappDprice;
+  var cappD = document.getElementById("cappDqty");
+  cappDqty = cappD.value;
+  var pos2 = cappDqty.search(/^[0-9]+$/);
+
+  if(pos2 != 0){
+    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
+    cappD.focus();
+    cappD.value = '';
+    cappDqty = 0;
+  }
+  else{
+    console.log("Pass checking");
+  }
+  capp_subtotal();
+}
+
+function capp_subtotal(cappSprice, cappDprice){
   if (cappSqty >= 0){
     capp_single_qty = cappSqty;
-    cappSubtotal_single = capp_single_qty * cappSprice;
+    cappSubtotal_single = capp_single_qty * g_cappSprice;
     cappSubtotal = cappSubtotal_single + cappSubtotal_double;
     document.getElementById("output3").textContent = '$' + cappSubtotal;
   }
@@ -134,7 +181,7 @@ function capp_subtotal(cappSprice, cappDprice){
   }
   if (cappDqty >= 0){
     capp_double_qty = cappDqty;
-    cappSubtotal_double = capp_double_qty * cappDprice;
+    cappSubtotal_double = capp_double_qty * g_cappDprice;
     cappSubtotal = cappSubtotal_single + cappSubtotal_double;
     document.getElementById("output3").textContent = '$' + cappSubtotal;
   }
@@ -146,32 +193,6 @@ function capp_subtotal(cappSprice, cappDprice){
     cappD.focus();
     cappD.value='';
   }
-  // var checking
-  /* if (cappSqty > 0){
-    capp_single_qty = cappSqty;
-  }
-  else {
-    alert("Please insert valid quantity(i.e. larger than or equal to 0)");
-    javaqty.focus();
-    javaqty.select();
-    return false;
-  }
-  if (cappDqty > 0){
-    capp_double_qty = cappDqty;
-  }
-  else {
-    alert("Please insert valid quantity(i.e. larger than or equal to 0)");
-    cappDqty.focus();
-    cappDqty.select();
-    return false;
-  }
-
-  cappSubtotal = capp_single_qty * cappSprice + cappDqty * cappDprice;
-
-  console.log(cappSubtotal);
-
-  //display cappacino subtotal
-  document.getElementById("output3").textContent = "Subtotal:\n" + '$' + cappSubtotal; */
 
   // call total func
   total();
