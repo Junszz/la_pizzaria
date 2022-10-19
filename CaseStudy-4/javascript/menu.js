@@ -16,23 +16,44 @@ function java_subtotal(javaprice){
   var java = document.getElementById("javaqty");
   var javaqty = java.value;
   
-  if (javaqty>=0){
-    javaSubtotal = javaqty * javaprice;
-    //display java subtotal
-    document.getElementById("output1").textContent = "$" +javaSubtotal;
-  }
-  else {
+  var pos = javaqty.search(/^[0-9]+$/);
+
+  if (pos != 0){
+    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
     javaSubtotal = 0;
     document.getElementById("output1").textContent = "$" +javaSubtotal;
-    alert("Please insert valid quantity(i.e. larger than or equal to 0)");
     java.focus();
-    java.value = '';
-    //return false;
+    java.value = '';}
+  else {
+    if (javaqty>=0){
+      javaSubtotal = javaqty * javaprice;
+      //display java subtotal
+      document.getElementById("output1").textContent = "$" +javaSubtotal;
+    }
+    else {
+      javaSubtotal = 0;
+      document.getElementById("output1").textContent = "$" +javaSubtotal;
+      alert("Please insert valid quantity(i.e. larger than or equal to 0)");
+      java.focus();
+      java.value = '';
+      //return false;
+    }
   }
-
   // call total func
   total();
     
+}
+
+function cafeqty_check(){
+  var cafeS = document.getElementById("cafeSqty");
+  var cafeD = document.getElementById("cafeDqty");
+  var cafeSqty = cafeS.value;
+  var cafeDqty = cafeD.value;
+  var pos1 = cafeSqty.search(/^[0-9]+$/);
+  var pos2 = cafeDqty.search(/^[0-9]+$/);
+
+  if (pos1 )
+
 }
 
 function cafe_subtotal(cafeSprice, cafeDprice){
@@ -40,8 +61,24 @@ function cafe_subtotal(cafeSprice, cafeDprice){
   var cafeD = document.getElementById("cafeDqty");
   var cafeSqty = cafeS.value;
   var cafeDqty = cafeD.value;
+  /* if (cafeS.value != 0){
+    var cafeSqty = cafeS.value;
+  }
+  else{
+    var cafeSqty = 0;
+  }
+  var cafeDqty = cafeD.value;
 
+  var pos1 = cafeSqty.search(/^[0-9]+$/);
+  var pos2 = cafeDqty.search(/^[0-9]+$/);
   // var checking
+  if (pos1 != 0 || pos2 != 0){
+    alert("Please insert valid quantity(i.e. integer which is larger than or equal to 0)");
+    cafeSubtotal = 0;
+    document.getElementById("output1").textContent = "$" +cafeSubtotal;
+    cafe.focus();
+    cafe.value = '';} */
+
   if (cafeSqty >= 0){
     cafe_single_qty = cafeSqty;
     cafeSubtotal_single = cafe_single_qty * cafeSprice;
