@@ -4,12 +4,13 @@ function chkName(event) {
     
     var name = event.currentTarget;
     
-    // Test the format of the input name  
+    // Test the format of the input name 
+    var pos0 = name.value.search(/^[A-Z][a-z]+$/);
     var pos1 = name.value.search(/^[A-Z][a-z]+ ?[A-Z][a-z]+$/);
     var pos2 = name.value.search(/^[A-Z][a-z]+ ?[A-Z][a-z]+ ?[A-Z][a-z]+$/);
     var pos3 = name.value.search(/^[A-Z][a-z]+ ?[A-Z][a-z]+ ?[A-Z][a-z]+ ?[A-Z][a-z]+$/);
     
-    if (pos1 != 0 && pos2 != 0 && pos3 != 0) {
+    if (pos0 != 0 && pos1 != 0 && pos2 != 0 && pos3 != 0) {
       alert("The name you entered (" + name.value + 
             ") is not in the correct form. \n" +
             "The correct form is: " +
