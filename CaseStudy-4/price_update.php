@@ -26,7 +26,7 @@ $db->close();
 
 <head>
     <title>Price Update</title>
-    <script type = "text/javascript"  src = "menu.js" ></script>
+    <script type = "text/javascript"  src = "javascript/price_update.js" ></script>
     <meta charset="utf-8">
     <style> 
         a:link {
@@ -186,7 +186,7 @@ $db->close();
                                 <strong>Endless Cup $ <?php echo $price[0];?></strong>
                             </td>
                             <th>
-                                <input type="text" name="java" maxlength="6" size="6">
+                                <input type="text" name="java" id = "java_new" maxlength="6" size="6" onchange = "java_latest()">
                             </th>
                         </tr>
                         <tr>
@@ -199,7 +199,7 @@ $db->close();
                                 </strong>
                             </td>
                             <th>
-                                <input type="text" name="cafe" maxlength="6" size="6">
+                                <input type="text" name="cafe" id = "cafe_new" maxlength="6" size="6" onchange = "cafe_latest()">
                             </th>
                         </tr>
                         <tr>
@@ -212,7 +212,7 @@ $db->close();
                                 </strong>
                             </td>
                             <th>
-                                <input type="text" name="capp" maxlength="6" size="6">
+                                <input type="text" name="capp" id = "capp_new" maxlength="6" size="6" onchange = "capp_latest()">
                             </th>
                         </tr>
                     </table>
