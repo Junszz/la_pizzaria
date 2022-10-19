@@ -97,7 +97,7 @@
 
         table {
             margin: auto;
-            width: 500px;
+            width: 600px;
             height: 250px;
         }
 

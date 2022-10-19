@@ -72,7 +72,7 @@
         }
     }
     if($highest_qty == 2){
-        $most_sold = $cat[3];
+        $most_sold = $cat[2];
         if ($sales[5] > $sales[6]){
             $most_sales = $type[3]; // Single Capp
         }
@@ -135,7 +135,7 @@
         }
 
         #rightcolumn {
-            margin-left: 155px;
+            /* margin-left: 155px; */
             background-color: #f5f5dd;
             color: #7a503e;
         }
@@ -183,10 +183,12 @@
         }
 
         table {
-            width: auto;
-            height: 250px
+            width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
         }
-
+        /*
         table strong {
             color: #342211;
         }
@@ -195,9 +197,6 @@
             padding: 15px;
         }
 
-        /* #checkbox {
-            background-color: #f5f5dd
-        } */
 
         th {
             font-size: 20px;
@@ -206,13 +205,14 @@
             color:#342211;
         }
 
-        /* tr:nth-of-type(odd) {
-            background-color: #d1b38e;
-        } */
-
         th .larger {
             width : 20 px;
             height : 20 px;
+        } */
+
+        button {
+            margin-bottom: 40px;
+            margin-left: 20px;
         }
 
         h2 {
@@ -250,35 +250,39 @@
         <header>
             <img src="images/header.png" width="300" height="70" alt="title">
         </header>
-        <div id="leftcolumn">
-            <nav>
-                <ul>
-                    <li><a href="index.html"><strong>Home</strong></a></li>
-                    <li><a href="menu.php"><strong>Menu</strong></a></li>
-                    <li><a href="music.html"><strong>Music</strong></a></li>
-                    <li><a href="jobs.html"><strong>Jobs</strong></a></li>
-                    <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
-                    <li><a href="salesReport.php"><strong>Daily Sales Report</strong></a></li>
-                </ul>
-            </nav>
-        </div>
         <div id="rightcolumn">
             <div class="content">   
-                <h2>Click to generate daily sales report:</h2>
-                <table border="0">
+                <h2>Total dollar and quantity sales by products</h2>
+                <table border="1">
                     <tr>
-                        <td style="background-color: #f5f5dd"><a href="sales_by_product.php"><img src="images/button.png" width="40" height="40" alt="checkbox"></a></td>
-                        <th>Total dollar and quantity sales by products</th>
+                        <th>Product</th>
+                        <th>Total Dollar Sales</th>
+                        <th>Quantity Sales</th>
                     </tr>
                     <tr>
-                        <td style="background-color: #f5f5dd"><a href="sales_by_cat.php"><img src="images/button.png" width="40" height="40" alt="checkbox"></a></td>
-                        <th>Total dollar and quantity sales by categories</th>
+                        <td><?php echo $cat[0]; ?></td>
+                        <th>$ <?php echo $sales[0]; ?></td>
+                        <th><?php echo $quantity[0]; ?></td>
                     </tr>
                     <tr>
-                        <th colspan="2">Popular option of best selling product: <?php echo $most_sales?> of <?php echo $most_sold?></th>
+                        <td><?php echo $cat[1]; ?></td>
+                        <th>$ <?php echo $sales[1]; ?></td>
+                        <th><?php echo $count[1]; ?></td>
+                    </tr>
+                    <tr>
+                        <td><?php echo $type[2]; ?></td>
+                        <th>$ <?php echo $sales[4]; ?></td>
+                        <th><?php echo $count[2]; ?></td>
                     </tr>
                 </table>
+                <p><?php echo $cat[1]; ?> = <?php echo $quantity[1]; ?> <?php echo $type[1]; ?>  ( $ <?php echo $sales[2]; ?>), <?php echo $quantity[2]; ?> <?php echo $type[2]; ?> ( $ <?php echo $sales[3]; ?>)</p>
+                <p><?php echo $cat[3]; ?> = <?php echo $quantity[3]; ?> <?php echo $type[3]; ?>  ( $ <?php echo $sales[5]; ?>), <?php echo $quantity[4]; ?> <?php echo $type[4]; ?> ( $ <?php echo $sales[6]; ?>)</p>
             </div>
+
+            <form action="salesReport.php">
+                <button>&larr; Back</button>
+            </form>
+
         </div>
         <footer><em>Copyright &copy; 2014 JavaJam Coffee House<br>
             <a href="mailto:JunZe@Siew.com" id="email-link">JunZe@Siew.com</a></em>

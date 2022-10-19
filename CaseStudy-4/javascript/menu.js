@@ -14,7 +14,7 @@ function java_subtotal(javaprice){
   javaSubtotal = javaqty * javaprice;
   
   //display java subtotal
-  document.getElementById("output1").textContent = "Subtotal:\n" + '$' + javaSubtotal;
+  document.getElementById("output1").textContent = "Subtotal: <br>" + '$' + javaSubtotal;
   
   // call total func
   total();
@@ -37,7 +37,7 @@ function cafe_subtotal(cafeSprice, cafeDprice){
   // console.log(cafeSubtotal);
 
   //display cafe subtotal
-  document.getElementById("output2").textContent = "Subtotal:\n" + '$' + cafeSubtotal;
+  document.getElementById("output2").textContent = "Subtotal:" + '$' + cafeSubtotal;
 
   // Update total price
   total();

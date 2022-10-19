@@ -9,7 +9,7 @@ create table quantity
 use javajam;
 
 insert into quantity values
-    (1, 'Just Java','Just Java', 1),
+    (1, 'Just Java','Null', 1),
     (2, 'Cafe au Lait','Single', 1),
     (3, 'Cafe au Lait','Double', 1),
     (4, 'Iced Cappuccino','Single', 1),
