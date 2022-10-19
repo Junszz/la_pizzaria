@@ -167,11 +167,11 @@
             <nav>
                 <ul>
                     <li><a href="index.html"><strong>Home</strong></a></li>
-                    <li><a href="menu.html"><strong>Menu</strong></a></li>
+                    <li><a href="menu.php"><strong>Menu</strong></a></li>
                     <li><a href="music.html"><strong>Music</strong></a></li>
                     <li><a href="jobs.html"><strong>Jobs</strong></a></li>
                     <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
-                    <li><a href="salesReport.html"><strong>Daily Sales Report</strong></a></li>
+                    <li><a href="salesReport.php"><strong>Daily Sales Report</strong></a></li>
                 </ul>
             </nav>
         </div>

@@ -39,7 +39,7 @@
 
     // echo("Qty from database: ".$javaqty.','.$cafeSqty.','.$cafeDqty.','.$cappSqty.','.$cappDqty."<br>");
 
-    if (isset($S_POST['submit'])){
+    if (isset($_POST['submit'])){
         if(isset($_POST['javaqty'])){$newjava = $_POST['javaqty'];} else{$newjava = 0;}
         if(isset($_POST['cafeSqty'])){$newcafe_single = $_POST['cafeSqty'];} else{$newcafe_single = 0;}
         if(isset($_POST['cafeDqty'])){$newcafe_double = $_POST['cafeDqty'];} else{$newcafe_double = 0;}
@@ -58,14 +58,6 @@
         // echo("New Qty: ".$totaljava.','.$totalcafe_single.','.$totalcafe_double.','.$totalcapp_single.','.$totalcapp_double."<br>");
 
         try{
-        // store in database
-        // UPDATE MyGuests SET lastname='Doe' WHERE id=2
-        // $query = "update quantity set coffeeqty = ".$totaljava."where coffeeid = 1;\n";
-        // $query = 'update quantity set coffeeqty = '.$totaljava.' where coffeeid = 1; \n'
-        //         'update quantity set coffeeqty = '.$totalcafe_single.' where coffeeid = 2;'
-        //         'update quantity set coffeeqty = '.$totalcafe_double.' where coffeeid = 3;'
-        //         'update quantity set coffeeqty = '.$totalcapp_single.' where coffeeid = 4;'
-        //         'update quantity set coffeeqty = '.$totalcapp_double.' where coffeeid = 5;';
         $result = $db->query("update quantity set coffeeqty = ".$totaljava." where coffeeid = 1;");
         $result = $db->query("update quantity set coffeeqty = ".$totalcafe_single." where coffeeid = 2;");
         $result = $db->query("update quantity set coffeeqty = ".$totalcafe_double." where coffeeid = 3;");
@@ -81,9 +73,11 @@
             echo "Update results failed";
         }
 
-        $_POST = array();
+        // Redirect to this page.
+        header( "Location: {$_SERVER['REQUEST_URI']}", true, 303 );
+        exit();
     }
-    
+
     $db->close();
 ?>
 
@@ -228,7 +222,7 @@
                     <li><a href="music.html"><strong>Music</strong></a></li>
                     <li><a href="jobs.html"><strong>Jobs</strong></a></li>
                     <li><a href="price_update.php"><strong>Product Price Update</strong></a></li>
-                    <li><a href="salesReport.html"><strong>Daily Sales Report</strong></a></li>
+                    <li><a href="salesReport.php"><strong>Daily Sales Report</strong></a></li>
                 </ul>
         </div>
         <div id="rightcolumn">
@@ -281,7 +275,7 @@
                             <td colspan="4" id="total">Total:$0 </td>
                         </tr>
                     </table>
-                    <input type="submit" value="Submit">
+                    <input type="submit" name='submit' value="Submit">
                 </form>
             </div>
         </div>
