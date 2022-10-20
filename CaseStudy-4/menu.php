@@ -54,14 +54,20 @@
         if(isset($_POST['cappSqty'])){$newcapp_single = $_POST['cappSqty'];}else{$newcapp_single = 0;}
         if(isset($_POST['cappDqty'])){$newcapp_double = $_POST['cappDqty'];}else{$newcapp_double = 0;}
 
-        // echo("Qty from form: ".$newjava.','.$newcafe_single.','.$newcafe_double.','.$newcapp_single.','.$newcapp_double."<br>");
+        echo("Qty from form: ".$newjava.','.$newcafe_single.','.$newcafe_double.','.$newcapp_single.','.$newcapp_double."<br>");
+
+        $newjava = number_format((int)$newjava);
+        $newcafe_single = number_format((int)$newcafe_single);
+        $newcafe_double = number_format((int)$newcafe_double);
+        $newcapp_single = number_format((int)$newcapp_single);
+        $newcapp_double = number_format((int)$newcapp_double);
 
         // perform addition here
-        $totaljava = number_format((int)($newjava + $javaqty));
-        $totalcafe_single = number_format((int)($newcafe_single + $cafeSqty));
-        $totalcafe_double = number_format((int)($newcafe_double + $cafeDqty));
-        $totalcapp_single = number_format((int)($newcapp_single + $cappSqty));
-        $totalcapp_double = number_format((int)($newcapp_double + $cappDqty));
+        $totaljava = $newjava + $javaqty;
+        $totalcafe_single = $newcafe_single + $cafeSqty;
+        $totalcafe_double = $newcafe_double + $cafeDqty;
+        $totalcapp_single = $newcapp_single + $cappSqty;
+        $totalcapp_double = $newcapp_double + $cappDqty;
 
         // echo("New Qty: ".$totaljava.','.$totalcafe_single.','.$totalcafe_double.','.$totalcapp_single.','.$totalcapp_double."<br>");
 
@@ -245,7 +251,9 @@
                             </td>
                             <!-- text box to enter number -->
                             <!-- update the subtotal once javaqty had been changed -->
-                            <td style="text-align:center"><input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
+                            <td style="text-align:center">
+                                E:
+                                <input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
                                 size="3" maxlength="3"></td>
                             <!-- print computed values -->
                             <td>Subtotal:<br><span id="output1">$0</span></td> 
@@ -256,9 +264,11 @@
                                 <br>Single $ <?php echo $price[1];?> Double $ <?php echo $price[2];?>
                             </td>
                             <!-- update the subtotal once cafeqty had been changed -->
-                            <td style="text-align:center">
+                            <td style="text-align:center; width: 100px">
+                                S:
                                 <input type="text" id="cafeSqty" name='cafeSqty' onchange="check_cafe_single(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
-                                size="3" maxlength="3">
+                                size="3" maxlength="3"> <br>
+                                D:
                                 <input type="text" id="cafeDqty" name='cafeDqty' onchange="check_cafe_double(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
                                 size="3" maxlength="3">
                             </td>
@@ -271,8 +281,10 @@
                             </td>
                             <!-- update the subtotal once cappqty had been changed -->
                             <td style="text-align:center">
+                                S:
                                 <input type="text" id="cappSqty" name='cappSqty' size="3" onchange="check_capp_single(<?php echo $price[3];?>, <?php echo $price[4];?>)"
-                                maxlength="3">
+                                maxlength="3"> <br>
+                                D:
                                 <input type="text" id="cappDqty" name='cappDqty' size="3" onchange="check_capp_double(<?php echo $price[3];?>, <?php echo $price[4];?>)"
                                 maxlength="3">
                             </td>
