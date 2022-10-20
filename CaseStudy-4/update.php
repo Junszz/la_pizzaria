@@ -23,7 +23,7 @@
                     $result = $db->query($query); //query submission
                 }
                 else{
-                    echo "Input error";
+                    // echo "Input error";
                 }
 
             }
@@ -41,7 +41,7 @@
                         $result = $db->query($query); //query submission
                     }
                     else{
-                        echo "Input error";
+                        // echo "Input error";
                     }
                 }
 
@@ -54,7 +54,7 @@
                         $result = $db->query($query); //query submission
                     }
                     else{
-                        echo "Input error";
+                        // echo "Input error";
                     }
                 }
             }
@@ -72,7 +72,7 @@
                         $result = $db->query($query); //query submission
                     }
                     else{
-                        echo "Input error";
+                        // echo "Input error";
                     }
                 }
 
@@ -85,7 +85,7 @@
                         $result = $db->query($query); //query submission
                     }
                     else{
-                        echo "Input error";
+                        // echo "Input error";
                     }
                 }
             }

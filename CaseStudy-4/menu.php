@@ -37,6 +37,14 @@
     $cappSqty = $quantity[3];
     $cappDqty = $quantity[4];
 
+    // Initialize var
+    $newjava = 0;
+    $newcafe_single = 0;
+    $newcafe_double = 0;
+    $newcapp_single = 0;
+    $newcafe_single = 0;
+    $newcapp_double = 0;
+
     // echo("Qty from database: ".$javaqty.','.$cafeSqty.','.$cafeDqty.','.$cappSqty.','.$cappDqty."<br>");
 
     if (isset($_POST['submit'])){
@@ -46,14 +54,20 @@
         if(isset($_POST['cappSqty'])){$newcapp_single = $_POST['cappSqty'];}else{$newcapp_single = 0;}
         if(isset($_POST['cappDqty'])){$newcapp_double = $_POST['cappDqty'];}else{$newcapp_double = 0;}
 
-        // echo("Qty from form: ".$newjava.','.$newcafe_single.','.$newcafe_double.','.$newcapp_single.','.$newcapp_double."<br>");
+        echo("Qty from form: ".$newjava.','.$newcafe_single.','.$newcafe_double.','.$newcapp_single.','.$newcapp_double."<br>");
+
+        $newjava = number_format((int)$newjava);
+        $newcafe_single = number_format((int)$newcafe_single);
+        $newcafe_double = number_format((int)$newcafe_double);
+        $newcapp_single = number_format((int)$newcapp_single);
+        $newcapp_double = number_format((int)$newcapp_double);
 
         // perform addition here
-        $totaljava = number_format((int)($newjava + $javaqty));
-        $totalcafe_single = number_format((int)($newcafe_single + $cafeSqty));
-        $totalcafe_double = number_format((int)($newcafe_double + $cafeDqty));
-        $totalcapp_single = number_format((int)($newcapp_single + $cappSqty));
-        $totalcapp_double = number_format((int)($newcapp_double + $cappDqty));
+        $totaljava = $newjava + $javaqty;
+        $totalcafe_single = $newcafe_single + $cafeSqty;
+        $totalcafe_double = $newcafe_double + $cafeDqty;
+        $totalcapp_single = $newcapp_single + $cappSqty;
+        $totalcapp_double = $newcapp_double + $cappDqty;
 
         // echo("New Qty: ".$totaljava.','.$totalcafe_single.','.$totalcafe_double.','.$totalcapp_single.','.$totalcapp_double."<br>");
 
@@ -237,10 +251,12 @@
                             </td>
                             <!-- text box to enter number -->
                             <!-- update the subtotal once javaqty had been changed -->
-                            <td align="center"><input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
+                            <td style="text-align:center">
+                                E:
+                                <input type="text" id="javaqty" name="javaqty" onchange="java_subtotal(<?php echo $price[0];?>)"
                                 size="3" maxlength="3"></td>
                             <!-- print computed values -->
-                            <td id="output1">Subtotal:<br>$0</td> 
+                            <td>Subtotal:<br><span id="output1">$0</span></td> 
                         </tr>
                         <tr>
                             <th>Cafe au Lait</th>
@@ -248,13 +264,15 @@
                                 <br>Single $ <?php echo $price[1];?> Double $ <?php echo $price[2];?>
                             </td>
                             <!-- update the subtotal once cafeqty had been changed -->
-                            <td align="center">
-                                <input type="text" id="cafeSqty" name='cafeSqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
-                                size="3" maxlength="3">
-                                <input type="text" id="cafeDqty" name='cafeDqty' onchange="cafe_subtotal(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                            <td style="text-align:center; width: 100px">
+                                S:
+                                <input type="text" id="cafeSqty" name='cafeSqty' onchange="check_cafe_single(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
+                                size="3" maxlength="3"> <br>
+                                D:
+                                <input type="text" id="cafeDqty" name='cafeDqty' onchange="check_cafe_double(<?php echo $price[1];?>, <?php echo $price[2];?>)" 
                                 size="3" maxlength="3">
                             </td>
-                            <td id="output2">Subtotal:<br>$0</td>
+                            <td>Subtotal:<br><span id="output2">$0</span></td>
                         </tr>
                         <tr id="capp">
                             <th>Iced Cappuccino</th>
@@ -262,14 +280,16 @@
                                 <br>Single $ <?php echo $price[3];?> Double $ <?php echo $price[4];?>
                             </td>
                             <!-- update the subtotal once cappqty had been changed -->
-                            <td align="center">
-                                <input type="text" id="cappSqty" name='cappSqty' size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
-                                maxlength="3">
-                                <input type="text" id="cappDqty" name='cappDqty' size="3" onchange="capp_subtotal(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                            <td style="text-align:center">
+                                S:
+                                <input type="text" id="cappSqty" name='cappSqty' size="3" onchange="check_capp_single(<?php echo $price[3];?>, <?php echo $price[4];?>)"
+                                maxlength="3"> <br>
+                                D:
+                                <input type="text" id="cappDqty" name='cappDqty' size="3" onchange="check_capp_double(<?php echo $price[3];?>, <?php echo $price[4];?>)"
                                 maxlength="3">
                             </td>
                             <!-- display the subtotal -->
-                            <td id="output3">Subtotal:<br>$0</td>
+                            <td>Subtotal:<br><span id="output3">$0</span></td>
                         </tr>
                         <tr>
                             <td colspan="4" id="total">Total:$0 </td>
