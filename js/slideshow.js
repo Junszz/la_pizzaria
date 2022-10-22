@@ -1,33 +1,33 @@
-// print default picture
-var slideIndex = 1;
-// prompt("Default values set to 1\n", "");
-showSlides(slideIndex);
+// global var
+var slideIndex = 0;
 
-// Next/previous controls
-function plusSlides(n) {
-  showSlides(slideIndex += n);  
-}
+// function gotoSlides(x){
+//   // Update global var slideIndex
+//   slideIndex = x;
+//   console.log("Go to slides ", x); 
+//   showSlides(slideIndex);
+// }
 
-// Thumbnail image controls
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
+function showSlides(index) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
-    if (n > slides.length) {slideIndex = 1} // reset index back to 1
-    if (n < 1) {slideIndex = slides.length} // reset index back to last
-    // make sure other slides are being hidden
-    for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
+    // 0,1,2 -> len = 3
+    // console.log(slides);
+
+    // Hide all slides
+    for (i = 0; i < slides.length;i++){
+      // console.log(slides[i]," display set to none");
+      slides[i].style.display = 'none';
     }
-    // make sure other slides are being hidden
-    for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
+
+
+    slideIndex++;
+
+    if(slideIndex > slides.length){
+      slideIndex = 1;
     }
     slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-  }
+    setTimeout(showSlides,2000);
+}
 

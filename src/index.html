@@ -3,6 +3,7 @@
 
 <head>
     <title>La Pizzaria</title>
+    <script type = "text/javascript"  src = "../js/slideshow.js" ></script>
     <meta charset="utf-8">
     <style>
         #wrapper {
@@ -62,7 +63,7 @@
 
         /* Hide the slideshow images by default */
         .mySlides {
-            display: none;
+            /* display: none; */
         }
 
         /* Next & previous buttons */
@@ -157,7 +158,7 @@
     </style>
 </head>
 
-<body>
+<body onload="showSlides()">
     <div id="wrapper">
         <!-- Make 2 versions of wrapper: small & big screen -->
         <nav>
@@ -179,33 +180,29 @@
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="../images/hori.png" style="width:100%">
+                <img src="../images/hori.png" width="850" height="400" alt="img1" style="width: 100%;">
                 <div class="text">Image 1</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="../images/hori2.png" style="width:100%">
+                <img src="../images/hori2.png" width="850" height="400" alt="img2" style="width: 100%;">
                 <div class="text">Image 2</div>
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="../images/hori3.png" style="width:100%">
+                <img src="../images/hori3.png" width="850" height="400" alt="img3" style="width: 100%;">
                 <div class="text">Images 3</div>
             </div>
-
-            <!-- Next and previous buttons &#10094 -->
-            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
         <br>
 
         <!-- The dots/circles -->
         <div style="text-align:center">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="gotoSlides(1)"></span>
+            <span class="dot" onclick="gotoSlides(2)"></span>
+            <span class="dot" onclick="gotoSlides(3)"></span>
         </div>
 
     </div>
