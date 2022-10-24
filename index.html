@@ -8,14 +8,30 @@
     <style>
         #wrapper {
             /* background-color: #FFFFFF; */
-            width: 90%;
             margin: auto;
             min-width: 800px;
         }
 
+        /* Create arrow symbol */
+        .arrow {
+            border: solid #000000;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        /* End of creating arrow symbol */
+
         /* Navbar styling */
         nav {
-            margin: 0px 0px 15px 0px;
+            margin: auto;
+            max-width: 1300px;
+            overflow: hidden;
+            width: 100%;
         }
 
         /* make image float on the left-side */
@@ -50,15 +66,11 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
+            transition: 500ms;
         }
 
         .active {
             background-color: #04AA6D;
-        }
-
-        /* Change the link color to grey on hover */
-        nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
-            background-color: #F5F5F5;
         }
 
         /* Dropdown bar */
@@ -77,6 +89,11 @@
             margin: 0px;
         }
 
+        .dropdown:hover .dropbtn i {
+            animation: rotate-up 500ms;
+            transform: rotate(225deg);
+        }
+
         .dropdown-content a {
             float: none;
             color: black;
@@ -89,10 +106,15 @@
         .dropdown-content {
             display: none;
             position: absolute;
-            background-color: inherit;
+            background-color: #FFFFFF;
             min-width: 160px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
+        }
+
+        /* Change the link color to grey on hover */
+        nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+            background-color: #F5F5F5;
         }
 
         /* Add a grey background color to dropdown links on hover */
@@ -102,6 +124,7 @@
 
         /* Show the dropdown menu on hover */
         .dropdown:hover .dropdown-content {
+            animation: drop-in 500ms;
             display: block;
         }
 
@@ -109,7 +132,7 @@
 
         /* Slideshow banner styling */
         .slideshow_container {
-            max-width: 1000px;
+            max-width: 1250px;
             height: 400px;
             position: relative;
             margin: auto;
@@ -192,7 +215,9 @@
             animation-name: fade;
             animation-duration: 1.5s;
         }
+        /* End of Slideshow banner styling */
 
+        /* Animation */
         @keyframes fade {
             from {
                 opacity: .4
@@ -202,11 +227,32 @@
                 opacity: 1
             }
         }
-        /* End of Slideshow banner styling */
+
+        @keyframes drop-in {
+            from {
+                transform: translateY(-30%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate-up {
+            from {
+                transform:rotate(45deg);
+            }
+            to {
+                transform: rotate(225deg);
+            }
+        }
+        /* End of Animation */
 
         /* Container styling */
         .container {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             justify-content: center;
             margin-bottom: 100px;
@@ -218,6 +264,7 @@
             margin: 10px;
             padding: 5px 5px 5px 10px;
             border-radius: 10px;
+            min-width: 450px;
         }
 
         #leftcolumn {
@@ -253,7 +300,7 @@
             </div>
             <ul>
                 <li class="dropdown">
-                    <a href="menu.html" class="dropbtn">Menu</a>
+                    <a href="menu.html" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                     <div class="dropdown-content">
                         <a href="menu.html">Pizza</a>
                         <a href="menu.html">Pasta</a>
@@ -263,13 +310,11 @@
                 </li>
                 <li><a href="hotDeals.html">Hot Deals</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
-                <!-- <li style="float:right"><a href="login.html">Login</a></li> -->
-            <div id="right-nav">
-                <a href="cart.html"><img src="images/carts.png" width="35" height="35" alt="carts"></a>
-            </div>
+                <li style="float:right;"><a href="cart.html"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                <li style="float:right;"><a href="login.html">Login</a></li>
             </ul>
         </nav>
-
+        <br>
         <!-- Slideshow container -->
         <script type="application/javascript" src="js/slideshow.js"></script>
         <div class="slideshow_container">
@@ -300,34 +345,34 @@
             <span class="dot" onclick="gotoSlides(2)"></span>
             <span class="dot" onclick="gotoSlides(3)"></span>
         </div>
-    </div>
-    <br><br>
-    <div class="container">
-        <!-- New Items Banner-->
-        <div class="banner">
-            <div id="leftcolumn">
-                <h2>New Releases</h2>
-                <p>Chase the summer away with sundae</p>
-            </div>
-            <div id="rightcolumn">
-                <img src="images/hori2.png" width="160" height="160" alt="img3">
-            </div>
-        </div>
-        <!-- About Us Banner-->
-        <div class="banner">
-            <div id="leftcolumn">
-                <h2>La Pizzaria</h2>
-                <p>Pizza craftmanship since 1998</p>
-            </div>
-            <div id="rightcolumn">
-                <img src="images/hori2.png" width="160" height="160" alt="img4">
-            </div>
-        </div>
-    </div>
 
-    <footer>
-        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
-    </footer>
+        <br><br>
+        <div class="container">
+            <!-- New Items Banner-->
+            <div class="banner">
+                <div id="leftcolumn">
+                    <h2>New Releases</h2>
+                    <p>Chase the summer away with sundae</p>
+                </div>
+                <div id="rightcolumn">
+                    <img src="images/hori2.png" width="160" height="160" alt="img3">
+                </div>
+            </div>
+            <!-- About Us Banner-->
+            <div class="banner">
+                <div id="leftcolumn">
+                    <h2>La Pizzaria</h2>
+                    <p>Pizza craftmanship since 1998</p>
+                </div>
+                <div id="rightcolumn">
+                    <img src="images/hori2.png" width="160" height="160" alt="img4">
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
+        </footer>
     </div>
 </body>
 
