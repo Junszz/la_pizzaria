@@ -3,13 +3,20 @@
 
 <head>
     <title>La Pizzaria</title>
-    <script type = "text/javascript"  src = "../js/slideshow.js" ></script>
+    <script type = "text/javascript"  src = "js/slideshow.js" ></script>
     <meta charset="utf-8">
     <style>
+        * { 
+            margin: auto;
+            padding: auto; 
+            box-sizing: border-box;
+        }
+
         #wrapper {
             /* background-color: #FFFFFF; */
             margin: auto;
             min-width: 800px;
+            background-image: url("images/background.jpg");
         }
 
         /* Create arrow symbol */
@@ -32,6 +39,8 @@
             max-width: 1300px;
             overflow: hidden;
             width: 100%;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
 
         /* make image float on the left-side */
@@ -265,6 +274,7 @@
             padding: 5px 5px 5px 10px;
             border-radius: 10px;
             min-width: 450px;
+            background-color: white;
         }
 
         #leftcolumn {
