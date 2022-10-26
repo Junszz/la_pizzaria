@@ -5,10 +5,18 @@
     <title>La Pizzaria</title>
     <meta charset="utf-8">
     <style>
+        /* Eliminate spaces on the sides */
+        * { 
+            margin: auto;
+            padding: auto; 
+            box-sizing: border-box;
+        }
+
         #wrapper {
             /* background-color: #FFFFFF; */
             margin: auto;
             min-width: 800px;
+            background-image: url("images/background.jpg");
         }
 
         /* Create arrow symbol */
@@ -28,9 +36,11 @@
         /* Navbar styling */
         nav {
             margin: auto;
-            max-width: 1200px;
+            max-width: 1300px;
             overflow: hidden;
             width: 100%;
+            background-color: white;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
 
         /* make image float on the left-side */
@@ -168,6 +178,7 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 100px;
+            max-width: 1300px;
         }
 
         .banner {
@@ -177,14 +188,18 @@
             padding: 0px 0px 5px 0px;
             border-radius: 5px;
             min-width: 450px;
+            background-color: white;
         }
 
         footer {
+            max-width: 1300px;
+            width: 100%;
 			font-size: 11px;
             text-align: center;
-            background-color: #d1b38e;
+            background-color: white;
             color: #000000;
             padding: 20px 10px 20px 0px;
+            box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
         }
 
     </style>

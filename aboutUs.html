@@ -4,89 +4,97 @@
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
-    <style>
-        #wrapper {
-            /* background-color: #FFFFFF; */
-            width: 80%;
-            margin: auto;
-            min-width: 800px;
-        }
-
-        nav {
-            margin-bottom: 15px;
-        }
-
-        /* make image float on the left-side */
-        #left-nav {
-            margin: 10px 30px 15px 10px;
-            float: left;
-        }
-
-        nav ul {
-            font-size: 20px;
-            font-weight: 600;
-            list-style-type: none;
-            margin: 0;
-            padding: 10px 0px 5px 0px;
-            overflow: hidden;
-            /* background-color: #F5F5F5; */
-        }
-
-        nav li {
-            float: left;
-        }
-
-        /* Display menu in a horizontal block orientation */
-        nav li a {
-            display: block;
-            color: #000000;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        .active {
-            background-color: #DCDCDC;
-        }
-
-        /* Change the link color to grey on hover */
-        nav li a:hover {
-            background-color: #F5F5F5;
-        }
-
-        footer {
-			font-size: 11px;
-            text-align: center;
-            background-color: #d1b38e;
-            color: #000000;
-            padding: 20px 10px 20px 0px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <div id="wrapper">
-        <!-- Make 2 versions of wrapper: small & big screen -->
-        <nav>
-            <div id="left-nav">
-                <a href="index.html"><img src="../images/logo.png" width="80" height="50" alt="logo"></a>
-            </div>
-            <ul>
-                <li><a href="menu.html">Menu</a></li>
-                <li><a href="hotDeals.html">Hot Deals</a></li>
-                <li><a class="active" href="aboutUs.html">About Us</a></li>
-                <li style="float:right"><a href="cart.html">Cart</a></li>
-                <li style="float:right"><a href="login.html">Login</a></li>
-            </ul>   
-        </nav>
-
-        <div>
-            <h2>About Us</h2>
+    <!-- Make 2 versions of wrapper: small & big screen -->
+    <nav>
+        <div id="left-nav">
+            <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
         </div>
-    </div>
-    <footer>
-        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
+        <ul>
+            <li class="dropdown">
+                <a href="menu.html" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                <div class="dropdown-content">
+                    <a href="menu.html">Pizza</a>
+                    <a href="menu.html">Pasta</a>
+                    <a href="menu.html">Sides</a>
+                    <a href="menu.html">Beverages</a>
+                </div>
+            </li>
+            <li><a href="hotDeals.html">Hot Deals</a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li style="float:right;"><a href="cart.html"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+            <li style="float:right;"><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Banner Container -->
+    <section class="About-us">
+        <div class="about-container">
+            <div class="textbox">
+                <h1 style="margin-bottom: 0px;">About Us</h1>
+                <p>Established food paradigm since 1980 with authentic craftmanship.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="welcome section-padding">
+        <div class="welcome-container">
+            <div class="left-column">
+                <img src="images/welcome.png" style="padding-left: 13%;" width="100%" alt="welcome">
+            </div>
+            <div class="right-column">
+                <div class="welcome-text">
+                    <h3><span class="yellow">Welcome</span> <br>to La Pizzaria</h3>
+                    <p>Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
+                    <br>
+                    <p>Experienced michelin chefs to delight ur taste buds. Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
+                    <a href="menu.html" class="button button-padding">Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area -->
+    <footer class="section-padding">
+        <div class="footer-container">
+            <div class="col">
+                <a href="index.html"><img src="images/logo.png"  width=50px height=50px alt=""></a>
+                <p>Best pizza store in town.</p>
+            </div>
+            <div class="col">
+                <h2>Contact Us</h2>
+                <table>
+                    <tr>
+                        <td>Logo</td>
+                        <td>
+                            50 Nanyang Ave, Singapore 639798<br>
+                            School of EEE
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Logo</td>
+                        <td>(+65) 89002643</td>
+                    </tr>
+                    <tr>
+                        <td>Logo</td>
+                        <td>
+                            meitong@pizzaria.com<br>
+                            junze@pizzaria.com
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col">
+                <h2>Opening Hours</h2>
+                <p>Monday.............Closed</p>
+                <p>Tue-Fri.........10am - 12pm</p>
+                <p>Sat-Sun..........8am - 11pm</p>
+                <p>Holidays........10am - 12pm</p>
+            </div>
+        </div>
     </footer>
 </body>
 
