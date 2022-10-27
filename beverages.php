@@ -301,12 +301,12 @@
             </div>
             <ul>
                 <li class="dropdown">
-                    <a class="active" href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                    <a class="active" href="beverages.php" class="dropbtn">Beverages<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                     <div class="dropdown-content">
+                        <a href="menu.php">Menu</a>
                         <a href="pizza.php">Pizza</a>
                         <a href="pasta.php">Pasta</a>
                         <a href="sides.php">Sides</a>
-                        <a href="beverages.php">Beverages</a>
                     </div>
                 </li>
                 <li><a href="hotDeals.html">Hot Deals</a></li>
