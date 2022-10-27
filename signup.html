@@ -63,18 +63,21 @@
         }
 
         label {
-            text-align: right;
+            text-align: left;
             float: left;
             display: block;
-            padding: 0px 100px 10px 10px;
-            width: 100px;
+            padding: 0px 100px 10px 100px;
+            width: 200px;
+            font-size: 18px;
         }
 
         input,
         textarea {
-            margin-bottom: 50px;
+            margin-bottom: 20px;
             display: block;
-            width: 800px;
+            width: 700px;
+            height: 30px;
+            margin-left: 100px;
         }
 
         #choices{
@@ -92,7 +95,57 @@
             text-decoration: none;
             margin-bottom: 15px;
         }
+        
+        #firstname1{
+            text-align: left;
+            float: left;
+            display: block;
+            padding: 0px 1000px 10px 100px;
+            width: 200px;
+            font-size: 18px;
+        }
+        #firstname2{
+            margin-bottom: 20px;
+            display: block;
+            width: 200px;
+            height: 30px;
+            margin-left: 100px;
+        }
+        #lastname1{
+            text-align: left;
+            float: left;
+            display: block;
+            padding: 0px 1000px 10px 100px;
+            width: 200px;
+            font-size: 18px;
+        }
+        #lastname2{
+            margin-bottom: 20px;
+            display: block;
+            width: 200px;
+            height: 30px;
+            margin-left: 100px;
+        }
+        #terms{
+            width: 15px;
+            height: 15px;
+        }
+        #promo{
+            width: 15px;
+            height: 15px;
+        }
 
+        #button{
+            text-align: center;
+            width: 150px;
+            margin-left: 430px;
+        }
+
+        #join{
+            text-align: center;
+            font-size: 20px;
+        }
+        
     </style>
 </head>
 
@@ -101,7 +154,7 @@
         <!-- Make 2 versions of wrapper: small & big screen -->
         <nav>
             <div id="left-nav">
-                <a href="index.html"><img src="../images/logo.png" width="80" height="50" alt="logo"></a>
+                <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
             </div>
             <ul>
                 <li><a href="menu.html">Menu</a></li>
@@ -113,7 +166,6 @@
         </nav>
 
         <nav>
-            <h2>Signup Form</h2>
             <ul id="choices"> 
                 <li><a href="login.html">Login</a></li>
                 <li><a class="active" href="signup.html">Signup</a></li>
@@ -122,10 +174,10 @@
 
         <div>
             <form action="">
-                <label for="email">*First Name:</label>
-                    <input type="email" name="email" id="email" required>
-                <label for="email">*Last Name:</label>
-                    <input type="email" name="email" id="email" required>
+                <label for="email" id="firstname1">*First Name:</label>
+                    <input type="email" name="email" id="firstname2" required>
+                <label for="email" id="lastname1">*Last Name:</label>
+                    <input type="email" name="email" id="lastname2" required>
                 <label for="email">*Contact Number:</label>
                     <input type="email" name="email" id="email" required>
                 <label for="email">*Email Address:</label>
@@ -134,8 +186,14 @@
                     <input type="password" name="password" id="password" required>
                 <label for="Password">*Delivery Address:</label>
                     <input type="password" name="password" id="password" required>
-
         </div>
+
+        <div>
+            <input type="checkbox" name="terms" id="terms"><label for="terms">Agree to terms & conditions</label>
+            <input type="checkbox" name="terms" id="promo">Receive marketing & promotion emails
+            <h3 id="join">Join us as member now and enjoy<br>exclusive perks!</h3>
+        </div>
+        <input type="submit" value="Login/Signup" id="button">
     </div>
     <footer>
         <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
