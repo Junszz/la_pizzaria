@@ -92,14 +92,21 @@
                     <td>Subtotal</td>
                 </tr>
             <?php
+                // Process cart data (Merge same product)
+                $filtered = array_unique($_SESSION['cart']);
+
+                // Split array keys and value
+                $fooditm = array_keys($filtered);
+                $foodcount = array_values($filtered);
+            
                 // Printing row by row
                 $count = 1;
-                for ($i=0; $i < count($_SESSION['cart']); $i++){
+                for ($i=0; $i < count($fooditm); $i++){
                     echo "<tr>";
                     echo "<td>".$count."</td>";
-                    echo "<td>".$name[$_SESSION['cart'][$i]]."</td>";
-                    echo "<td>".$price[$_SESSION['cart'][$i]]."</td>";
-                    echo "<td>".$qty[$_SESSION['cart'][$i]]."</td>";
+                    echo "<td>".$name[$fooditm[$i]]."</td>";
+                    echo "<td>".$price[$fooditm[$i]]."</td>";
+                    echo "<td>".$foodcount[$i]."</td>";
                     echo "</tr>";
                     $count++;
                 }
