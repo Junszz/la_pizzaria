@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 @import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
 
-* { 
+* {
     margin: auto;
-    padding: auto; 
+    padding: auto;
     box-sizing: border-box;
 }
 
@@ -26,6 +26,7 @@
     transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 }
+
 /* End of creating arrow symbol */
 
 /* Navbar styling */
@@ -111,12 +112,14 @@ nav li a {
     position: absolute;
     background-color: #FFFFFF;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
 
 /* Change the link color to grey on hover */
-nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+nav li a:hover,
+.dropdown:hover .dropbtn,
+.dropbtn:focus {
     background-color: #F5F5F5;
 }
 
@@ -133,148 +136,10 @@ nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
 
 /* End of Navbar styling */
 
-/* Animation */
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes drop-in {
-    from {
-        transform: translateY(-30%);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes rotate-up {
-    from {
-        transform:rotate(45deg);
-    }
-    to {
-        transform: rotate(225deg);
-    }
-}
-/* End of Animation */
-
-/* Container styling */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 100px;
-}
-
-.banner {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    text-align: center;
-    margin: 15px;
-    padding: 0px 0px 5px 0px;
-    border-radius: 5px;
-    min-width: 450px;
-}
-
-.about-container {
-    background-image: url("../images/about.jpg");
-    height: 450px;
-}
-
-.textbox {
-    padding-top: 150px;
-    text-align: center;
-    color: #FFFFFF;
-}
-
-h1 {
-    color: #fff;
-    font-family: "Playfair Display", serif;
-    font-size: 60px;
-    font-weight: 700;
-    font-style: italic
-}
-
-h3 {
-    color: #131230;
-    font-family: "Playfair Display", serif;
-    font-size: 36px;
-    font-weight: 700;
-}
-
-p {
-    color: #fff;
-    /* font-family: "Roboto", sans-serif; */
-    font-size: 18px;
-    font-weight: 400;
-}
-
-.textbox p {
-    font-style: italic;
-    text-transform: capitalize;
-}
-
 .section-padding {
-  padding: 130px 0px;  
+    padding: 130px 0px;
 }
 
-.welcome-container {
-    background-color: white;
-    display: flex;
-}
-
-.left-column {
-    flex: 50%;
-}
-
-.right-column {
-    flex: 50%;
-}
-
-.welcome-text {
-    padding: 20% 40% 20% 5%;
-}
-
-.yellow {
-    color: #ffb606;
-    font-style: italic
-}
-
-.welcome-text p {
-    font-style: normal;
-    color: grey;
-    font-size: 15px;
-}
-
-.button {
-    color: #131230;
-    background: #ffb606;
-    font-family: "Roboto", sans-serif;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 500;
-    border: 1px solid transparent;
-    display: inline-block;
-    padding: 12px 30px;
-    text-decoration: none;
-}
-
-.button-padding {
-    margin-top: 50px;
-}
-
-.button:hover {
-    color: #131230;
-    background: transparent;
-    border: 1px solid #ffb606
-}
 
 /* footer {
     text-align: center;
@@ -334,5 +199,86 @@ td {
 .footer-container p {
     font-size: 14px;
     color: #000000;
-    
+
 }
+
+/* Cart styling */
+.basket-labels {
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    margin-top: 1.625rem;
+}
+
+.basket-labels ul {
+    list-style: none;
+}
+
+.basket-labels li {
+    color: #111;
+    display: inline-block;
+    padding: 0.625rem 3rem;
+}
+
+.basket-product {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0px;
+    position: relative;
+}
+
+.item {
+    width: 55%;
+}
+
+.price,
+.quantity,
+.subtotal {
+    width: 15%;
+}
+
+.subtotal {
+    text-align: right;
+}
+
+.product-image {
+    width: 35%;
+}
+
+.product-details {
+    width: 65%;
+}
+
+
+/* Animation */
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes drop-in {
+    from {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-up {
+    from {
+        transform: rotate(45deg);
+    }
+
+    to {
+        transform: rotate(225deg);
+    }
+}
+
+/* End of Animation */

@@ -6,3 +6,12 @@
 4. Settle Server side stuff
 ----------------------Week 11------------------------------
 5. Double check
+
+* Log in to enjoy amazing deals
+* You have * items in cart currently
+
+* Clean-up css code
+* Finalize navbar and footer (on big screen)
+
+
+Open-issues:

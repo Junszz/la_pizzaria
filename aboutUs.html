@@ -15,7 +15,7 @@
         </div>
         <ul>
             <li class="dropdown">
-                <a href="menu.html" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                <a href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                 <div class="dropdown-content">
                     <a href="menu.html">Pizza</a>
                     <a href="menu.html">Pasta</a>
@@ -24,10 +24,10 @@
                 </div>
             </li>
             <li><a href="hotDeals.html">Hot Deals</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-            <li style="float:right;"><a href="cart.html"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+            <li><a class="active" href="aboutUs.html">About Us</a></li>
+            <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
             <li style="float:right;"><a href="login.html">Login</a></li>
-        </ul>
+        </ul>   
     </nav>
 
     <!-- Banner Container -->
@@ -48,6 +48,7 @@
             <div class="right-column">
                 <div class="welcome-text">
                     <h3><span class="yellow">Welcome</span> <br>to La Pizzaria</h3>
+                    <br>
                     <p>Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
                     <br>
                     <p>Experienced michelin chefs to delight ur taste buds. Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
@@ -58,41 +59,63 @@
     </section>
 
     <!-- Footer Area -->
-    <footer class="section-padding">
+    <footer class="footer-padding">
         <div class="footer-container">
-            <div class="col">
-                <a href="index.html"><img src="images/logo.png"  width=50px height=50px alt=""></a>
-                <p>Best pizza store in town.</p>
-            </div>
-            <div class="col">
-                <h2>Contact Us</h2>
-                <table>
-                    <tr>
-                        <td>Logo</td>
-                        <td>
-                            50 Nanyang Ave, Singapore 639798<br>
-                            School of EEE
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Logo</td>
-                        <td>(+65) 89002643</td>
-                    </tr>
-                    <tr>
-                        <td>Logo</td>
-                        <td>
-                            meitong@pizzaria.com<br>
-                            junze@pizzaria.com
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <div class="col">
-                <h2>Opening Hours</h2>
-                <p>Monday.............Closed</p>
-                <p>Tue-Fri.........10am - 12pm</p>
-                <p>Sat-Sun..........8am - 11pm</p>
-                <p>Holidays........10am - 12pm</p>
+            <div class="row">
+                <div class="col">
+                    <div class="logo-content">
+                        <a href="index.html"><img src="images/logo.png"  width=50px height=50px alt=""></a>
+                    </div>
+                    <div class="logo-content">
+                        <p>Best pizza store in town.</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-content">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="col-content">
+                        <table>
+                            <tr>
+                                <td><img src="images/location.png" width="22px" height="22px"></td>
+                                <td>
+                                    50 Nanyang Ave, Singapore 639798
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/contact.png" width="20px" height="20px"></td>
+                                <td>(+65) 89002643</td>
+                            </tr>
+                            <tr>
+                                <td><img src="images/email.png" width="22px" height="22px"></td>
+                                <td>
+                                    order@lapizzaria.com
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="col-content">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="col-content">
+                        <table>
+                            <tr>
+                                <td>Monday.............Closed</td>
+                            </tr>
+                            <tr>
+                                <td>Tue-Fri.........10am - 12pm</td>
+                            </tr>
+                            <tr>
+                                <td>Sat-Sun..........8am - 11pm</td>
+                            </tr>
+                            <tr>
+                                <td>Holidays........10am - 12pm</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </footer>

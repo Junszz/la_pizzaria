@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php //menu.php
+    session_start();
+    $count = array(0,1,2,3,4,5,6,7,8,9);
+
+    if (!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }   
+    if (isset($_GET['buy'])) {
+        $_SESSION['cart'][] = $_GET['buy'];
+        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+        exit();
+    }
+?>
+
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
@@ -198,7 +212,7 @@
             </div>
             <ul>
                 <li class="dropdown">
-                    <a href="menu.html" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                    <a class="active" href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                     <div class="dropdown-content">
                         <a href="menu.html">Pizza</a>
                         <a href="menu.html">Pasta</a>
@@ -208,7 +222,7 @@
                 </li>
                 <li><a href="hotDeals.html">Hot Deals</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
-                <li style="float:right;"><a href="cart.html"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
                 <li style="float:right;"><a href="login.html">Login</a></li>
             </ul>
         </nav>
@@ -220,6 +234,11 @@
                 <div class="banner">
                     <img src="images/peperoni.jpg" width="300" height="180" alt="d1" style="width: 100%;">
                     <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+                    <button>
+                        <?php
+                            echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$count[0]. "'>Buy</a>"
+                        ?>
+                    </button>
                 </div>
                 <div class="banner">
                     <img src="images/haiwaiian chicken.jpg" width="300" height="180" alt="d1" style="width: 100%;">
