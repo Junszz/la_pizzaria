@@ -186,15 +186,6 @@ nav li a:hover,
     padding-left: 30%;
 }
 
-table {
-    text-align: left;
-    border-spacing: 0 0px;
-}
-
-td {
-    padding-left: 10px;
-    font-size: 14px;
-}
 
 .footer-container p {
     font-size: 14px;
@@ -202,41 +193,45 @@ td {
 
 }
 
+.main-container {
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border: 3px solid black; */
+}
+
 /* Cart styling */
-.basket-labels {
-    border-top: 1px solid #ccc;
-    border-bottom: 1px solid #ccc;
-    margin-top: 1.625rem;
+.basket-container {
+    margin-top: 5px;
+    -ms-flex: 0 0 60%;
+    flex: 0 0 60%;
+    max-width: 60%;
+    height: 250px;
+    /* border: 3px solid red; */
 }
 
-.basket-labels ul {
-    list-style: none;
+.address-container {
+    margin-top: 5px;
+    -ms-flex: 0 0 40%;
+    flex: 0 0 40%;
+    max-width: 40%;
+    height: 100px;
+    /* border: 3px solid green; */
 }
 
-.basket-labels li {
-    color: #111;
-    display: inline-block;
-    padding: 0.625rem 3rem;
+.basket-container table {
+    width: 100%;
 }
 
-.basket-product {
-    border-bottom: 1px solid #ccc;
-    padding: 1rem 0px;
-    position: relative;
+.basket-container td,th {
+    text-align: center;
+    
 }
 
-.item {
-    width: 55%;
-}
-
-.price,
-.quantity,
-.subtotal {
-    width: 15%;
-}
-
-.subtotal {
-    text-align: right;
+.main-container button {
+    /* position: absolute; */
+    margin: 10px 0 10px 45%;
 }
 
 .product-image {

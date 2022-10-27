@@ -190,7 +190,7 @@
             margin: 15px;
             padding: 0px 0px 5px 0px;
             border-radius: 5px;
-            min-width: 250px;
+            min-width: 450px;
         }
         footer {
 			font-size: 11px;
@@ -229,16 +229,49 @@
         <br>
         <div>
             <h2>Menu</h2>
+            
+            <!-- Debug -->
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
+                ?>
+            </button>
+
             <!-- Create container here -->
             <div class="container">
                 <div class="banner">
                     <img src="images/peperoni.jpg" width="300" height="180" alt="d1" style="width: 100%;">
                     <div class="text">57% Off 1 Regular Cheesy Pizza</div>
-                    <button>
-                        <?php
-                            echo "<a href='" .$_SERVER['PHP_SELF']. '?buy=' .$count[0]. "'>Buy</a>"
-                        ?>
-                    </button>
                 </div>
                 <div class="banner">
                     <img src="images/haiwaiian chicken.jpg" width="300" height="180" alt="d1" style="width: 100%;">
