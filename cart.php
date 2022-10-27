@@ -1,10 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+    
+<?php
+    session_start();
+    if (!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }
+    if (isset($_GET['empty'])) {
+        unset($_SESSION['cart']);
+        header('location: ' . $_SERVER['PHP_SELF']);
+        exit();
+    }
+
+    // Fetch menu from database
+    @ $db = new mysqli("localhost", "root", "", "lapizzaria");
+
+    if (mysqli_connect_errno()) {
+        echo 'Error: Could not connect to database.  Please try again later.';
+        exit;
+    }
+
+    $query = "SELECT * FROM menu";
+    $result = $db->query($query);
+    if(!$result) {
+        echo "Unable to fetch data";
+    }
+
+    // Store values in array
+    $name = [];
+    $type = [];
+    $size = [];
+    $qty = [];
+    $price = [];
+    while ($row = $result->fetch_assoc()) {
+        $name[] = $row["foodname"];
+        $type[] = $row["foodtype"];
+        $size[] = $row["foodsize"];
+        $qty[] = $row["qty"];
+        $price[] = $row["price"];
+    }
+
+    $db->close();
+?>
 
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
 </head>
 
 <body>
@@ -17,48 +59,69 @@
             <li class="dropdown">
                 <a href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                 <div class="dropdown-content">
-                    <a href="menu.html">Pizza</a>
-                    <a href="menu.html">Pasta</a>
-                    <a href="menu.html">Sides</a>
-                    <a href="menu.html">Beverages</a>
+                    <a href="menu.php">Pizza</a>
+                    <a href="menu.php">Pasta</a>
+                    <a href="menu.php">Sides</a>
+                    <a href="menu.php">Beverages</a>
                 </div>
             </li>
             <li><a href="hotDeals.html">Hot Deals</a></li>
-            <li><a class="active" href="aboutUs.html">About Us</a></li>
-            <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+            <li><a href="aboutUs.html">About Us</a></li>
+            <li style="float:right;"><a class="active" href="cart.html"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
             <li style="float:right;"><a href="login.html">Login</a></li>
         </ul>   
     </nav>
 
-    <!-- Banner Container -->
-    <section class="About-us">
-        <div class="about-container">
-            <div class="textbox">
-                <h1 style="margin-bottom: 0px;">About Us</h1>
-                <p>Established food paradigm since 1980 with authentic craftmanship.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Remove after finish debugging -->
+    <!-- $name = [];
+    $type = [];
+    $size = [];
+    $qty = [];
+    $price = []; -->
+    
+    <!-- Ordering cart implementation -->
+    <h2>Ordering Cart</h2>
+    <div class="main-container">
+        <div class="basket-container">
+            <table border="0">
+                <tr>
+                    <td>No</td>
+                    <td>Item</td>
+                    <td>Price</td>
+                    <td>Quantity</td>
+                    <td>Subtotal</td>
+                </tr>
+            <?php
+                // Process cart data (Merge same product)
+                $filtered = array_unique($_SESSION['cart']);
 
-    <section class="welcome section-padding">
-        <div class="welcome-container">
-            <div class="left-column">
-                <img src="images/welcome.png" style="padding-left: 13%;" width="100%" alt="welcome">
-            </div>
-            <div class="right-column">
-                <div class="welcome-text">
-                    <h3><span class="yellow">Welcome</span> <br>to La Pizzaria</h3>
-                    <br>
-                    <p>Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
-                    <br>
-                    <p>Experienced michelin chefs to delight ur taste buds. Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
-                    <a href="menu.html" class="button button-padding">Order Now</a>
-                </div>
-            </div>
+                // Split array keys and value
+                $fooditm = array_keys($filtered);
+                $foodcount = array_values($filtered);
+            
+                // Printing row by row
+                $count = 1;
+                for ($i=0; $i < count($fooditm); $i++){
+                    echo "<tr>";
+                    echo "<td>".$count."</td>";
+                    echo "<td>".$name[$fooditm[$i]]."</td>";
+                    echo "<td>".$price[$fooditm[$i]]."</td>";
+                    echo "<td>".$foodcount[$i]."</td>";
+                    echo "</tr>";
+                    $count++;
+                }
+            ?>
+            </table>
         </div>
-    </section>
+        <div class="address-container">
+            Coupon Container
+        </div>
+        <button>
+                <a href="<?php echo $_SERVER['PHP_SELF']; ?>?empty=1">Empty your cart</a>
+        </button>
+    </div>
 
-    <!-- Footer Area -->
+    <!-- Footer section -->
     <footer class="footer-padding">
         <div class="footer-container">
             <div class="row">
@@ -119,6 +182,7 @@
             </div>
         </div>
     </footer>
+    <!-- End of footer section -->
 </body>
 
 </html>

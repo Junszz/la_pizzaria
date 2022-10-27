@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php //menu.php
+    session_start();
+    $count = array(0,1,2,3,4,5,6,7,8,9);
+
+    if (!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }   
+    if (isset($_GET['buy'])) {
+        $_SESSION['cart'][] = $_GET['buy'];
+        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+        exit();
+    }
+?>
+
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
@@ -176,7 +190,7 @@
             margin: 15px;
             padding: 0px 0px 0px 0px;
             border-radius: 5px;
-            min-width: 200px;
+            min-width: 400px;
             min-height: 200px;
         }
         footer {
@@ -287,7 +301,7 @@
             </div>
             <ul>
                 <li class="dropdown">
-                    <a href="menu.html" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                    <a class="active" href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                     <div class="dropdown-content">
                         <a href="menu.html">Pizza</a>
                         <a href="menu.html">Pasta</a>
@@ -297,7 +311,7 @@
                 </li>
                 <li><a href="hotDeals.html">Hot Deals</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
-                <li style="float:right;"><a href="cart.html"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
                 <li style="float:right;"><a href="login.html">Login</a></li>
             </ul>
         </nav>
@@ -318,6 +332,44 @@
                     <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
+            
+            <!-- Debug -->
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
+                ?>
+            </button>
+
             <!-- Create container here -->
             <h2>Menu</h2>
             <!-- <div class="counter">
