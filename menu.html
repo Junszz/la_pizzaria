@@ -174,9 +174,10 @@
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             margin: 15px;
-            padding: 0px 0px 5px 0px;
+            padding: 0px 0px 0px 0px;
             border-radius: 5px;
-            min-width: 250px;
+            min-width: 200px;
+            min-height: 200px;
         }
         footer {
 			font-size: 11px;
@@ -185,6 +186,94 @@
             color: #000000;
             padding: 20px 10px 20px 0px;
         }
+        #pizzaname{
+            font-size: 20px;
+
+        }
+        #pizzasize{
+            margin: 0px 15px 5px 0px;
+            padding: 0px 10px 5px 0px;
+            min-width: 90px;
+            min-height: 90px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .size{
+            padding: 0px 110px 0px 110px;
+            text-align: center;
+        }
+        #sizepic{
+            padding-bottom: 20px;
+        }
+        #sizepic2{
+            padding-bottom: 10px;
+        }
+
+        /*styling the counter box*/
+        .counter{
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(239, 145, 145);
+            border-radius: 12px;
+            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+            margin: auto;
+        }
+
+        .counter span{
+            width: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 60;
+            cursor: pointer;
+        }
+
+        .counter span num{
+            font-size: 50px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        .counter1{
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(234, 216, 216);
+            border-radius: 12px;
+            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+            margin: auto;
+        }
+
+        .counter1 span{
+            width: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 60;
+            cursor: pointer;
+        }
+
+        .counter1 span num{
+            font-size: 50px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        .choice{
+            position: relative;
+        }
+
+        .counter1{
+            position: absolute;
+            top: 70px;
+            left: 90px;
+        }
+        
 
     </style>
 </head>
@@ -214,25 +303,69 @@
         </nav>
         <br>
         <div>
-            <h2>Menu</h2>
+            <h3>Pizza size</h3>
+            <div id="pizzasize">
+                <div class="size">
+                    <img src="images/pizza (3).png" width="70px" height="70px" id="sizepic">
+                    <div class="text"><strong>PERSONAL <br> 6 inch</strong></div>
+                </div>
+                <div class="size">
+                    <img src="images/pizza (2).png" width="80px" height="80px" id="sizepic2">
+                    <div class="text"><strong>REGULAR <br> 9 inch</strong></div>
+                </div>
+                <div class="size">
+                    <img src="images/pizza (2).png" width="90px" height="90px">
+                    <div class="text"><strong>LARGE <br> 12 inch</strong></div>
+                </div>
+            </div>
             <!-- Create container here -->
+            <h2>Menu</h2>
+            <!-- <div class="counter">
+                <span class="minus">-</span>
+                <span class="num">01</span>
+                <span class="plus">+</span>
+            </div> -->
+            
             <div class="container">
                 <div class="banner">
-                    <img src="images/peperoni.jpg" width="300" height="180" alt="d1" style="width: 100%;">
-                    <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+                    <div class="text" id="pizzaname">Peperoni</div>
+                    <div class="choice">
+                        <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                        <div class="counter1" >
+                            <span class="minus1">-</span>
+                            <span class="num1">01</span>
+                            <span class="plus1">+</span>
+                        </div>
+                    </div>
                 </div>
                 <div class="banner">
-                    <img src="images/haiwaiian chicken.jpg" width="300" height="180" alt="d1" style="width: 100%;">
-                    <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+                    <div class="text" id="pizzaname">Haiwaiian Chicken</div>
+                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <div class="counter">
+                        <span class="minus2">-</span>
+                        <span class="num2">01</span>
+                        <span class="plus2">+</span>
+                    </div>
                 </div>
                 <div class="banner">
-                    <img src="images/cheezy 7.jpg" width="300" height="180" alt="d1" style="width: 100%;">
-                    <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+                    <div class="text" id="pizzaname">Cheesy 7</div>
+                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <div class="counter">
+                        <span class="minus3">-</span>
+                        <span class="num3">01</span>
+                        <span class="plus3">+</span>
+                    </div>
                 </div>
                 <div class="banner">
-                    <img src="images/chilicrab.jpg" width="300" height="180" alt="d1" style="width: 100%;">
-                    <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+                    <div class="text" id="pizzaname">Chili Crab</div>
+                    <img src="images/chilicrab.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <div class="counter">
+                        <span class="minus4">-</span>
+                        <span class="num4">01</span>
+                        <span class="plus4">+</span>
+                    </div>
                 </div>
+                <script src="js/plus_n_minus.js"></script>
         </div>
     </div>
     <footer>
