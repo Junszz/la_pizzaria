@@ -81,3 +81,19 @@ const plus1 = document.querySelector(".plus1"),
                 console.log(a4);
             }
         });
+
+        const form = document.getElementById('form');
+
+        form.addEventListener('click', function handleClick(event) {
+          // 👇️ if you are submitting a form (prevents page reload)
+          event.preventDefault();
+        
+          const qty1 = document.getElementById('a1');
+        
+          // Send value to server
+          console.log(qty1.value);
+        
+          // 👇️ clear input field
+          //qty1.value = '1';
+          num1.innerText = 'qty1';
+        });

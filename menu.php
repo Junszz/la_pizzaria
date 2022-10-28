@@ -377,7 +377,7 @@
                 <span class="num">01</span>
                 <span class="plus">+</span>
             </div> -->
-            
+        <form method="post" action="menu.php" id="form">  
             <div class="container">
                 <div class="banner">
                     <div class="text" id="pizzaname">Peperoni</div>
@@ -418,6 +418,7 @@
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
+        </form>
         </div>
     </div>
     <footer>

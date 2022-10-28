@@ -283,9 +283,13 @@
         }
 
         .counter1{
+            margin: 0px 0px 5px 0px;
+        }
+
+        .addcart{
             position: absolute;
             top: 70px;
-            left: 90px;
+            left: 160px;
         }
         
 
@@ -377,16 +381,19 @@
                 <span class="num">01</span>
                 <span class="plus">+</span>
             </div> -->
-            
+        <form method="post" action="pizza.php" id="form">  
             <div class="container">
                 <div class="banner">
                     <div class="text" id="pizzaname">Peperoni</div>
                     <div class="choice">
                         <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                        <div class="counter1" >
-                            <span class="minus1">-</span>
-                            <span class="num1">01</span>
-                            <span class="plus1">+</span>
+                        <div class="addcart">
+                            <div class="counter1" >
+                                <span class="minus1">-</span>
+                                <span class="num1">01</span>
+                                <span class="plus1">+</span>
+                            </div>
+                            <input type="submit" name='submit' value="Add to cart">
                         </div>
                     </div>
                 </div>
@@ -418,7 +425,8 @@
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
-        </div>
+            </form>
+            </div>
     </div>
     <footer>
         <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
