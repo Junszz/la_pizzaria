@@ -33,14 +33,18 @@
         }
         /* End of creating arrow symbol */
 
+        .nav-container {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
         /* Navbar styling */
         nav {
             margin: auto;
-            /* max-width: 1300px; */
+            max-width: 1300px;
             overflow: hidden;
             width: 100%;
             background-color: white;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
 
         /* make image float on the left-side */
@@ -55,12 +59,13 @@
         }
 
         nav ul {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
             list-style-type: none;
             margin: 0;
-            padding: 10px 0px 5px 0px;
+            padding: 15px 0px 5px 0px;
             overflow: hidden;
+            text-align: center;
             /* background-color: #F5F5F5; */
         }
 
@@ -142,16 +147,16 @@
         /* Slideshow banner styling */
         .slideshow_container {
             max-width: 1200px;
-            height: 100%;
+            height: 475px;
             position: relative;
             margin: auto;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 8px;
         }
 
-        /* Hide the slideshow images by default */
-        /* .mySlides {
-            display: none;
-        } */
+        .mySlides img {
+            border-radius: 8px;
+        }
 
         /* Next & previous buttons */
         .prev,
@@ -290,30 +295,23 @@
             /* background-color: #04AA6D; */
         }
         /* End of container styling */
- 
-        /* footer {
-            max-width: 1300px;
-            width: 100%;
-            font-size: 11px;
-            text-align: center;
-            background-color: white;
-            color: #000000;
-            padding: 20px 10px 20px 0px;
-            box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
-        } */
-
-        .footer-padding {
-            padding-top: 35px;
-            box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
 
         .footer-container {
+            background-color: white;
+            box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
+        }
+
+        .footer-padding {
+            padding-top: 15px;
+        }
+
+        .three-columns {
             background-color: white;
             max-width: 1300px;
         }
 
         .row {
-            padding: 0 10%;
+            padding: 0 8%;
             display: flex;
             align-items: center;
         }
@@ -330,10 +328,19 @@
             align-content: center;
         }
 
+        .logo-content img {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
         .col-content {
             margin-top: 5px;
             display: flex;
             align-content: flex-start;
+        }
+
+        .col-content h2 {
+            margin-bottom: 8px;
         }
 
         .padding-left {
@@ -350,37 +357,40 @@
             font-size: 14px;
         }
 
-        .footer-container p {
+        .three-columns p {
             font-size: 14px;
             color: #000000;
             
         }
+        
     </style>
 </head>
 
 <body onload="showSlides()">
     <div id="wrapper">
         <!-- Make 2 versions of wrapper: small & big screen -->
-        <nav>
-            <div id="left-nav">
-                <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
-            </div>
-            <ul>
-                <li class="dropdown">
-                    <a href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
-                    <div class="dropdown-content">
-                        <a href="menu.html">Pizza</a>
-                        <a href="menu.html">Pasta</a>
-                        <a href="menu.html">Sides</a>
-                        <a href="menu.html">Beverages</a>
-                    </div>
-                </li>
-                <li><a href="hotDeals.html">Hot Deals</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                <li style="float:right;"><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <nav>
+                <div id="left-nav">
+                    <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
+                </div>
+                <ul>
+                    <li class="dropdown">
+                        <a href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                        <div class="dropdown-content">
+                            <a href="menu.php">Pizza</a>
+                            <a href="pasta.php">Pasta</a>
+                            <a href="sides.php">Sides</a>
+                            <a href="beverages.php">Beverages</a>
+                        </div>
+                    </li>
+                    <li><a href="hotDeals.html">Hot Deals</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
         <br>
         <!-- Slideshow container -->
         <script type="application/javascript" src="js/slideshow.js"></script>
@@ -388,20 +398,17 @@
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="images/hori.png" width="850" height="475" alt="img1" style="width: 100%;">
-                <div class="text">Image 1</div>
+                <img src="images/hori.jpg" width="850" height="475" alt="img1" style="width: 100%;">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">2 / 3</div>
-                <img src="images/hori2.png" width="850" height="475" alt="img2" style="width: 100%;">
-                <div class="text">Image 2</div>
+                <img src="images/hori2.jpg" width="850" height="475" alt="img2" style="width: 100%;">
             </div>
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="images/hori3.png" width="850" height="475" alt="img3" style="width: 100%;">
-                <div class="text">Images 3</div>
+                <img src="images/hori3.jpg" width="850" height="475" alt="img3" style="width: 100%;">
             </div>
         </div>
         <br>
@@ -438,12 +445,12 @@
         </div>
 
         <!-- Footer Area -->
-        <footer>
-            <div class="footer-container footer-padding">
+        <div class="footer-container">
+            <div class="three-columns footer-padding">
                 <div class="row">
                     <div class="col">
                         <div class="logo-content">
-                            <a href="index.html"><img src="images/logo.png"  width=50px height=50px alt=""></a>
+                            <a href="index.html"><img src="images/logo_v2.png"  width=90px height=75px alt=""></a>
                         </div>
                         <div class="logo-content">
                             <p>Best pizza store in town.</p>
@@ -476,7 +483,7 @@
                     </div>
                     <div class="col">
                         <div class="col-content">
-                            <h2>Contact Us</h2>
+                            <h2>Opening Hours</h2>
                         </div>
                         <div class="col-content">
                             <table>
@@ -497,7 +504,7 @@
                     </div>
                 </div>
             </div>
-        </footer>
+        </div>
     </div>
 </body>
 

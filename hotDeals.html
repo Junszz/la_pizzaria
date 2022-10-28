@@ -33,6 +33,11 @@
         }
         /* End of creating arrow symbol */
 
+        .nav-container {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
         /* Navbar styling */
         nav {
             margin: auto;
@@ -40,7 +45,6 @@
             overflow: hidden;
             width: 100%;
             background-color: white;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
         }
 
         /* make image float on the left-side */
@@ -55,11 +59,11 @@
         }
 
         nav ul {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: 600;
             list-style-type: none;
             margin: 0;
-            padding: 10px 0px 5px 0px;
+            padding: 15px 0px 5px 0px;
             overflow: hidden;
             /* background-color: #F5F5F5; */
         }
@@ -191,43 +195,100 @@
             background-color: white;
         }
 
-        footer {
-            max-width: 1300px;
-            width: 100%;
-			font-size: 11px;
-            text-align: center;
+        .footer-container {
             background-color: white;
-            color: #000000;
-            padding: 20px 10px 20px 0px;
-            box-shadow: 0 -5px 10px -5px rgba(0, 0, 0, 0.2), 0 -6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
         }
 
+        .footer-padding {
+            padding-top: 15px;
+        }
+
+        .three-columns {
+            background-color: white;
+            max-width: 1300px;
+        }
+
+        .row {
+            padding: 0 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        .col {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            height: 150px;
+        }
+
+        .logo-content {
+            display: flex;
+            align-content: center;
+        }
+
+        .logo-content img {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .col-content {
+            margin-top: 5px;
+            display: flex;
+            align-content: flex-start;
+        }
+
+        .col-content h2 {
+            margin-bottom: 8px;
+        }
+
+        .padding-left {
+            padding-left: 30%;
+        }
+
+        table {
+            text-align: left;
+            border-spacing: 0 0px;
+        }
+
+        td {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        .three-columns p {
+            font-size: 14px;
+            color: #000000;
+        }
+        
     </style>
 </head>
 
 <body>
     <div id="wrapper">
         <!-- Make 2 versions of wrapper: small & big screen -->
-        <nav>
-            <div id="left-nav">
-                <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
-            </div>
-            <ul>
-                <li class="dropdown">
-                    <a href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
-                    <div class="dropdown-content">
-                        <a href="menu.php">Pizza</a>
-                        <a href="menu.php">Pasta</a>
-                        <a href="menu.php">Sides</a>
-                        <a href="menu.php">Beverages</a>
-                    </div>
-                </li>
-                <li><a class="active" href="hotDeals.html">Hot Deals</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                <li style="float:right;"><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <nav>
+                <div id="left-nav">
+                    <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
+                </div>
+                <ul>
+                    <li class="dropdown">
+                        <a href="menu.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                        <div class="dropdown-content">
+                            <a href="menu.php">Pizza</a>
+                            <a href="pasta.php">Pasta</a>
+                            <a href="sides.php">Sides</a>
+                            <a href="beverages.php">Beverages</a>
+                        </div>
+                    </li>
+                    <li><a class="active" href="hotDeals.html">Hot Deals</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
         <br>
         <!-- Create container here -->
         <div class="container">
@@ -265,9 +326,67 @@
             </div>
         </div>
 
-        <footer>
-            <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
-        </footer>
+        <!-- Footer Area -->
+        <div class="footer-container">
+            <div class="three-columns footer-padding">
+                <div class="row">
+                    <div class="col">
+                        <div class="logo-content">
+                            <a href="index.html"><img src="images/logo_v2.png"  width=90px height=75px alt=""></a>
+                        </div>
+                        <div class="logo-content">
+                            <p>Best pizza store in town.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Contact Us</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td><img src="images/location.png" width="22px" height="22px"></td>
+                                    <td>
+                                        50 Nanyang Ave, Singapore 639798
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/contact.png" width="20px" height="20px"></td>
+                                    <td>(+65) 89002643</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/email.png" width="22px" height="22px"></td>
+                                    <td>
+                                        order@lapizzaria.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Opening Hours</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td>Monday.............Closed</td>
+                                </tr>
+                                <tr>
+                                    <td>Tue-Fri.........10am - 12pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Sat-Sun..........8am - 11pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Holidays........10am - 12pm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 
