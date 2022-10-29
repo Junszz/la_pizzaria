@@ -184,15 +184,41 @@
             margin-bottom: 100px;
         }
 
-        .banner {
+        .food-banner {
+            cursor: pointer;
+            flex: 0 0 16%;
+            margin: 15px;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
-            margin: 15px;
-            padding: 0px 0px 0px 0px;
-            border-radius: 5px;
-            min-width: 400px;
-            min-height: 200px;
+            border-radius: 10px;
+            height:auto;
         }
+
+        .food-banner img {
+            margin-top: 15px;
+            width: 90%;
+            border-radius: 10px;
+            height: 150px;
+        }
+        
+        .food-banner .text {
+            padding: 0 10%;
+            text-align: left;
+        }
+
+        .food-banner .text h2{
+            color: #808080;
+            font-size: 20px;
+        }
+
+        .food-banner .text p{
+            font-size: 18px;
+        }
+
+        .price {
+            color: purple;
+        }
+
         footer {
 			font-size: 11px;
             text-align: center;
@@ -233,7 +259,7 @@
             background: rgb(239, 145, 145);
             border-radius: 12px;
             /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
-            margin: auto;
+            /* margin: auto; */
         }
 
         .counter span{
@@ -279,7 +305,19 @@
         }
 
         .choice{
-            position: relative;
+            /* position: relative; */
+            /* align-content: center; */
+            /* float:none;
+            width:35%;
+            margin: 0;
+            transform: translateY(-150%);
+            display: none;
+            z-index: 1; */
+            display: none;
+            position:absolute;
+            left: 26%;
+            transform: translateY(-150%);
+            z-index: 1;
         }
 
         .counter1{
@@ -292,6 +330,10 @@
             left: 160px;
         }
         
+        .food-banner:hover .choice {
+            display: block;
+            animation: fade 500ms;
+        }
 
     </style>
 </head>
@@ -336,43 +378,6 @@
                     <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
-            
-            <!-- Debug -->
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
-                ?>
-            </button>
 
             <!-- Create container here -->
             <h2>Menu</h2>
@@ -383,39 +388,43 @@
             </div> -->
         <form method="post" action="pizza.php" id="form">  
             <div class="container">
-                <div class="banner">
-                    <div class="text" id="pizzaname">Peperoni</div>
+                <div class="food-banner">
+                    <img src="images/peperoni.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Peperoni</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p>
+                        <p class="price">$12.00<p>
+                    </div>
+                    
                     <div class="choice">
-                        <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                        <div class="addcart">
-                            <div class="counter1" >
-                                <span class="minus1">-</span>
-                                <span class="num1">01</span>
-                                <span class="plus1">+</span>
-                            </div>
-                            <input type="submit" name='submit' value="Add to cart">
+                        <div class="counter1" >
+                            <span class="minus1">-</span>
+                            <span class="num1">01</span>
+                            <span class="plus1">+</span>
                         </div>
+                        <input type="submit" name='submit' value="Add to cart">
                     </div>
                 </div>
-                <div class="banner">
+                
+                <div class="food-banner">
                     <div class="text" id="pizzaname">Haiwaiian Chicken</div>
-                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1">
                     <div class="counter">
                         <span class="minus2">-</span>
                         <span class="num2">01</span>
                         <span class="plus2">+</span>
                     </div>
                 </div>
-                <div class="banner">
+                <div class="food-banner">
                     <div class="text" id="pizzaname">Cheesy 7</div>
-                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1">
                     <div class="counter">
                         <span class="minus3">-</span>
                         <span class="num3">01</span>
                         <span class="plus3">+</span>
                     </div>
                 </div>
-                <div class="banner">
+                <div class="food-banner">
                     <div class="text" id="pizzaname">Chili Crab</div>
                     <img src="images/chilicrab.jpg" width="150" height="180" alt="d1" style="width: 100%;">
                     <div class="counter">
