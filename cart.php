@@ -6,6 +6,7 @@
     if (!isset($_SESSION['cart'])){
         $_SESSION['cart'] = array();
     }
+    // to empty the cart
     if (isset($_GET['empty'])) {
         unset($_SESSION['cart']);
         header('location: ' . $_SERVER['PHP_SELF']);
@@ -92,6 +93,9 @@
                     <td>Subtotal</td>
                 </tr>
             <?php
+                echo "<p>".$_SESSION['cart'][0]."</p>";
+                echo "<p>".$_SESSION['cart'][1]."</p>";
+                echo "<p>".$_SESSION['cart'][2]."</p>";
                 // Process cart data (Merge same product)
                 $filtered = array_unique($_SESSION['cart']);
 

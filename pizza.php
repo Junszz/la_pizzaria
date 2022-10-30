@@ -3,16 +3,48 @@
 
 <?php //menu.php
     session_start();
-    $count = array(0,1,2,3,4,5,6,7,8,9);
+    $qty = array(1,2,3,4,5,6);
 
     if (!isset($_SESSION['cart'])){
         $_SESSION['cart'] = array();
     }   
-    if (isset($_GET['buy'])) {
-        $_SESSION['cart'][] = $_GET['buy'];
+    if (isset($_GET['item'])) {
+        $_SESSION['cart'][] = $_GET['item'];
+        // php self is this pizza.php
         header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
         exit();
     }
+     // Fetch menu from database
+     @ $db = new mysqli("localhost", "root", "", "lapizzaria");
+
+     if (mysqli_connect_errno()) {
+         echo 'Error: Could not connect to database.  Please try again later.';
+         exit;
+     }
+ 
+     $query = "SELECT * FROM menu";
+     $result = $db->query($query);
+     if(!$result) {
+         echo "Unable to fetch data";
+     }
+ 
+     // Store values in array
+     $id = [];
+     while ($row = $result->fetch_assoc()) {
+         $id[] = $row["foodid"];
+     }
+
+    if (isset($_POST['submit'])){
+        if(isset($_POST['quantity1'])){$qty[0] = $_POST['quantity1'];}
+        if(isset($_POST['quantity2'])){$qty[1] = $_POST['quantity2'];}
+        if(isset($_POST['quantity2'])){$qty[2] = $_POST['quantity2'];}
+
+        // var_dump(isset($_POST['submit']));
+        unset ($_POST['submit']);
+        exit();
+    }
+
+    $db->close();
 ?>
 
 <head>
@@ -188,13 +220,14 @@
             cursor: pointer;
             flex: 0 0 16%;
             margin: 15px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             border-radius: 10px;
             height:auto;
         }
 
-        .food-banner img {
+        .food-banner img, .hover-banner img {
             margin-top: 15px;
             width: 90%;
             border-radius: 10px;
@@ -313,10 +346,10 @@
             transform: translateY(-150%);
             display: none;
             z-index: 1; */
-            display: none;
+            /* display: none; */
             position:absolute;
             left: 26%;
-            transform: translateY(-150%);
+            /* transform: translateY(-150%); */
             z-index: 1;
         }
 
@@ -329,7 +362,7 @@
             top: 70px;
             left: 160px;
         }
-        
+
         .food-banner:hover .choice {
             display: block;
             animation: fade 500ms;
@@ -386,7 +419,6 @@
                 <span class="num">01</span>
                 <span class="plus">+</span>
             </div> -->
-        <form method="post" action="pizza.php" id="form">  
             <div class="container">
                 <div class="food-banner">
                     <img src="images/peperoni.jpg"  alt="d1">
@@ -402,10 +434,36 @@
                             <span class="num1">01</span>
                             <span class="plus1">+</span>
                         </div>
-                        <input type="submit" name='submit' value="Add to cart">
+
+                        <form method="post">
+                            <input type="text" name="quantity1" value="3" size="2">
+                            <input type="hidden" name="id" value=<?=$id[0]?> size="2">
+                            <input type="submit" name="submit" value="Add to Cart">    
+                        </form>
+                        
+                        <form method="post">
+                            <input type="text" name="quantity2" value="2" size="2">
+                            <input type="hidden" name="id" value=<?=$id[1]?> size="2">
+                            <input type="submit" name="submit" value="Add to Cart">    
+                        </form>
+
+                        <!--
+                            Approach 2 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?buy=1:'. $_PHP ."'>Add to cart</a></button>"; 
+                        -->
+
+                        <!-- 
+                            Approach 3
+                         -->
+                        <?php 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[0].'?'.$qty[0]."'>Add to cart</a></button>"; 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[1].'?'.$qty[1]."'>Add to cart</a></button>"; 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[2].'?'.$qty[2]."'>Add to cart</a></button>"; 
+                        ?>
+                        
                     </div>
                 </div>
-                
+            
                 <div class="food-banner">
                     <div class="text" id="pizzaname">Haiwaiian Chicken</div>
                     <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1">

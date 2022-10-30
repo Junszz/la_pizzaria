@@ -15,3 +15,7 @@
 
 
 Open-issues:
+1. Pass item-id + qty to cart page
+ - Approach 1: Using form submission (Data not being passed without form action)
+ - Approach 2: Using session data (succesful with 1 var)
+ - Approach 3: Passing multiple session data using ? to concat
