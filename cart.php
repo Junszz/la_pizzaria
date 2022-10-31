@@ -136,7 +136,7 @@
                     <tr>
                         <td class="img">
                             <a href="main.php?page=product&id=<?=$product['foodid']?>">
-                                <img src="images/peperoni.jpg" width="50" height="50" alt="<?=$product['foodname']?>">
+                                <img src="images/<?=$product['foodid']?>.png" width="50" height="50" alt="<?=$product['foodname']?>">
                             </a>
                         </td>
                         <td>

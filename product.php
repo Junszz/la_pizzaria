@@ -124,7 +124,7 @@ if (isset($_GET['id'])) {
         <div class="product-container">
             <div class="image-col">
                 <div class="product-images">
-                    <img src='images/peperoni.jpg' width:'350' height='350'>
+                    <img src='images/menu/<?=$product['foodid']?>.png' width:'350' height='350'>
                 </div>
             </div>
 

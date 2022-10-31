@@ -399,7 +399,7 @@
             <!-- Create container here -->
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/Sides/25.jpg"  alt="d1">
+                    <img src="images/menu/25.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Chocolate Lava Cake</h2>
                         <p>Made with pork, beef, salt and natural spices </p></div>
@@ -412,7 +412,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Sides/26.jpeg"  alt="d1">
+                    <img src="images/menu/26.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Marbled Cookie Brownie</h2>
                         <p>Made with pork, beef, salt and natural spices such as </p></div>
@@ -424,7 +424,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Sides/27.jpg"  alt="d1">
+                    <img src="images/menu/27.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>6 Pcs Drummets</h2>
                         <p>Made with pork, beef, salt and natural spices such as</p></div>
@@ -436,7 +436,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Sides/28.jpg"  alt="d1">
+                    <img src="images/menu/28.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Crazy Chicken Crunchies - Original</h2>
                         <p>Made with pork, beef, salt and natural spices such a</p></div>
@@ -448,7 +448,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Sides/29.png"  alt="d1">
+                    <img src="images/menu/29.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Crazy Chicken Crunchies - Tomyam</h2>
                         <p>Made with pork, beef, salt and natural spices such</p></div>
@@ -461,7 +461,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Sides/30.jpg"  alt="d1">
+                    <img src="images/menu/30.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Awesome Foursome</h2>
                         <p>Made with pork, beef, salt </p></div>
@@ -473,7 +473,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Sides/31.jpg"  alt="d1">
+                    <img src="images/menu/31.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Golden Roasted Wings</h2>
                         <p>Made with pork, beef, salt and natural spices such </p></div>
@@ -485,7 +485,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Sides/32.jpg"  alt="d1">
+                    <img src="images/menu/32.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Chocolate Roasted Wings</h2>
                         <p>Made with pork, beef, salt and natural spices such </p></div>

@@ -387,7 +387,7 @@
             <h2>Beverages</h2>
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/Beverages/33.jpg"  alt="d1">
+                    <img src="images/menu/33.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Coca-Cola</h2></div>
                     <div class="price">
@@ -399,7 +399,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Beverages/34.jpg"  alt="d1">
+                    <img src="images/menu/34.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Coca-Cola Zero Sugar</h2></div>
                     <div class="price">
@@ -410,7 +410,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/35.jpg"  alt="d1">
+                    <img src="images/menu/35.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Sprite</h2></div>
                     <div class="price">
@@ -421,7 +421,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/36.png"  alt="d1">
+                    <img src="images/menu/36.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Heaven & Earth Iced Lemon Tea</h2></div>
                     <div class="price">
@@ -432,7 +432,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/37.jpg"  alt="d1">
+                    <img src="images/menu/37.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Heaven & Earth Jasmine Green Tea</h2></div>
                     <div class="price">
@@ -443,7 +443,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/38.jpg"  alt="d1">
+                    <img src="images/menu/38.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Coca-Cola</h2></div>
                     <div class="price">
@@ -454,7 +454,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/39.jpg"  alt="d1">
+                    <img src="images/menu/39.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Coca-Cola Zero Sugar</h2></div>
                     <div class="price">
@@ -465,7 +465,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/40.jpg"  alt="d1">
+                    <img src="images/menu/40.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Sprite</h2></div>
                     <div class="price">
@@ -476,7 +476,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/41.jpg"  alt="d1">
+                    <img src="images/menu/41.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Heaven & Earth Iced Lemon Tea</h2></div>
                     <div class="price">
@@ -487,7 +487,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Beverages/42.jpg"  alt="d1">
+                    <img src="images/menu/42.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Heaven & Earth Jasmine Green Tea</h2></div>
                     <div class="price">

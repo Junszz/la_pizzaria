@@ -1,52 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<?php //menu.php
-    session_start();
-    $qty = array(1,2,3,4,5,6);
-
-    if (!isset($_SESSION['cart'])){
-        $_SESSION['cart'] = array();
-    }   
-    if (isset($_GET['item'])) {
-        $_SESSION['cart'][] = $_GET['item'];
-        // php self is this pizza.php
-        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
-        exit();
-    }
-     // Fetch menu from database
-     @ $db = new mysqli("localhost", "root", "", "lapizzaria");
-
-     if (mysqli_connect_errno()) {
-         echo 'Error: Could not connect to database.  Please try again later.';
-         exit;
-     }
- 
-     $query = "SELECT * FROM menu";
-     $result = $db->query($query);
-     if(!$result) {
-         echo "Unable to fetch data";
-     }
- 
-     // Store values in array
-     $id = [];
-     while ($row = $result->fetch_assoc()) {
-         $id[] = $row["foodid"];
-     }
-
-    if (isset($_POST['submit'])){
-        if(isset($_POST['quantity1'])){$qty[0] = $_POST['quantity1'];}
-        if(isset($_POST['quantity2'])){$qty[1] = $_POST['quantity2'];}
-        if(isset($_POST['quantity2'])){$qty[2] = $_POST['quantity2'];}
-
-        // var_dump(isset($_POST['submit']));
-        unset ($_POST['submit']);
-        exit();
-    }
-
-    $db->close();
-?>
-
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
@@ -458,7 +411,7 @@
             </div>
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/Pizza/1.png"  alt="d1">
+                    <img src="images/menu/1.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Meatzza</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -471,7 +424,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pizza/2.png"  alt="d1">
+                    <img src="images/menu/2.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Quattro Fiesta</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -483,7 +436,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/3.png"  alt="d1">
+                    <img src="images/menu/3.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Extravaganza</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -495,7 +448,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/4.png"  alt="d1">
+                    <img src="images/menu/4.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Chicken Temptation</h2>
                         <p>Made with pork, beef, salt and natural spices such a</p></div>
@@ -507,7 +460,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/5.png"  alt="d1">
+                    <img src="images/menu/5.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Chili Beef</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -520,7 +473,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pizza/6.png"  alt="d1">
+                    <img src="images/menu/6.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Parmagiana Chicken</h2>
                         <p>Made with pork, beef, salt and natural spices such as a</p></div>
@@ -532,7 +485,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/7.png"  alt="d1">
+                    <img src="images/menu/7.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Smoky Meatilicious</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -544,7 +497,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/8.png"  alt="d1">
+                    <img src="images/menu/8.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Diavola Beef</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -561,7 +514,7 @@
             </div>
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/Pizza/9.png"  alt="d1">
+                    <img src="images/menu/9.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Haiwaiian Paradise</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -574,7 +527,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pizza/10.png"  alt="d1">
+                    <img src="images/menu/10.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Classified Chicken</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -586,7 +539,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/11.png"  alt="d1">
+                    <img src="images/menu/11.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Classic Pepperoni</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -598,7 +551,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/12.png"  alt="d1">
+                    <img src="images/menu/12.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Smoky Pepperoni & Mushroom</h2>
                         <p>Made with pork, beef, salt and natural spices such a</p></div>
@@ -610,7 +563,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/13.png"  alt="d1">
+                    <img src="images/menu/13.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Simply Cheese</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -623,7 +576,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pizza/14.png"  alt="d1">
+                    <img src="images/menu/14.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>The Big BBQ</h2>
                         <p>Made with pork, beef, salt and natural spices such as a</p></div>
@@ -635,7 +588,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/15.png"  alt="d1">
+                    <img src="images/menu/15.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Very Veggie</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -647,7 +600,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/16.png"  alt="d1">
+                    <img src="images/menu/16.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Classy Chic</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>

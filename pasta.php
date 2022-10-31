@@ -399,7 +399,7 @@
             <!-- Create container here -->
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/Pasta/17.jpg"  alt="d1">
+                    <img src="images/menu/17.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Rose Shrimp Pasta</h2>
                         <p>Made with pork, beef, salt and natural spices </p></div>
@@ -412,7 +412,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pasta/18.jpg"  alt="d1">
+                    <img src="images/menu/18.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Chicken Pasta</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
@@ -424,7 +424,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pasta/19.jpg"  alt="d1">
+                    <img src="images/menu/19.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Chicken Satay Baked Pasta</h2>
                         <p>Made with pork, beef, salt and natural spices such as</p></div>
@@ -436,7 +436,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pasta/20.jpg"  alt="d1">
+                    <img src="images/menu/20.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Nuts Pasta</h2>
                         <p>Made with pork, beef, salt and natural spices such a</p></div>
@@ -448,7 +448,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pasta/21.jpg"  alt="d1">
+                    <img src="images/menu/21.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Seafood Mariana Pasta</h2>
                         <p>Made with pork, beef, salt and natural spices such</p></div>
@@ -461,7 +461,7 @@
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pasta/22.jpg"  alt="d1">
+                    <img src="images/menu/22.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Creamy Seafood Baked Pasta</h2>
                         <p>Made with pork, beef, salt </p></div>
@@ -473,7 +473,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pasta/23.jpg"  alt="d1">
+                    <img src="images/menu/23.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Half Spring Ayam PAsta</h2>
                         <p>Made with pork, beef, salt and natural spices such </p></div>
@@ -485,7 +485,7 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pasta/24.jpg"  alt="d1">
+                    <img src="images/menu/24.png"  alt="d1">
                     <div class="text" id="pizzaname">
                         <h2>Full Spring Ayam Pasta</h2>
                         <p>Made with pork, beef, salt and natural spices such </p></div>
