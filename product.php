@@ -28,54 +28,74 @@ if (isset($_GET['id'])) {
     <!-- Page specific styling -->
     <style>
         .product-container {
-            margin-bottom: 350px;
-            width: 80%;
-            height: auto;
-        }  
+            width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            padding: 40px 0;
+        }   
         .product-container h1 {
-            padding-bottom: 35px;
-            font-size: 50px;
-            color: black;
+            font-size: 34px;
+            font-weight: 600;
+            margin: 0;
+            padding: 20px 0 10px;
+            color:black;
         }
         .product-container p {
             color: black;
+            padding-bottom: 20px;
         }
+        .product-container form {
+            display: flex;
+            flex-flow: column;
+            margin: 25px 0 40px;
+        }
+        .product-container form input[type="number"]{
+            width:400px;
+            padding: 12px 10px;
+            margin-bottom: 15px;
+            color: #0066CC;
+        }
+        .product-container form label {
+            padding-bottom: 10px;
+        }
+        .btn {
+            text-decoration: none;
+            background: #4b505c;
+            border: 0;
+            color: #fff;
+            padding: 11px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
         .product-container .price {
             display: block;
             font-size: 22px;
             color: #999999;
         }
-        .form {
-            display: flex;
-            flex-flow: column;
-            margin: 40px 0;
+        .image-col {
+            /* display:block; */
+            padding: 20px 10px 0;
         }
-        .product-container .form input[type='number']{
-            width: 400px;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            color: #555555;
-            border-radius: 5px;
+        .product-images {
+            height: 500px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display:flex;
         }
-        .product-container .left-column {
-            float:left;
-            width: 50%;
-            /* border: 1px solid red; */
-            padding-left: 40px;
-            padding-top: 100px;
+        .product-description {
+            height:500px;
+            padding-left: 50px;
+            flex: 1;
         }
-        .product-container .right-column {
-            margin-left: 50%;
-            padding-right: 5%;
-            padding-top: 50px;
-            /* border: 1px solid black; */
-        }    
+
     </style>
 </head>
 
 <body>
-    <div id="wrapper">
         <div class="nav-container">
             <!-- Make 2 versions of wrapper: small & big screen -->
             <nav>
@@ -102,19 +122,22 @@ if (isset($_GET['id'])) {
 
         <!-- Product Part goes here -->
         <div class="product-container">
-            <div class="left-column">
-                <img src='images/peperoni.jpg' width:'350' height='350'>
+            <div class="image-col">
+                <div class="product-images">
+                    <img src='images/peperoni.jpg' width:'350' height='350'>
+                </div>
             </div>
 
-            <div class="right-column">
+            <div class="product-description">
                 <h1><?=$product['foodname']?></h1>
                 <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p> 
                 <span class="price">$ <?=$product['price']?></span>
 
                 <form action="main.php?page=cart" method="post">
+                    <label>Quantity</label>
                     <input type="number" name="quantity" value="1" placeholder="Quantity" required>
                     <input type="hidden" name="product_id" value="<?=$product['foodid']?>">
-                    <input type="submit" value="Add To Cart">
+                    <input type="submit" value="Add To Cart" class='btn'>
                 </form>
             </div>
         </div>
@@ -180,7 +203,6 @@ if (isset($_GET['id'])) {
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>
