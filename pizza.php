@@ -368,54 +368,205 @@
 
             <!-- Create container here -->
             <h2>Menu</h2>
-            <!-- <div class="counter">
-                <span class="minus">-</span>
-                <span class="num">01</span>
-                <span class="plus">+</span>
-            </div> -->
+            <h2>Original</h2>
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/peperoni.jpg"  alt="d1">
+                    <img src="images/Pizza/1.png"  alt="d1">
                     <div class="text" id="pizzaname">
-                        <h2>Peperoni</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p>
-                        <p class="price">$12.00<p>
-                    </div>
-                    
-                    <div class="choice">
-                         <a href="main.php?page=product&id=1?" class="product">Add to cart</a>
-                         <a href="main.php?page=product&id=2?" class="product">Add to cart</a>
-                         <a href="main.php?page=product&id=3?" class="product">Add to cart</a>
-                         <a href="main.php?page=product&id=4?" class="product">Add to cart</a>
-                        
+                        <h2>Meatzza</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=1?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
             
                 <div class="food-banner">
-                    <div class="text" id="pizzaname">Haiwaiian Chicken</div>
-                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1">
-                    <div class="counter">
-                        <span class="minus2">-</span>
-                        <span class="num2">01</span>
-                        <span class="plus2">+</span>
+                    <img src="images/Pizza/2.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Quattro Fiesta</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=2?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <div class="text" id="pizzaname">Cheesy 7</div>
-                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1">
-                    <div class="counter">
-                        <span class="minus3">-</span>
-                        <span class="num3">01</span>
-                        <span class="plus3">+</span>
+                    <img src="images/Pizza/3.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Extravaganza</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=3?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <div class="text" id="pizzaname">Chili Crab</div>
-                    <img src="images/chilicrab.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus4">-</span>
-                        <span class="num4">01</span>
-                        <span class="plus4">+</span>
+                    <img src="images/Pizza/4.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Chicken Temptation</h2>
+                        <p>Made with pork, beef, salt and natural spices such a</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=4?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/5.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Chili Beef</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=5?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="food-banner">
+                    <img src="images/Pizza/6.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Parmagiana Chicken</h2>
+                        <p>Made with pork, beef, salt and natural spices such as a</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=6?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/7.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Smoky Meatilicious</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=7?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/8.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Diavola Beef</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=8?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2>Special</h2>
+            <div class="container">
+                <div class="food-banner">
+                    <img src="images/Pizza/9.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Haiwaiian Paradise</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=9?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="food-banner">
+                    <img src="images/Pizza/10.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Classified Chicken</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=10?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/11.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Classic Pepperoni</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=11?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/12.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Smoky Pepperoni & Mushroom</h2>
+                        <p>Made with pork, beef, salt and natural spices such a</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=12?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/13.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Simply Cheese</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=13?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="food-banner">
+                    <img src="images/Pizza/14.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>The Big BBQ</h2>
+                        <p>Made with pork, beef, salt and natural spices such as a</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=14?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/15.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Very Veggie</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=15?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Pizza/16.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Classy Chic</h2>
+                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=16?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>

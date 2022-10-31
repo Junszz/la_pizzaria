@@ -317,89 +317,106 @@
                     <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
-            
-            <!-- Debug -->
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
-                ?>
-            </button>
 
             <!-- Create container here -->
-            <h2>Menu</h2>
-            <!-- <div class="counter">
-                <span class="minus">-</span>
-                <span class="num">01</span>
-                <span class="plus">+</span>
-            </div> -->
-            
+            <h2>Sides</h2>
             <div class="container">
-                <div class="banner">
-                    <div class="text" id="pizzaname">Peperoni</div>
-                    <div class="choice">
-                        <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                        <div class="counter1" >
-                            <span class="minus1">-</span>
-                            <span class="num1">01</span>
-                            <span class="plus1">+</span>
+                <div class="food-banner">
+                    <img src="images/Sides/25.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Chocolate Lava Cake</h2>
+                        <p>Made with pork, beef, salt and natural spices </p></div>
+                    <div class="price">
+                        <p>$6.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=25?">Add to cart</a>
                         </div>
                     </div>
                 </div>
-                <div class="banner">
-                    <div class="text" id="pizzaname">Haiwaiian Chicken</div>
-                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus2">-</span>
-                        <span class="num2">01</span>
-                        <span class="plus2">+</span>
+            
+                <div class="food-banner">
+                    <img src="images/Sides/26.jpeg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Marbled Cookie Brownie</h2>
+                        <p>Made with pork, beef, salt and natural spices such as </p></div>
+                    <div class="price">
+                        <p>$5.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=26?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
-                <div class="banner">
-                    <div class="text" id="pizzaname">Cheesy 7</div>
-                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus3">-</span>
-                        <span class="num3">01</span>
-                        <span class="plus3">+</span>
+                <div class="food-banner">
+                    <img src="images/Sides/27.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>6 Pcs Drummets</h2>
+                        <p>Made with pork, beef, salt and natural spices such as</p></div>
+                    <div class="price">
+                        <p>$8.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=27?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
-                <div class="banner">
-                    <div class="text" id="pizzaname">Chili Crab</div>
-                    <img src="images/chilicrab.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus4">-</span>
-                        <span class="num4">01</span>
-                        <span class="plus4">+</span>
+                <div class="food-banner">
+                    <img src="images/Sides/28.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Crazy Chicken Crunchies - Original</h2>
+                        <p>Made with pork, beef, salt and natural spices such a</p></div>
+                    <div class="price">
+                        <p>$8.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=28?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Sides/29.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Crazy Chicken Crunchies - Tomyam</h2>
+                        <p>Made with pork, beef, salt and natural spices such</p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=29?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="food-banner">
+                    <img src="images/Sides/30.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Awesome Foursome</h2>
+                        <p>Made with pork, beef, salt </p></div>
+                    <div class="price">
+                        <p>$10.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=30?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Sides/31.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Golden Roasted Wings</h2>
+                        <p>Made with pork, beef, salt and natural spices such </p></div>
+                    <div class="price">
+                        <p>$10.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=31?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Sides/32.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Chocolate Roasted Wings</h2>
+                        <p>Made with pork, beef, salt and natural spices such </p></div>
+                    <div class="price">
+                        <p>$12.00</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=32?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>

@@ -318,89 +318,119 @@
                     <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
-            
-            <!-- Debug -->
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
-                ?>
-            </button>
 
             <!-- Create container here -->
-            <h2>Menu</h2>
-            <!-- <div class="counter">
-                <span class="minus">-</span>
-                <span class="num">01</span>
-                <span class="plus">+</span>
-            </div> -->
-            
+            <h2>Beverages</h2>
             <div class="container">
-                <div class="banner">
-                    <div class="text" id="pizzaname">Peperoni</div>
-                    <div class="choice">
-                        <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                        <div class="counter1" >
-                            <span class="minus1">-</span>
-                            <span class="num1">01</span>
-                            <span class="plus1">+</span>
+                <div class="food-banner">
+                    <img src="images/Beverages/33.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Coca-Cola</h2></div>
+                    <div class="price">
+                        <p>$3.20</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=33?">Add to cart</a>
                         </div>
                     </div>
                 </div>
-                <div class="banner">
-                    <div class="text" id="pizzaname">Haiwaiian Chicken</div>
-                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus2">-</span>
-                        <span class="num2">01</span>
-                        <span class="plus2">+</span>
+            
+                <div class="food-banner">
+                    <img src="images/Beverages/34.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Coca-Cola Zero Sugar</h2></div>
+                    <div class="price">
+                        <p>$3.20</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=34?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
-                <div class="banner">
-                    <div class="text" id="pizzaname">Cheesy 7</div>
-                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus3">-</span>
-                        <span class="num3">01</span>
-                        <span class="plus3">+</span>
+                <div class="food-banner">
+                    <img src="images/Beverages/35.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Sprite</h2></div>
+                    <div class="price">
+                        <p>$3.20</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=35?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
-                <div class="banner">
-                    <div class="text" id="pizzaname">Chili Crab</div>
-                    <img src="images/chilicrab.jpg" width="150" height="180" alt="d1" style="width: 100%;">
-                    <div class="counter">
-                        <span class="minus4">-</span>
-                        <span class="num4">01</span>
-                        <span class="plus4">+</span>
+                <div class="food-banner">
+                    <img src="images/Beverages/36.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Heaven & Earth Iced Lemon Tea</h2></div>
+                    <div class="price">
+                        <p>$3.40</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=36?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Beverages/37.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Heaven & Earth Jasmine Green Tea</h2></div>
+                    <div class="price">
+                        <p>$3.40</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=37?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Beverages/38.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Coca-Cola</h2></div>
+                    <div class="price">
+                        <p>$4.30</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=38?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Beverages/39.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Coca-Cola Zero Sugar</h2></div>
+                    <div class="price">
+                        <p>$4.30</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=39?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Beverages/40.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Sprite</h2></div>
+                    <div class="price">
+                        <p>$4.30</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=40?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Beverages/41.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Heaven & Earth Iced Lemon Tea</h2></div>
+                    <div class="price">
+                        <p>$4.60</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=41?">Add to cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner">
+                    <img src="images/Beverages/42.jpg"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Heaven & Earth Jasmine Green Tea</h2></div>
+                    <div class="price">
+                        <p>$4.60</p>
+                        <div class="addtocart">
+                            <a href="main.php?page=product&id=42?">Add to cart</a>
+                        </div>
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
