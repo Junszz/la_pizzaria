@@ -3,48 +3,16 @@
 
 <?php //menu.php
     session_start();
-    $qty = array(1,2,3,4,5,6);
+    $count = array(0,1,2,3,4,5,6,7,8,9);
 
     if (!isset($_SESSION['cart'])){
         $_SESSION['cart'] = array();
     }   
-    if (isset($_GET['item'])) {
-        $_SESSION['cart'][] = $_GET['item'];
-        // php self is this pizza.php
+    if (isset($_GET['buy'])) {
+        $_SESSION['cart'][] = $_GET['buy'];
         header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
         exit();
     }
-     // Fetch menu from database
-     @ $db = new mysqli("localhost", "root", "", "lapizzaria");
-
-     if (mysqli_connect_errno()) {
-         echo 'Error: Could not connect to database.  Please try again later.';
-         exit;
-     }
- 
-     $query = "SELECT * FROM menu";
-     $result = $db->query($query);
-     if(!$result) {
-         echo "Unable to fetch data";
-     }
- 
-     // Store values in array
-     $id = [];
-     while ($row = $result->fetch_assoc()) {
-         $id[] = $row["foodid"];
-     }
-
-    if (isset($_POST['submit'])){
-        if(isset($_POST['quantity1'])){$qty[0] = $_POST['quantity1'];}
-        if(isset($_POST['quantity2'])){$qty[1] = $_POST['quantity2'];}
-        if(isset($_POST['quantity2'])){$qty[2] = $_POST['quantity2'];}
-
-        // var_dump(isset($_POST['submit']));
-        unset ($_POST['submit']);
-        exit();
-    }
-
-    $db->close();
 ?>
 
 <head>
@@ -216,78 +184,15 @@
             margin-bottom: 100px;
         }
 
-        .food-banner {
-            cursor: pointer;
-            /* flex: 0 0 16%; */
+        .banner {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
             margin: 15px;
-            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
-            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-            border-radius: 10px;
-            height:auto;
-            width: 250px;
-        }
-
-        .food-banner img, .hover-banner img {
-            margin-top: 15px;
-            width: 90%;
-            border-radius: 10px;
-            height: 150px;
-        }
-        
-        .food-banner .text {
-            padding: 0 10%;
-            text-align: left;
-        }
-
-        .food-banner .text h2{
-            color: #808080;
-            font-size: 30px;
-        }
-
-        .food-banner .text p{
-            font-size: 18px;
-        }
-
-        .food-banner .price {
-            padding: 0 10%;
-            width:80%;
-            display:flex;
-        }
-
-        .food-banner .price .addtocart {
-            background-color: lightgrey;
-            width: 60%;
-            height: 25%;
-            text-align: center;
-            font-size: 18px;
-            border: 1px solid green;
-            margin: 20px 0px 5px 35px;
+            padding: 0px 0px 0px 0px;
             border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            min-width: 400px;
+            min-height: 200px;
         }
-
-        .food-banner .price .addtocart a {
-            text-decoration: none;
-        }
-
-        .food-banner .price p{
-            font-size: 20px;
-            text-align: left;
-            padding-left: 10px;
-        }
-
-        /* .food-banner .price a{
-            font-size: 15px;
-            text-align: center;
-            text-decoration: none;
-            margin-left: 30%;
-        } */
-
-        .price {
-            color: purple;
-        }
-
         footer {
 			font-size: 11px;
             text-align: center;
@@ -297,6 +202,7 @@
         }
         #pizzaname{
             font-size: 20px;
+
         }
         #pizzasize{
             margin: 0px 15px 5px 0px;
@@ -326,8 +232,8 @@
             justify-content: center;
             background: rgb(239, 145, 145);
             border-radius: 12px;
-            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
-            /* margin: auto; */
+            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+            margin: auto;
         }
 
         .counter span{
@@ -373,19 +279,7 @@
         }
 
         .choice{
-            /* position: relative; */
-            /* align-content: center; */
-            /* float:none;
-            width:35%;
-            margin: 0;
-            transform: translateY(-150%);
-            display: none;
-            z-index: 1; */
-            /* display: none; */
-            position:absolute;
-            left: 56%;
-            /* transform: translateY(-150%); */
-            z-index: 1;
+            position: relative;
         }
 
         .counter1{
@@ -397,11 +291,7 @@
             top: 70px;
             left: 160px;
         }
-
-        .food-banner:hover .choice {
-            display: block;
-            animation: fade 500ms;
-        }
+        
 
     </style>
 </head>
@@ -446,116 +336,134 @@
                     <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
+            
+            <!-- Debug -->
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
+                ?>
+            </button>
+            <button>
+                <?php
+                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
+                ?>
+            </button>
 
             <!-- Create container here -->
             <h2>Menu</h2>
-            <h2>Original</h2>
+            <!-- <div class="counter">
+                <span class="minus">-</span>
+                <span class="num">01</span>
+                <span class="plus">+</span>
+            </div> -->
+        <form method="post" action="pizza.php" id="form">  
             <div class="container">
-                <div class="food-banner">
-                    <img src="images/Pizza/1.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Meatzza</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
+                <div class="banner">
+                    <div class="text" id="pizzaname">Peperoni</div>
+                    <div class="choice">
+                        <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                        <div class="addcart">
+                            <div class="counter1" >
+                                <span class="minus1">-</span>
+                                <span class="num1">01</span>
+                                <span class="plus1">+</span>
+                            </div>
+                            <input type="submit" name='submit' value="Add to cart">
                         </div>
                     </div>
                 </div>
-            
-                <div class="food-banner">
-                    <img src="images/Pizza/2.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Quattro Fiesta</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
+                <div class="banner">
+                    <div class="text" id="pizzaname">Haiwaiian Chicken</div>
+                    <img src="images/haiwaiian chicken.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <div class="counter">
+                        <span class="minus2">-</span>
+                        <span class="num2">01</span>
+                        <span class="plus2">+</span>
                     </div>
                 </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/3.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Extravaganza</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
+                <div class="banner">
+                    <div class="text" id="pizzaname">Cheesy 7</div>
+                    <img src="images/cheezy 7.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <div class="counter">
+                        <span class="minus3">-</span>
+                        <span class="num3">01</span>
+                        <span class="plus3">+</span>
                     </div>
                 </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/4.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Chicken Temptation</h2>
-                        <p>Made with pork, beef, salt and natural spices such a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
+                <div class="banner">
+                    <div class="text" id="pizzaname">Chili Crab</div>
+                    <img src="images/chilicrab.jpg" width="150" height="180" alt="d1" style="width: 100%;">
+                    <div class="counter">
+                        <span class="minus4">-</span>
+                        <span class="num4">01</span>
+                        <span class="plus4">+</span>
                     </div>
                 </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/5.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Chili Beef</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
+                <script src="js/plus_n_minus.js"></script>
+            </form>
+            </div>
+    </div>
+    <footer>
+        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
+    </footer>
+</body>
+
+</html>
+
+<div>
+            <h3>Pizza size</h3>
+            <div id="pizzasize">
+                <div class="size">
+                    <img src="images/pizza (3).png" width="70px" height="70px" id="sizepic">
+                    <div class="text"><strong>PERSONAL <br> 6 inch</strong></div>
                 </div>
-            
-                <div class="food-banner">
-                    <img src="images/Pizza/6.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Parmagiana Chicken</h2>
-                        <p>Made with pork, beef, salt and natural spices such as a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
+                <div class="size">
+                    <img src="images/pizza (2).png" width="80px" height="80px" id="sizepic2">
+                    <div class="text"><strong>REGULAR <br> 9 inch</strong></div>
                 </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/7.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Smoky Meatilicious</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/8.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Diavola Beef</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
+                <div class="size">
+                    <img src="images/pizza (2).png" width="90px" height="90px">
+                    <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
-            <h2>Special</h2>
+
+            <!-- Create container here -->
+            <h2>Menu</h2>
+            <!-- <div class="counter">
+                <span class="minus">-</span>
+                <span class="num">01</span>
+                <span class="plus">+</span>
+            </div> -->
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/Pizza/9.png"  alt="d1">
+                    <img src="images/peperoni.jpg"  alt="d1">
                     <div class="text" id="pizzaname">
-                        <h2>Haiwaiian Paradise</h2>
+                        <h2>Peperoni</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
                     <div class="price">
                         <p>$12.00</p>
@@ -563,12 +471,50 @@
                             <a href="">Add to cart</a>
                         </div>
                     </div>
+                    <!-- <div class="choice">
+                        
+                    </div> -->
+                    
+                    <!-- <div class="choice"> -->
+                        <!-- <div class="counter1" >
+                            <span class="minus1">-</span>
+                            <span class="num1">01</span>
+                            <span class="plus1">+</span>
+                        </div> -->
+
+                        <!-- <form method="post">
+                            <input type="text" name="quantity1" value="3" size="2">
+                            <input type="hidden" name="id" value=<?=$id[0]?> size="2">
+                            <input type="submit" name="submit" value="Add to Cart">    
+                        </form>
+                        
+                        <form method="post">
+                            <input type="text" name="quantity2" value="2" size="2">
+                            <input type="hidden" name="id" value=<?=$id[1]?> size="2">
+                            <input type="submit" name="submit" value="Add to Cart">    
+                        </form>
+ -->
+                        <!--
+                            Approach 2 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?buy=1:'. $_PHP ."'>Add to cart</a></button>"; 
+                        -->
+
+                        <!-- 
+                            Approach 3
+                         -->
+                        <!-- <?php 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[0].'?'.$qty[0]."'>Add to cart</a></button>"; 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[1].'?'.$qty[1]."'>Add to cart</a></button>"; 
+                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[2].'?'.$qty[2]."'>Add to cart</a></button>"; 
+                        ?> -->
+                        
+                    <!-- </div> -->
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/Pizza/10.png"  alt="d1">
+                <img src="images/peperoni.jpg"  alt="d1">
                     <div class="text" id="pizzaname">
-                        <h2>Classified Chicken</h2>
+                        <h2>Peperoni</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
                     <div class="price">
                         <p>$12.00</p>
@@ -578,9 +524,9 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/11.png"  alt="d1">
+                    <img src="images/peperoni.jpg"  alt="d1">
                     <div class="text" id="pizzaname">
-                        <h2>Classic Pepperoni</h2>
+                        <h2>Peperoni</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
                     <div class="price">
                         <p>$12.00</p>
@@ -590,58 +536,9 @@
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/Pizza/12.png"  alt="d1">
+                    <img src="images/peperoni.jpg"  alt="d1">
                     <div class="text" id="pizzaname">
-                        <h2>Smoky Pepperoni & Mushroom</h2>
-                        <p>Made with pork, beef, salt and natural spices such a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/13.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Simply Cheese</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="food-banner">
-                    <img src="images/Pizza/14.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>The Big BBQ</h2>
-                        <p>Made with pork, beef, salt and natural spices such as a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/15.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Very Veggie</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="">Add to cart</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="food-banner">
-                    <img src="images/Pizza/16.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Classy Chic</h2>
+                        <h2>Peperoni</h2>
                         <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
                     <div class="price">
                         <p>$12.00</p>
@@ -651,11 +548,6 @@
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
+            </form>
             </div>
     </div>
-    <footer>
-        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
-    </footer>
-</body>
-
-</html>
