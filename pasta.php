@@ -170,15 +170,81 @@
             margin-bottom: 100px;
         }
 
-        .banner {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
+        .food-banner {
+            cursor: pointer;
+            /* flex: 0 0 16%; */
             margin: 15px;
-            padding: 0px 0px 0px 0px;
-            border-radius: 5px;
-            min-width: 400px;
-            min-height: 200px;
+            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            border-radius: 10px;
+            height:420px;
+            width: 250px;
         }
+        .food-banner img, .hover-banner img {
+            margin-top: 15px;
+            width: 90%;
+            border-radius: 10px;
+            height: 150px;
+        }
+        
+        .food-banner .text {
+            padding: 0 10%;
+            text-align: left;
+        }
+
+        .food-banner .text h2{
+            color: #808080;
+            font-size: 30px;
+        }
+
+        .food-banner .text p{
+            font-size: 18px;
+        }
+
+        .food-banner .price {
+            padding: 0 10%;
+            width:80%;
+            display:flex;
+        }
+
+        .food-banner .price .addtocart {
+            background-color: lightgrey;
+            width: 60%;
+            height: 25%;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid green;
+            margin: 20px 0px 5px 35px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .food-banner .price .addtocart a {
+            text-decoration: none;
+        }
+
+        .food-banner .price p{
+            font-size: 20px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .food-banner .price{
+            padding-bottom: 10%;
+        }
+
+        /* .food-banner .price a{
+            font-size: 15px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 30%;
+        } */
+
+        .price {
+            color: purple;
+        }
+        
         footer {
 			font-size: 11px;
             text-align: center;

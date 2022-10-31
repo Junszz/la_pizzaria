@@ -172,13 +172,14 @@
 
         .food-banner {
             cursor: pointer;
-            flex: 0 0 16%;
+            /* flex: 0 0 16%; */
             margin: 15px;
             /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             border-radius: 10px;
             height:auto;
+            width: 250px;
         }
 
         .food-banner img, .hover-banner img {
@@ -195,12 +196,47 @@
 
         .food-banner .text h2{
             color: #808080;
-            font-size: 20px;
+            font-size: 30px;
         }
 
         .food-banner .text p{
             font-size: 18px;
         }
+
+        .food-banner .price {
+            padding: 0 10%;
+            width:80%;
+            display:flex;
+        }
+
+        .food-banner .price .addtocart {
+            background-color: lightgrey;
+            width: 60%;
+            height: 25%;
+            text-align: center;
+            font-size: 18px;
+            border: 1px solid green;
+            margin: 20px 0px 5px 35px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .food-banner .price .addtocart a {
+            text-decoration: none;
+        }
+
+        .food-banner .price p{
+            font-size: 20px;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        /* .food-banner .price a{
+            font-size: 15px;
+            text-align: center;
+            text-decoration: none;
+            margin-left: 30%;
+        } */
 
         .price {
             color: purple;
