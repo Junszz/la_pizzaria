@@ -238,6 +238,7 @@
         .food-banner .text {
             padding: 0 10%;
             text-align: left;
+            height: 60%;
         }
 
         .food-banner .text h2{
@@ -403,6 +404,10 @@
             animation: fade 500ms;
         }
 
+        #wrapper .title{
+            font-size: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -448,8 +453,9 @@
             </div>
 
             <!-- Create container here -->
-            <h2>Menu</h2>
-            <h2>Original</h2>
+            <div class="title">
+                <h2>Original Pizza</h2>
+            </div>
             <div class="container">
                 <div class="food-banner">
                     <img src="images/Pizza/1.png"  alt="d1">
@@ -550,7 +556,9 @@
                     </div>
                 </div>
             </div>
-            <h2>Special</h2>
+            <div class="title"> 
+                <h2>Special Pizza</h2>
+            </div>
             <div class="container">
                 <div class="food-banner">
                     <img src="images/Pizza/9.png"  alt="d1">

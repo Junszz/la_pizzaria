@@ -318,43 +318,6 @@
                     <div class="text"><strong>LARGE <br> 12 inch</strong></div>
                 </div>
             </div>
-            
-            <!-- Debug -->
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=0'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=1'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=2'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=3'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=4'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=5'."'>Buy</a></p>";
-                ?>
-            </button>
-            <button>
-                <?php
-                    echo "<p><a href='" .$_SERVER['PHP_SELF']. '?buy=6'."'>Buy</a></p>";
-                ?>
-            </button>
 
             <!-- Create container here -->
             <h2>Menu</h2>

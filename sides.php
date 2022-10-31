@@ -177,7 +177,7 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             border-radius: 10px;
-            height:450px;
+            height:420px;
             width: 250px;
         }
 
@@ -191,6 +191,7 @@
         .food-banner .text {
             padding: 0 10%;
             text-align: left;
+            height: 40%;
         }
 
         .food-banner .text h2{
@@ -359,6 +360,11 @@
             animation: fade 500ms;
         }
 
+        #wrapper .title{
+            font-size: 30px;
+            text-align: center;
+        }
+
     </style>
 </head>
 
@@ -386,9 +392,11 @@
             </ul>
         </nav>
         <br>
+        <div class="title">
+            <h2>Sides</h2>
+        </div>
         <div>
             <!-- Create container here -->
-            <h2>Sides</h2>
             <div class="container">
                 <div class="food-banner">
                     <img src="images/Sides/25.jpg"  alt="d1">

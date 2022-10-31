@@ -178,7 +178,7 @@
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             border-radius: 10px;
-            height:400px;
+            height:350px;
             width: 250px;
         }
 
@@ -192,6 +192,7 @@
         .food-banner .text {
             padding: 0 10%;
             text-align: left;
+            height: 28%;
         }
 
         .food-banner .text h2{
@@ -199,14 +200,11 @@
             font-size: 30px;
         }
 
-        .food-banner .text p{
-            font-size: 18px;
-        }
-
         .food-banner .price {
-            padding: 0 10%;
+            padding: 0% 10%;
             width:80%;
             display:flex;
+            padding-bottom: 30px;
         }
 
         .food-banner .price .addtocart {
@@ -229,10 +227,6 @@
             font-size: 20px;
             text-align: left;
             padding-left: 10px;
-        }
-
-        .food-banner .price{
-            padding-bottom: 10%;
         }
 
         /* .food-banner .price a{

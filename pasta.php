@@ -192,6 +192,7 @@
         .food-banner .text {
             padding: 0 10%;
             text-align: left;
+            height: 40%;
         }
 
         .food-banner .text h2{
@@ -360,6 +361,10 @@
             animation: fade 500ms;
         }
 
+        #wrapper .title{
+            font-size: 30px;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -387,9 +392,11 @@
             </ul>
         </nav>
         <br>
+        <div class="title">
+            <h2>Pasta</h2>
+        </div>
         <div>
             <!-- Create container here -->
-            <h2>Pasta</h2>
             <div class="container">
                 <div class="food-banner">
                     <img src="images/Pasta/17.jpg"  alt="d1">
