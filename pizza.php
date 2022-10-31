@@ -1,6 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php //menu.php
+    session_start();
+    $qty = array(1,2,3,4,5,6);
+
+    if (!isset($_SESSION['cart'])){
+        $_SESSION['cart'] = array();
+    }   
+    if (isset($_GET['item'])) {
+        $_SESSION['cart'][] = $_GET['item'];
+        // php self is this pizza.php
+        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
+        exit();
+    }
+     // Fetch menu from database
+     @ $db = new mysqli("localhost", "root", "", "lapizzaria");
+
+     if (mysqli_connect_errno()) {
+         echo 'Error: Could not connect to database.  Please try again later.';
+         exit;
+     }
+ 
+     $query = "SELECT * FROM menu";
+     $result = $db->query($query);
+     if(!$result) {
+         echo "Unable to fetch data";
+     }
+ 
+     // Store values in array
+     $id = [];
+     while ($row = $result->fetch_assoc()) {
+         $id[] = $row["foodid"];
+     }
+
+    if (isset($_POST['submit'])){
+        if(isset($_POST['quantity1'])){$qty[0] = $_POST['quantity1'];}
+        if(isset($_POST['quantity2'])){$qty[1] = $_POST['quantity2'];}
+        if(isset($_POST['quantity2'])){$qty[2] = $_POST['quantity2'];}
+
+        // var_dump(isset($_POST['submit']));
+        unset ($_POST['submit']);
+        exit();
+    }
+
+    $db->close();
+?>
+
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
@@ -251,7 +297,6 @@
         }
         #pizzaname{
             font-size: 20px;
-
         }
         #pizzasize{
             margin: 0px 15px 5px 0px;
@@ -281,7 +326,7 @@
             justify-content: center;
             background: rgb(239, 145, 145);
             border-radius: 12px;
-            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
             /* margin: auto; */
         }
 
@@ -338,7 +383,7 @@
             z-index: 1; */
             /* display: none; */
             position:absolute;
-            left: 26%;
+            left: 56%;
             /* transform: translateY(-150%); */
             z-index: 1;
         }
@@ -606,7 +651,6 @@
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
-            </form>
             </div>
     </div>
     <footer>

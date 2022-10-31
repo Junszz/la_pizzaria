@@ -244,7 +244,6 @@
         .price {
             color: purple;
         }
-        
         footer {
 			font-size: 11px;
             text-align: center;
@@ -254,7 +253,6 @@
         }
         #pizzaname{
             font-size: 20px;
-
         }
         #pizzasize{
             margin: 0px 15px 5px 0px;
@@ -284,8 +282,8 @@
             justify-content: center;
             background: rgb(239, 145, 145);
             border-radius: 12px;
-            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
-            margin: auto;
+            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+            /* margin: auto; */
         }
 
         .counter span{
@@ -331,15 +329,35 @@
         }
 
         .choice{
-            position: relative;
+            /* position: relative; */
+            /* align-content: center; */
+            /* float:none;
+            width:35%;
+            margin: 0;
+            transform: translateY(-150%);
+            display: none;
+            z-index: 1; */
+            /* display: none; */
+            position:absolute;
+            left: 56%;
+            /* transform: translateY(-150%); */
+            z-index: 1;
         }
 
         .counter1{
+            margin: 0px 0px 5px 0px;
+        }
+
+        .addcart{
             position: absolute;
             top: 70px;
-            left: 90px;
+            left: 160px;
         }
-        
+
+        .food-banner:hover .choice {
+            display: block;
+            animation: fade 500ms;
+        }
 
     </style>
 </head>
@@ -369,22 +387,6 @@
         </nav>
         <br>
         <div>
-            <h3>Pizza size</h3>
-            <div id="pizzasize">
-                <div class="size">
-                    <img src="images/pizza (3).png" width="70px" height="70px" id="sizepic">
-                    <div class="text"><strong>PERSONAL <br> 6 inch</strong></div>
-                </div>
-                <div class="size">
-                    <img src="images/pizza (2).png" width="80px" height="80px" id="sizepic2">
-                    <div class="text"><strong>REGULAR <br> 9 inch</strong></div>
-                </div>
-                <div class="size">
-                    <img src="images/pizza (2).png" width="90px" height="90px">
-                    <div class="text"><strong>LARGE <br> 12 inch</strong></div>
-                </div>
-            </div>
-
             <!-- Create container here -->
             <h2>Sides</h2>
             <div class="container">
@@ -487,7 +489,7 @@
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
-        </div>
+            </div>
     </div>
     <footer>
         <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
