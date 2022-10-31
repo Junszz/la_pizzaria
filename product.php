@@ -1,3 +1,22 @@
+<?php
+// Check to make sure the id parameter is specified in the URL
+if (isset($_GET['id'])) {
+    // Prepare statement and execute, prevents SQL injection
+    $stmt = $db->prepare('SELECT * FROM menu WHERE foodid = ?');
+    $stmt->execute([$_GET['id']]);
+    // Fetch the product from the database and return the result as an Array
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Check if the product exists (array is not empty)
+    if (!$product) {
+        // Simple error to display if the id for the product doesn't exists (array is empty)
+        exit('Product does not exist!');
+    }
+} else {
+    // Simple error to display if the id wasn't specified
+    exit('Product does not exist!');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,6 +24,54 @@
     <title>La Pizzaria</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page specific styling -->
+    <style>
+        .product-container {
+            margin-bottom: 350px;
+            width: 80%;
+            height: auto;
+        }  
+        .product-container h1 {
+            padding-bottom: 35px;
+            font-size: 50px;
+            color: black;
+        }
+        .product-container p {
+            color: black;
+        }
+        .product-container .price {
+            display: block;
+            font-size: 22px;
+            color: #999999;
+        }
+        .form {
+            display: flex;
+            flex-flow: column;
+            margin: 40px 0;
+        }
+        .product-container .form input[type='number']{
+            width: 400px;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            color: #555555;
+            border-radius: 5px;
+        }
+        .product-container .left-column {
+            float:left;
+            width: 50%;
+            /* border: 1px solid red; */
+            padding-left: 40px;
+            padding-top: 100px;
+        }
+        .product-container .right-column {
+            margin-left: 50%;
+            padding-right: 5%;
+            padding-top: 50px;
+            /* border: 1px solid black; */
+        }    
+    </style>
 </head>
 
 <body>
@@ -32,34 +99,25 @@
                 </ul>   
             </nav>
         </div>
-        <br>
-        <!-- Banner Container -->
-        <section class="About-us">
-            <div class="about-container">
-                <div class="textbox">
-                    <h1 style="margin-bottom: 0px;">About Us</h1>
-                    <p>Established food paradigm since 1980 with authentic craftmanship.</p>
-                </div>
-            </div>
-        </section>
 
-        <section class="welcome section-padding">
-            <div class="welcome-container">
-                <div class="left-column">
-                    <img src="images/welcome.png" style="padding-left: 13%;" width="100%" alt="welcome">
-                </div>
-                <div class="right-column">
-                    <div class="welcome-text">
-                        <h3><span class="yellow">Welcome</span> <br>to La Pizzaria</h3>
-                        <br>
-                        <p>Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
-                        <br>
-                        <p>Experienced michelin chefs to delight ur taste buds. Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
-                        <a href="menu.html" class="button button-padding">Order Now</a>
-                    </div>
-                </div>
+        <!-- Product Part goes here -->
+        <div class="product-container">
+            <div class="left-column">
+                <img src='images/peperoni.jpg' width:'350' height='350'>
             </div>
-        </section>
+
+            <div class="right-column">
+                <h1><?=$product['foodname']?></h1>
+                <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p> 
+                <span class="price">$ <?=$product['price']?></span>
+
+                <form action="main.php?page=cart" method="post">
+                    <input type="number" name="quantity" value="1" placeholder="Quantity" required>
+                    <input type="hidden" name="product_id" value="<?=$product['foodid']?>">
+                    <input type="submit" value="Add To Cart">
+                </form>
+            </div>
+        </div>
 
         <!-- Footer Area -->
         <div class="footer-container">

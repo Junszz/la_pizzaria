@@ -1,52 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php //menu.php
-    session_start();
-    $qty = array(1,2,3,4,5,6);
-
-    if (!isset($_SESSION['cart'])){
-        $_SESSION['cart'] = array();
-    }   
-    if (isset($_GET['item'])) {
-        $_SESSION['cart'][] = $_GET['item'];
-        // php self is this pizza.php
-        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
-        exit();
-    }
-     // Fetch menu from database
-     @ $db = new mysqli("localhost", "root", "", "lapizzaria");
-
-     if (mysqli_connect_errno()) {
-         echo 'Error: Could not connect to database.  Please try again later.';
-         exit;
-     }
- 
-     $query = "SELECT * FROM menu";
-     $result = $db->query($query);
-     if(!$result) {
-         echo "Unable to fetch data";
-     }
- 
-     // Store values in array
-     $id = [];
-     while ($row = $result->fetch_assoc()) {
-         $id[] = $row["foodid"];
-     }
-
-    if (isset($_POST['submit'])){
-        if(isset($_POST['quantity1'])){$qty[0] = $_POST['quantity1'];}
-        if(isset($_POST['quantity2'])){$qty[1] = $_POST['quantity2'];}
-        if(isset($_POST['quantity2'])){$qty[2] = $_POST['quantity2'];}
-
-        // var_dump(isset($_POST['submit']));
-        unset ($_POST['submit']);
-        exit();
-    }
-
-    $db->close();
-?>
-
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
@@ -376,7 +330,7 @@
         <!-- Make 2 versions of wrapper: small & big screen -->
         <nav>
             <div id="left-nav">
-                <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
+                <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
             </div>
             <ul>
                 <li class="dropdown">
@@ -429,37 +383,10 @@
                     </div>
                     
                     <div class="choice">
-                        <div class="counter1" >
-                            <span class="minus1">-</span>
-                            <span class="num1">01</span>
-                            <span class="plus1">+</span>
-                        </div>
-
-                        <form method="post">
-                            <input type="text" name="quantity1" value="3" size="2">
-                            <input type="hidden" name="id" value=<?=$id[0]?> size="2">
-                            <input type="submit" name="submit" value="Add to Cart">    
-                        </form>
-                        
-                        <form method="post">
-                            <input type="text" name="quantity2" value="2" size="2">
-                            <input type="hidden" name="id" value=<?=$id[1]?> size="2">
-                            <input type="submit" name="submit" value="Add to Cart">    
-                        </form>
-
-                        <!--
-                            Approach 2 
-                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?buy=1:'. $_PHP ."'>Add to cart</a></button>"; 
-                        -->
-
-                        <!-- 
-                            Approach 3
-                         -->
-                        <?php 
-                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[0].'?'.$qty[0]."'>Add to cart</a></button>"; 
-                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[1].'?'.$qty[1]."'>Add to cart</a></button>"; 
-                            echo  "<button><a href='" .$_SERVER['PHP_SELF']. '?item='.$id[2].'?'.$qty[2]."'>Add to cart</a></button>"; 
-                        ?>
+                         <a href="main.php?page=product&id=1?" class="product">Add to cart</a>
+                         <a href="main.php?page=product&id=2?" class="product">Add to cart</a>
+                         <a href="main.php?page=product&id=3?" class="product">Add to cart</a>
+                         <a href="main.php?page=product&id=4?" class="product">Add to cart</a>
                         
                     </div>
                 </div>
