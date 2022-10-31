@@ -1,20 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<?php //menu.php
-    session_start();
-    $count = array(0,1,2,3,4,5,6,7,8,9);
-
-    if (!isset($_SESSION['cart'])){
-        $_SESSION['cart'] = array();
-    }   
-    if (isset($_GET['buy'])) {
-        $_SESSION['cart'][] = $_GET['buy'];
-        header('location: ' . $_SERVER['PHP_SELF']. '?' . SID);
-        exit();
-    }
-?>
-
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
@@ -259,7 +245,7 @@
         .price {
             color: purple;
         }
-
+        
         footer {
 			font-size: 11px;
             text-align: center;
@@ -383,21 +369,21 @@
         <!-- Make 2 versions of wrapper: small & big screen -->
         <nav>
             <div id="left-nav">
-                <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
+                <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
             </div>
             <ul>
                 <li class="dropdown">
-                    <a class="active" href="beverages.php" class="dropbtn">Beverages<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                    <a class="active" href="main.php?page=beverages" class="dropbtn">Beverages<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                     <div class="dropdown-content">
-                        <a href="menu.php">Menu</a>
-                        <a href="pizza.php">Pizza</a>
-                        <a href="pasta.php">Pasta</a>
-                        <a href="sides.php">Sides</a>
+                        <a href="main.php">Menu</a>
+                        <a href="main.php?page=pizza">Pizza</a>
+                        <a href="main.php?page=pasta">Pasta</a>
+                        <a href="main.php?page=sides">Sides</a>
                     </div>
                 </li>
                 <li><a href="hotDeals.html">Hot Deals</a></li>
                 <li><a href="aboutUs.html">About Us</a></li>
-                <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
                 <li style="float:right;"><a href="login.html">Login</a></li>
             </ul>
         </nav>
@@ -413,7 +399,7 @@
                     <div class="price">
                         <p>$3.20</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=33?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -425,7 +411,7 @@
                     <div class="price">
                         <p>$3.20</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=34?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -436,7 +422,7 @@
                     <div class="price">
                         <p>$3.20</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=35?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -447,7 +433,7 @@
                     <div class="price">
                         <p>$3.40</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=36?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -458,7 +444,7 @@
                     <div class="price">
                         <p>$3.40</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=37?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -469,7 +455,7 @@
                     <div class="price">
                         <p>$4.30</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=38?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -480,7 +466,7 @@
                     <div class="price">
                         <p>$4.30</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=39?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -491,7 +477,7 @@
                     <div class="price">
                         <p>$4.30</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=40?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -502,7 +488,7 @@
                     <div class="price">
                         <p>$4.60</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=41?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -513,7 +499,7 @@
                     <div class="price">
                         <p>$4.60</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=42?">Add to cart</a>
                         </div>
                     </div>
                 </div>

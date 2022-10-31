@@ -411,7 +411,7 @@
         <!-- Make 2 versions of wrapper: small & big screen -->
         <nav>
             <div id="left-nav">
-                <a href="index.html"><img src="images/logo.png" width="80" height="50" alt="logo"></a>
+                <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
             </div>
             <ul>
                 <li class="dropdown">
@@ -459,7 +459,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=1?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -472,7 +472,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=2?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -484,7 +484,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=3?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -496,7 +496,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=4?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -508,7 +508,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=5?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -521,7 +521,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=6?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -533,7 +533,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=7?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -545,7 +545,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=8?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -560,7 +560,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=9?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -573,7 +573,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=10?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -585,7 +585,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=11?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -597,7 +597,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=12?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -609,7 +609,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=13?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -622,7 +622,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=14?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -634,7 +634,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=15?">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -646,7 +646,7 @@
                     <div class="price">
                         <p>$12.00</p>
                         <div class="addtocart">
-                            <a href="">Add to cart</a>
+                            <a href="main.php?page=product&id=16?">Add to cart</a>
                         </div>
                     </div>
                 </div>

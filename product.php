@@ -1,3 +1,22 @@
+<?php
+// Check to make sure the id parameter is specified in the URL
+if (isset($_GET['id'])) {
+    // Prepare statement and execute, prevents SQL injection
+    $stmt = $db->prepare('SELECT * FROM menu WHERE foodid = ?');
+    $stmt->execute([$_GET['id']]);
+    // Fetch the product from the database and return the result as an Array
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Check if the product exists (array is not empty)
+    if (!$product) {
+        // Simple error to display if the id for the product doesn't exists (array is empty)
+        exit('Product does not exist!');
+    }
+} else {
+    // Simple error to display if the id wasn't specified
+    exit('Product does not exist!');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,10 +24,78 @@
     <title>La Pizzaria</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Page specific styling -->
+    <style>
+        .product-container {
+            width: 1050px;
+            margin: 0 auto;
+            display: flex;
+            padding: 40px 0;
+        }   
+        .product-container h1 {
+            font-size: 34px;
+            font-weight: 600;
+            margin: 0;
+            padding: 20px 0 10px;
+            color:black;
+        }
+        .product-container p {
+            color: black;
+            padding-bottom: 20px;
+        }
+        .product-container form {
+            display: flex;
+            flex-flow: column;
+            margin: 25px 0 40px;
+        }
+        .product-container form input[type="number"]{
+            width:400px;
+            padding: 12px 10px;
+            margin-bottom: 15px;
+            color: #0066CC;
+        }
+        .product-container form label {
+            padding-bottom: 10px;
+        }
+        .btn {
+            text-decoration: none;
+            background: #4b505c;
+            border: 0;
+            color: #fff;
+            padding: 11px 16px;
+            font-size: 14px;
+            font-weight: 500;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .product-container .price {
+            display: block;
+            font-size: 22px;
+            color: #999999;
+        }
+        .image-col {
+            /* display:block; */
+            padding: 20px 10px 0;
+        }
+        .product-images {
+            height: 500px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            display:flex;
+        }
+        .product-description {
+            height:500px;
+            padding-left: 50px;
+            flex: 1;
+        }
+
+    </style>
 </head>
 
 <body>
-    <div id="wrapper">
         <div class="nav-container">
             <!-- Make 2 versions of wrapper: small & big screen -->
             <nav>
@@ -32,34 +119,28 @@
                 </ul>   
             </nav>
         </div>
-        <br>
-        <!-- Banner Container -->
-        <section class="About-us">
-            <div class="about-container">
-                <div class="textbox">
-                    <h1 style="margin-bottom: 0px;">About Us</h1>
-                    <p>Established food paradigm since 1980 with authentic craftmanship.</p>
-                </div>
-            </div>
-        </section>
 
-        <section class="welcome section-padding">
-            <div class="welcome-container">
-                <div class="left-column">
-                    <img src="images/welcome.png" style="padding-left: 13%;" width="100%" alt="welcome">
-                </div>
-                <div class="right-column">
-                    <div class="welcome-text">
-                        <h3><span class="yellow">Welcome</span> <br>to La Pizzaria</h3>
-                        <br>
-                        <p>Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
-                        <br>
-                        <p>Experienced michelin chefs to delight ur taste buds. Italian flour baked with green vegetable delivered from organic farm. Ingredients and spices from all over the world to craft the best pizza in town.</p>
-                        <a href="menu.html" class="button button-padding">Order Now</a>
-                    </div>
+        <!-- Product Part goes here -->
+        <div class="product-container">
+            <div class="image-col">
+                <div class="product-images">
+                    <img src='images/peperoni.jpg' width:'350' height='350'>
                 </div>
             </div>
-        </section>
+
+            <div class="product-description">
+                <h1><?=$product['foodname']?></h1>
+                <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p> 
+                <span class="price">$ <?=$product['price']?></span>
+
+                <form action="main.php?page=cart" method="post">
+                    <label>Quantity</label>
+                    <input type="number" name="quantity" value="1" placeholder="Quantity" required>
+                    <input type="hidden" name="product_id" value="<?=$product['foodid']?>">
+                    <input type="submit" value="Add To Cart" class='btn'>
+                </form>
+            </div>
+        </div>
 
         <!-- Footer Area -->
         <div class="footer-container">
@@ -122,7 +203,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </body>
 
 </html>

@@ -91,7 +91,7 @@ const plus1 = document.querySelector(".plus1"),
           const qty1 = document.getElementById('a1');
         
           // Send value to server
-          console.log(qty1.value);
+        //   console.log(qty1.value);
         
           // 👇️ clear input field
           //qty1.value = '1';
