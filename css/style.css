@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display:400,700");
+
+* { 
+    margin: auto;
+    padding: auto; 
+    box-sizing: border-box;
+}
+
+#wrapper {
+    /* background-color: #FFFFFF; */
+    margin: auto;
+    min-width: 800px;
+    background-image: url("images/background.jpg");
+}
+
+/* Create arrow symbol */
+.arrow {
+    border: solid #000000;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+/* End of creating arrow symbol */
+
+.nav-container {
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/* Navbar styling */
+nav {
+    margin: auto;
+    max-width: 1300px;
+    overflow: hidden;
+    width: 100%;
+    background-color: white;
+}
+
+/* make image float on the left-side */
+#left-nav {
+    margin: 10px 30px 15px 10px;
+    float: left;
+}
+
+#right-nav {
+    margin: 10px 30px 15px 10px;
+    float: right;
+}
+
+nav ul {
+    font-size: 24px;
+    font-weight: 600;
+    list-style-type: none;
+    margin: 0;
+    padding: 15px 0px 5px 0px;
+    overflow: hidden;
+    text-align: center;
+    /* background-color: #F5F5F5; */
+}
+
+nav li {
+    float: left;
+}
+
+/* Display menu horizontally */
+nav li a {
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: 500ms;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+/* Dropdown bar */
+.dropdown {
+    float: left;
+}
+
+.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0px;
+}
+
+.dropdown:hover .dropbtn i {
+    animation: rotate-up 500ms;
+    transform: rotate(225deg);
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #FFFFFF;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Change the link color to grey on hover */
+nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+    background-color: #F5F5F5;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #F5F5F5;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    animation: drop-in 500ms;
+    display: block;
+}
+
+/* End of Navbar styling */
+
+/* Animation */
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes drop-in {
+    from {
+        transform: translateY(-30%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@keyframes rotate-up {
+    from {
+        transform:rotate(45deg);
+    }
+    to {
+        transform: rotate(225deg);
+    }
+}
+/* End of Animation */
+
+/* Container styling */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.banner {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    margin: 15px;
+    padding: 0px 0px 5px 0px;
+    border-radius: 5px;
+    min-width: 450px;
+}
+
+.about-container {
+    background-image: url("../images/about.jpg");
+    height: 450px;
+}
+
+.textbox {
+    padding-top: 150px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+h1 {
+    color: #fff;
+    font-family: "Playfair Display", serif;
+    font-size: 60px;
+    font-weight: 700;
+    font-style: italic
+}
+
+h3 {
+    color: #131230;
+    font-family: "Playfair Display", serif;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+p {
+    color: #fff;
+    /* font-family: "Roboto", sans-serif; */
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.textbox p {
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.section-padding {
+  padding: 130px 0px;  
+}
+
+.welcome-container {
+    background-color: white;
+    display: flex;
+}
+
+.left-column {
+    flex: 50%;
+}
+
+.right-column {
+    flex: 50%;
+}
+
+.welcome-text {
+    padding: 20% 40% 20% 5%;
+}
+
+.yellow {
+    color: #ffb606;
+    font-style: italic
+}
+
+.welcome-text p {
+    font-style: normal;
+    color: grey;
+    font-size: 15px;
+}
+
+.button {
+    color: #131230;
+    background: #ffb606;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+}
+
+.button-padding {
+    margin-top: 50px;
+}
+
+.button:hover {
+    color: #131230;
+    background: transparent;
+    border: 1px solid #ffb606
+}
+
+/* footer {
+    text-align: center;
+    color: #000000;
+    margin: auto;
+    max-width: 1300px;
+    width: 100%;
+} */
+
+.footer-padding {
+    padding-top: 15px;
+}
+
+
+.footer-container {
+    background-color: white;
+    box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
+}
+
+.three-columns {
+    background-color: white;
+    max-width: 1300px;
+}
+
+.row {
+    padding: 0 10%;
+    display: flex;
+    align-items: center;
+}
+
+.col {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    height: 150px;
+}
+
+.logo-content {
+    display: flex;
+    align-content: center;
+}
+
+.logo-content img {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.col-content {
+    margin-top: 5px;
+    display: flex;
+    align-content: flex-start;
+}
+
+.col-content h2 {
+    margin-bottom: 8px;
+}
+
+.padding-left {
+    padding-left: 30%;
+}
+
+table {
+    text-align: left;
+    border-spacing: 0 0px;
+}
+
+td {
+    padding-left: 10px;
+    font-size: 14px;
+}
+
+.three-columns p {
+    font-size: 14px;
+    color: #000000;
+    
+}

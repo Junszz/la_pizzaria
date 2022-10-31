@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>La Pizzaria</title>
+    <script type = "text/javascript"  src = "js/slideshow.js" ></script>
+    <meta charset="utf-8">
+    <style>
+        * { 
+            margin: auto;
+            padding: auto; 
+            box-sizing: border-box;
+        }
+
+        #wrapper {
+            /* background-color: #FFFFFF; */
+            margin: auto;
+            min-width: 800px;
+            background-image: url("images/background-01.png");
+        }
+
+        /* Create arrow symbol */
+        .arrow {
+            border: solid #000000;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+        }
+
+        .down {
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        /* End of creating arrow symbol */
+
+        .nav-container {
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        /* Navbar styling */
+        nav {
+            margin: auto;
+            max-width: 1300px;
+            overflow: hidden;
+            width: 100%;
+            background-color: white;
+        }
+
+        /* make image float on the left-side */
+        #left-nav {
+            margin: 10px 30px 15px 10px;
+            float: left;
+        }
+
+        #right-nav {
+            margin: 10px 30px 15px 10px;
+            float: right;
+        }
+
+        nav ul {
+            font-size: 24px;
+            font-weight: 600;
+            list-style-type: none;
+            margin: 0;
+            padding: 15px 0px 5px 0px;
+            overflow: hidden;
+            text-align: center;
+            /* background-color: #F5F5F5; */
+        }
+
+        nav li {
+            float: left;
+        }
+
+        /* Display menu horizontally */
+        nav li a {
+            display: block;
+            color: #000000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            transition: 500ms;
+        }
+
+        .active {
+            background-color: #04AA6D;
+        }
+
+        /* Dropdown bar */
+        .dropdown {
+            float: left;
+        }
+
+        .dropdown .dropbtn {
+            cursor: pointer;
+            font-size: inherit;
+            border: none;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0px;
+        }
+
+        .dropdown:hover .dropbtn i {
+            animation: rotate-up 500ms;
+            transform: rotate(225deg);
+        }
+
+        .dropdown-content a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #FFFFFF;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        /* Change the link color to grey on hover */
+        nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
+            background-color: #F5F5F5;
+        }
+
+        /* Add a grey background color to dropdown links on hover */
+        .dropdown-content a:hover {
+            background-color: #F5F5F5;
+        }
+
+        /* Show the dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            animation: drop-in 500ms;
+            display: block;
+        }
+
+        /* End of Navbar styling */
+
+        /* Slideshow banner styling */
+        .slideshow_container {
+            max-width: 1200px;
+            height: 475px;
+            position: relative;
+            margin: auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            border-radius: 8px;
+        }
+
+        .mySlides img {
+            border-radius: 8px;
+        }
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            margin-top: -22px;
+            padding: 16px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover,
+        .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Caption text */
+        .text {
+            color: #f2f2f2;
+            font-size: 15px;
+            padding: 8px 12px;
+            position: absolute;
+            bottom: 8px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Number text (1/3 etc) */
+        .numbertext {
+            color: #f2f2f2;
+            font-size: 12px;
+            padding: 8px 12px;
+            position: absolute;
+            top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+            cursor: pointer;
+            height: 10px;
+            width: 10px;
+            margin: 0 2px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+
+        .active,
+        .dot:hover {
+            background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        /* End of Slideshow banner styling */
+
+        /* Animation */
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes drop-in {
+            from {
+                transform: translateY(-30%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes rotate-up {
+            from {
+                transform:rotate(45deg);
+            }
+            to {
+                transform: rotate(225deg);
+            }
+        }
+        /* End of Animation */
+
+        /* Container styling */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 100px;
+        }
+        
+        .banner {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            margin: 10px;
+            padding: 5px 5px 5px 10px;
+            border-radius: 10px;
+            min-width: 450px;
+            background-color: white;
+        }
+
+        #leftcolumn {
+            float: left;
+            width: 200px;
+            /* background-color: aqua; */
+        }
+
+        #rightcolumn {
+            float: right;
+            margin-left: 20px;
+            width: 170px;
+            /* background-color: #04AA6D; */
+        }
+        /* End of container styling */
+
+        .footer-container {
+            background-color: white;
+            box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
+        }
+
+        .footer-padding {
+            padding-top: 15px;
+        }
+
+        .three-columns {
+            background-color: white;
+            max-width: 1300px;
+        }
+
+        .row {
+            padding: 0 8%;
+            display: flex;
+            align-items: center;
+        }
+
+        .col {
+            -ms-flex: 0 0 33.333333%;
+            flex: 0 0 33.333333%;
+            max-width: 33.333333%;
+            height: 150px;
+        }
+
+        .logo-content {
+            display: flex;
+            align-content: center;
+        }
+
+        .logo-content img {
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .col-content {
+            margin-top: 5px;
+            display: flex;
+            align-content: flex-start;
+        }
+
+        .col-content h2 {
+            margin-bottom: 8px;
+        }
+
+        .padding-left {
+            padding-left: 30%;
+        }
+
+        table {
+            text-align: left;
+            border-spacing: 0 0px;
+        }
+
+        td {
+            padding-left: 10px;
+            font-size: 14px;
+        }
+
+        .three-columns p {
+            font-size: 14px;
+            color: #000000;
+            
+        }
+        
+    </style>
+</head>
+
+<body onload="showSlides()">
+    <div id="wrapper">
+        <!-- Make 2 versions of wrapper: small & big screen -->
+        <div class="nav-container">
+            <nav>
+                <div id="left-nav">
+                    <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
+                </div>
+                <ul>
+                    <li class="dropdown">
+                        <a href="main.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                        <div class="dropdown-content">
+                            <a href="main.php?page=pizza">Pizza</a>
+                            <a href="main.php?page=pasta">Pasta</a>
+                            <a href="main.php?page=sides">Sides</a>
+                            <a href="main.php?page=beverages">Beverages</a>
+                        </div>
+                    </li>
+                    <li><a href="hotDeals.html">Hot Deals</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <!-- Slideshow container -->
+        <script type="application/javascript" src="js/slideshow.js"></script>
+        <div class="slideshow_container">
+            <!-- Full-width images with number and caption text -->
+            <div class="mySlides fade">
+                <div class="numbertext">1 / 3</div>
+                <img src="images/hori.jpg" width="850" height="475" alt="img1" style="width: 100%;">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">2 / 3</div>
+                <img src="images/hori2.jpg" width="850" height="475" alt="img2" style="width: 100%;">
+            </div>
+
+            <div class="mySlides fade">
+                <div class="numbertext">3 / 3</div>
+                <img src="images/hori3.jpg" width="850" height="475" alt="img3" style="width: 100%;">
+            </div>
+        </div>
+        <br>
+
+        <!-- The dots/circles -->
+        <div style="text-align:center">
+            <span class="dot" onclick="gotoSlides(1)"></span>
+            <span class="dot" onclick="gotoSlides(2)"></span>
+            <span class="dot" onclick="gotoSlides(3)"></span>
+        </div>
+
+        <br><br>
+        <div class="container">
+            <!-- New Items Banner-->
+            <div class="banner">
+                <div id="leftcolumn">
+                    <h2>New Releases</h2>
+                    <p>Chase the summer away with sundae</p>
+                </div>
+                <div id="rightcolumn">
+                    <img src="images/hori2.png" width="160" height="160" alt="img3">
+                </div>
+            </div>
+            <!-- About Us Banner-->
+            <div class="banner">
+                <div id="leftcolumn">
+                    <h2>La Pizzaria</h2>
+                    <p>Pizza craftmanship since 1998</p>
+                </div>
+                <div id="rightcolumn">
+                    <img src="images/hori2.png" width="160" height="160" alt="img4">
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Area -->
+        <div class="footer-container">
+            <div class="three-columns footer-padding">
+                <div class="row">
+                    <div class="col">
+                        <div class="logo-content">
+                            <a href="index.html"><img src="images/logo_v2.png"  width=90px height=75px alt=""></a>
+                        </div>
+                        <div class="logo-content">
+                            <p>Best pizza store in town.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Contact Us</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td><img src="images/location.png" width="22px" height="22px"></td>
+                                    <td>
+                                        50 Nanyang Ave, Singapore 639798
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/contact.png" width="20px" height="20px"></td>
+                                    <td>(+65) 89002643</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/email.png" width="22px" height="22px"></td>
+                                    <td>
+                                        order@lapizzaria.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Opening Hours</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td>Monday.............Closed</td>
+                                </tr>
+                                <tr>
+                                    <td>Tue-Fri.........10am - 12pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Sat-Sun..........8am - 11pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Holidays........10am - 12pm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
