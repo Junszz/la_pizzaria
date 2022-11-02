@@ -156,7 +156,9 @@ footer {
     font-style: italic;
     text-align: center;
 }
-
+#wrapper .title h2 {
+    color: orange;
+}
 #orange {
     color: #ff8c00;
 }

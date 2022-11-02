@@ -1,34 +1,45 @@
 <?php
-    if (isset($_POST['email']) && isset($_POST['password']))
-    {
-        // if the user has just tried to log in
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $password = md5($password);
-
-        // echo $email;
-        // echo $password;
-
-        $query = 'select * from member '
-                ."where email='$email' "
-                ." and pwd='$password'";
-        // // echo "<br>" .$query. "<br>";
-        $stmt = $db->query($query);
-        $row = $stmt->fetch();
-        if (!$row)
+    if (isset($_POST['submit'])) {
+        // echo "is true";
+        if (isset($_POST['email']) && isset($_POST['password']))
         {
-            exit("User doesn't exist! Please proceed to sign up");
-            echo "Failed";
+            // if the user has just tried to log in
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+
+            $password = md5($password);
+
+            // echo $email;
+            // echo $password;
+
+            $query = 'select * from member '
+                    ."where email='$email' "
+                    ." and pwd='$password'";
+            // // echo "<br>" .$query. "<br>";
+            $stmt = $db->query($query);
+            $row = $stmt->fetch();
+            if (!$row)
+            {
+                exit("User doesn't exist! Please proceed to sign up");
+                echo "Failed";
+            }
+            else {
+                // if they are in the database register the user id
+                $_SESSION['user'] = $row;    
+                echo "Login successful!";
+            }
+        // Prevent form submission
+            header('location: main.php?page=login');
+            exit;
         }
-        else {
-            // if they are in the database register the user id
-            $_SESSION['user'] = $row;    
-            echo "Login successful!";
-        }
-    // Prevent form submission
-    header('location: main.php?page=login');
-    exit;
+    }
+
+    $login_status = isset($_SESSION['user']) ? $_SESSION['user'] : array();
+    if($login_status){
+        $username = $_SESSION['user']['firstname'];
+    }
+    else{
+        $username = 'Login';
     }
 
 ?>
@@ -210,7 +221,12 @@
                     <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                    <li style="float:right;"><a class="active" href="main.php?page=login">Login</a></li>
+                    <li class="login-bar">
+                        <a class="login-btn" href="main.php?page=login"><?=$username?></a>
+                        <div class="login-dropdown">
+                            <a href="">Log Out</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -224,11 +240,11 @@
             </div>
 
             <div class="form-container">
-                <form action="">
+                <form action="main.php?page=login" method="post">
                     <label for="email">*Email Address</label>
                         <input type="email" name="email" id="email" required>
                     <label for="password">*Password</label>
-                        <input type="password" id="password" required>
+                        <input type="password" name='password' id="password" required>
                 <script type = "text/javascript"  src = "js/validator_r.js" ></script>
             </div>
 
@@ -241,7 +257,9 @@
                 </div>
             </div>
 
-            <input type="submit" value="Login/Signup" class="button1">
+            <input type="submit" value="Login/Signup" name='submit' class="button1"></form>
+
+
             
         </div>
         <div class="footer-padding"></div>

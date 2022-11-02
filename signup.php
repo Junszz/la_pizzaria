@@ -1,3 +1,39 @@
+<?php // register.php
+    if (isset($_POST['submit'])) {
+        if (empty($_POST['firstname']) || empty ($_POST['lastname']) || empty ($_POST['contact']) || empty ($_POST['email']) || empty ($_POST['password']) || empty ($_POST['address']) ) {
+        echo "All records to be filled in";
+        exit;
+        }
+        else{
+            $firstname = $_POST['firstname'];
+            $lastname = $_POST['lastname'];
+            $contact = $_POST['contact'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $address = $_POST['address'];
+        
+            $password = md5($password);
+            // echo $password;
+        
+            $sql = "INSERT INTO member VALUES 
+                    ('null','$firstname','$lastname','$contact','$email','$password', '$address')";
+            echo "<br>". $sql. "<br>";
+            $result = $db->query($sql);
+        
+            if (!$result) {
+                echo "Your query failed.";
+            }
+            else{
+                echo "Welcome ". $firstname . ". You are now registered";
+                // Prevent form submission
+                // header('location: main.php?page=login');
+                // exit;
+            }
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -199,28 +235,27 @@
             </div>
 
             <div class="form-container">
-                <form action="">
+                <form action="main.php?page=signup" method="post">
                     <label >*First Name</label>
-                        <input type="text" id="firstname" required>
+                        <input type="text" id="firstname" name='firstname' required>
                     <label>*Last Name</label>
-                        <input type="text" id="lastname" required>
+                        <input type="text" id="lastname" name='lastname' required>
                     <label>*Contact Number (+65)</label>
-                        <input type="text" id="contactno" required>
+                        <input type="text" id="contactno" name='contact' required>
                     <label>*Email Address</label>
-                        <input type="email" id="email" required>
+                        <input type="email" id="email" name='email' required>
                     <label>*Password</label>
-                        <input type="password" id="password" required>
+                        <input type="password" id="password" name='password' required>
                     <label>*Delivery Address</label>
-                        <input type="text" id="delivery" required>
+                        <input type="text" id="delivery" name='address' required>
                     <script type = "text/javascript"  src = "js/validator_signup_r.js" ></script>
             </div>
-
             <div class="checkbox-container">
                 <div id="check2">
                     <input id="cb" type="checkbox" required>Agree to terms & conditions <br>
                     <input id="cb" type="checkbox">Receive marketing & promotion emails
                     <h3 id="join">Join us as member now and enjoy<br>exclusive perks!</h3><br>
-                    <input type="submit" value="Login/Signup" id="button">
+                    <input type="submit" value="Login/Signup" id="button" name='submit'></form>
                 </div>
             </div>
         </div>

@@ -96,23 +96,41 @@
 
         /* Container styling */
         .container {
+            padding-top: 60px;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            margin-bottom: 100px;
         }
         
         .banner {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
-            margin: 10px;
-            padding: 5px 5px 5px 10px;
+            position: relative;
+            margin: 0 50px;
             border-radius: 10px;
-            min-width: 450px;
-            background-color: white;
+            max-width: 700px;
+            height: 300px;
         }
 
+        .banner img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 500ms;
+        }
+
+        .bottom-left {
+            font-family: "Playfair Display", serif;
+            position: absolute;
+            bottom: 15px;
+            left: 16px;
+            font-size: 50px;
+            font-weight: 600;
+            color:white;
+            text-align: left;
+            filter: opacity(0);
+        }
+        
         #leftcolumn {
             float: left;
             width: 200px;
@@ -127,6 +145,36 @@
         }
         
         /* End of container styling */
+
+        .shop-title {
+            text-align: center;
+        }
+
+        .shop-title p {
+            color: black;
+            font-size: 30px;
+        }
+
+        .shop-name {
+            font-size: 100px;
+            font-style: italic;
+            font-weight: 600;
+            font-family: "Playfair Display", serif;
+            padding-right: 60px;
+            color: orange;
+        }
+        
+        .banner:hover img{
+            filter: blur(4px) brightness(.5);
+        }
+
+        .banner:hover .bottom-left {
+            filter: opacity(0.9);
+        }
+
+        .orange {
+            color:orange;
+        }
     </style>
 </head>
 
@@ -155,14 +203,16 @@
                 </ul>
             </nav>
         </div>
-        <br>
+        <div class="shop-title">
+            <p><span class="shop-name">LaPizzeria</span> since 1988</p>
+        </div>
         <!-- Slideshow container -->
         <script type="application/javascript" src="js/slideshow.js"></script>
         <div class="slideshow_container">
             <!-- Full-width images with number and caption text -->
             <div class="mySlides fade">
                 <div class="numbertext">1 / 3</div>
-                <img src="images/hori.jpg" width="850" height="475" alt="img1" style="width: 100%;">
+                <img src="images/hori1.png" width="850" height="475" alt="img1" style="width: 100%;">
             </div>
 
             <div class="mySlides fade">
@@ -172,7 +222,7 @@
 
             <div class="mySlides fade">
                 <div class="numbertext">3 / 3</div>
-                <img src="images/hori3.jpg" width="850" height="475" alt="img3" style="width: 100%;">
+                <img src="images/hori3.png" width="850" height="475" alt="img3" style="width: 100%;">
             </div>
         </div>
         <br>
@@ -187,15 +237,13 @@
         <div class="container">
             <!-- New Items Banner-->
             <div class="banner">
-                <div id="leftcolumn">
-                    <img src="images/new_beverage.jpg" width="380" height="200" alt="img3">
-                </div>
+                <a href='main.php?page=beverages'><img src="images/new_beverage.jpg" height="300"></a>
+                <div class="bottom-left"><span class="orange">Chill Fresh Drinks! </span></div>
             </div>
             <!-- About Us Banner-->
             <div class="banner">
-                <div id="rightcolumn"></div>
-                    <img src="images/history.jpg" width="380" height="200" alt="img4">
-                </div>
+                <a href=''><img src="images/history.jpg" height="300"></a>
+                <div class="bottom-left">Read more <br>about our story </div>
             </div>
         </div>
 
