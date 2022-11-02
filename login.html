@@ -3,31 +3,78 @@
 
 <head>
     <title>La Pizzaria</title>
+    <script type = "text/javascript"  src = "js/validator.js" ></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        label {
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            width: 65%;
+            /* border: 1px solid black; */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+        }
+        .details {
+            margin:auto;
+            display:flex;
+        }
+        .details a {
+            float: none;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
             text-align: left;
-            float: left;
-            display: block;
-            padding: 0px 100px 10px 100px;
-            width: 200px;
-            font-size: 18px;
+            transition: 500ms;
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 45px;
+            font-weight: 600;
         }
-
-        input,
-        textarea {
-            margin-bottom: 20px;
+        .details .login-active {
+            color: #A9A9A9;
+        }
+        .details a:hover .white-text {
+            animation: fade 500ms;
+            color: #A9A9A9;
+        }
+        #firstname {
+            margin: 0px 0px 15px 50px;
             display: block;
-            width: 700px;
+            width: 150px;
             height: 30px;
-            margin-left: 100px;
         }
-
-        #login-bar {
-            background-color: transparent;
+        #lastname {
+            margin: 0px 0px 15px 50px;
+            display: block;
+            width: 150px;
+            height: 30px;
         }
-        
+        #email {
+            margin: 0px 0px 15px 50px;
+            display: block;
+            width: 400px;
+            height: 30px;
+        }
+        #password {
+            margin: 0px 0px 15px 50px;
+            display: block;
+            width: 400px;
+            height: 30px;
+        }
+        #contactno{
+            margin: 0px 0px 15px 50px;
+            display: block;
+            width: 150px;
+            height: 30px;
+        }
+        #cb{
+            margin: 5px 10px 0px 0px;
+        }
         #choices{
             font-size: 20px;
             font-weight: 600;
@@ -43,72 +90,130 @@
             text-decoration: none;
             margin-bottom: 15px;
         }
+        #terms{
+            width: 15px;
+            height: 15px;
+        }
+        #promo{
+            width: 15px;
+            height: 15px;
+        }
 
+        .button1{
+            text-align: center;
+            width: 150px;
+            margin-right: 340px;
+            margin-bottom: 10px;
+        }
+
+        #join{
+            text-align: center;
+            font-size: 20px;
+        }
+
+        .check .cb{
+            float: left; 
+            margin-top: 5px; 
+            padding-left: 0px;
+        }
+        .nav-container {
+            width:100%;
+            display:flex;
+            padding-top: 10px;
+        }
+        .login-container {
+            width:100%;
+            display:flex;
+            padding-top: 10px;
+        }
+        .form-container {
+            width:100%;
+            display:flex;
+            padding-top: 10px;
+        }
+        .checkbox-container {
+            width:100%;
+            display:flex;
+            padding-top: 10px;
+        }
+        .form-container label{
+            padding-left: 40px;
+        }
+        .checkbox-container .others{
+            align-items: center;
+        }
         #others{
-            font-size: 15px;
+            font-size: 50px;
             text-align: center;
             margin-bottom: 15px;
 
         }
-
-        #button{
+        #others h3{
+            font-size: 20px;
             text-align: center;
-            width: 150px;
-            margin-left: 430px;
+            margin-bottom: 15px;
         }
-
     </style>
 </head>
 
 <body>
     <div id="wrapper">
+        <!-- Make 2 versions of wrapper: small & big screen -->
         <div class="nav-container">
             <nav>
                 <div id="left-nav">
-                    <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
+                    <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
                 </div>
                 <ul>
                     <li class="dropdown">
-                        <a href="main.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                        <a href="pizza.php" class="dropbtn">Pizza<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                         <div class="dropdown-content">
-                            <a href="main.php?page=pizza">Pizza</a>
-                            <a href="main.php?page=pasta">Pasta</a>
-                            <a href="main.php?page=sides">Sides</a>
-                            <a href="main.php?page=beverages">Beverages</a>
+                            <a href="menu.php">Menu</a>
+                            <a href="pasta.php">Pasta</a>
+                            <a href="sides.php">Sides</a>
+                            <a href="beverages.php">Beverages</a>
                         </div>
                     </li>
                     <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
-                    <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                    <li style="float:right;"><a href="login.html">Login</a></li>
+                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a class="active" href="login.html">Login</a></li>
                 </ul>
             </nav>
         </div>
 
-        <nav id="login-bar">
-            <ul id="choices"> 
-                <li><a class="active" href="login.html">Login</a></li>
-                <li><a href="signup.html">Signup</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="login-container">
+                <div class="details">
+                    <a class="login-active" href="login.html">Login</a>
+                    <a href="signup.html">Signup</a>
+                </div>
+            </div>
 
-        <div>
-            <form action="">
-                <label for="email">*Email Address</label>
-                    <input type="email" name="email" id="email" required>
-                <label for="Password">*Password</label>
-                    <input type="password" name="password" id="password" required>
+            <div class="form-container">
+                <form action="">
+                    <label for="email">*Email Address</label>
+                        <input type="email" name="email" id="email" required>
+                    <label for="password">*Password</label>
+                        <input type="password" id="password" required>
+                <script type = "text/javascript"  src = "js/validator_r.js" ></script>
+            </div>
+
+            <div class="checkbox-container">
+                <div id="others">
+                    <h3>Other login methods</h3>
+                    <a href="www.gmail.com"><img src="images/google.png" width="40" height="40" alt="logo"></a>
+                    <a href="www.facebook.com"><img src="images/facebook.png" width="40" height="40" alt="logo"></a>
+                    <a href="www.icloud.com"><img src="images/apple.png" width="40" height="40" alt="logo"></a>
+                </div>
+            </div>
+
+            <input type="submit" value="Login/Signup" class="button1">
+
+
+            
         </div>
-
-        <div id="others">
-            <h3>Other login methods</h3>
-            <a href="www.gmail.com"><img src="images/google.png" width="40" height="40" alt="logo"></a>
-            <a href="www.facebook.com"><img src="images/facebook.png" width="40" height="40" alt="logo"></a>
-            <a href="www.icloud.com"><img src="images/apple.png" width="40" height="40" alt="logo"></a>
-        </div>
-
-        <input type="submit" value="Login/Signup" id="button">
-
+        <div class="footer-padding"></div>
         <!-- Footer Area -->
         <div class="footer-container">
             <div class="three-columns footer-padding">

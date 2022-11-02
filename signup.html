@@ -3,6 +3,7 @@
 
 <head>
     <title>La Pizzaria</title>
+    <script type = "text/javascript"  src = "js/validator_signup.js" ></script>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
     <style>
@@ -14,8 +15,8 @@
             margin-top: 20px;
             margin-bottom: 50px;
             width: 65%;
-            border: 1px solid black;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            /* border: 1px solid black; */
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
         }
         .details {
             margin:auto;
@@ -53,7 +54,19 @@
             width: 150px;
             height: 30px;
         }
-        #address {
+        #email {
+            margin: 0px 0px 15px 50px;
+            display: block;
+            width: 400px;
+            height: 30px;
+        }
+        #password {
+            margin: 0px 0px 15px 50px;
+            display: block;
+            width: 400px;
+            height: 30px;
+        }
+        #delivery {
             margin: 0px 0px 15px 50px;
             display: block;
             width: 400px;
@@ -103,6 +116,7 @@
             text-align: center;
             width: 150px;
             margin-right: 70px;
+            margin-bottom: 10px;
         }
 
         #join{
@@ -186,19 +200,19 @@
 
             <div class="form-container">
                 <form action="">
-                    <label>*First Name</label>
+                    <label >*First Name</label>
                         <input type="text" id="firstname" required>
                     <label>*Last Name</label>
                         <input type="text" id="lastname" required>
                     <label>*Contact Number (+65)</label>
                         <input type="text" id="contactno" required>
                     <label>*Email Address</label>
-                        <input type="email" id="address" required>
+                        <input type="email" id="email" required>
                     <label>*Password</label>
-                        <input type="password" id="address" required>
+                        <input type="password" id="password" required>
                     <label>*Delivery Address</label>
-                        <input type="password" id="address" required>
-                </form>
+                        <input type="text" id="delivery" required>
+                    <script type = "text/javascript"  src = "js/validator_signup_r.js" ></script>
             </div>
 
             <div class="checkbox-container">
