@@ -27,7 +27,7 @@
                     </li>
                     <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
-                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
                     <li style="float:right;"><a href="login.html">Login</a></li>
                 </ul>
             </nav>

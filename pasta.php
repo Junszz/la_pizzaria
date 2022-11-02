@@ -20,15 +20,15 @@
                     <li class="dropdown">
                         <a class="active" href="main.php?page=pasta" class="dropbtn">Pasta<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                         <div class="dropdown-content">
-                            <a href="menu.php">Menu</a>
+                            <a href="main.php">Menu</a>
                             <a href="main.php?page=pizza">Pizza</a>
-                            <a href="sides.php">Sides</a>
-                            <a href="beverages.php">Beverages</a>
+                            <a href="main.php?page=sides">Sides</a>
+                            <a href="main.php?page=beverages">Beverages</a>
                         </div>
                     </li>
                     <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
-                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
                     <li style="float:right;"><a href="login.html">Login</a></li>
                 </ul>
             </nav>
