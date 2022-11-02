@@ -92,6 +92,61 @@ if (isset($_GET['id'])) {
             flex: 1;
         }
 
+        /*styling the counter box*/
+        .counter{
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(239, 145, 145);
+            border-radius: 12px;
+            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+            /* margin: auto; */
+        }
+
+        .counter span{
+            width: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 60;
+            cursor: pointer;
+        }
+
+        .counter span num{
+            font-size: 50px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        .counter1{
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(234, 216, 216);
+            border-radius: 12px;
+            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+            margin: auto;
+        }
+
+        .counter1 span{
+            width: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 60;
+            cursor: pointer;
+        }
+
+        .counter1 span num{
+            font-size: 50px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
     </style>
 </head>
 

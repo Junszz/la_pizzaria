@@ -3,183 +3,26 @@
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        #wrapper {
-            /* background-color: #FFFFFF; */
-            width: 80%;
-            margin: auto;
-            min-width: 800px;
-            background-image: url("images/bg-02.jpg");
-        }
-
-        /* Create arrow symbol */
-        .arrow {
-            border: solid #000000;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 3px;
-        }
-
-        .down {
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-        }
-        /* End of creating arrow symbol */
-
-        /* Navbar styling */
-        nav {
-            margin: auto;
-            max-width: 1300px;
-            overflow: hidden;
-            width: 100%;
-            background-color: white;
-        }
-
-        /* make image float on the left-side */
-        #left-nav {
-            margin: 10px 30px 15px 10px;
-            float: left;
-        }
-
-        #right-nav {
-            margin: 10px 30px 15px 10px;
-            float: right;
-        }
-
-        nav ul {
-            font-size: 20px;
-            font-weight: 600;
-            list-style-type: none;
-            margin: 0;
-            padding: 10px 0px 5px 0px;
-            overflow: hidden;
-            /* background-color: #F5F5F5; */
-        }
-
-        nav li {
-            float: left;
-        }
-
-        /* Display menu horizontally */
-        nav li a {
-            display: block;
-            color: #000000;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: 500ms;
-        }
-
-        .active {
-            background-color: #04AA6D;
-        }
-
-        /* Dropdown bar */
-        .dropdown {
-            float: left;
-        }
-
-        .dropdown .dropbtn {
-            cursor: pointer;
-            font-size: inherit;
-            border: none;
-            outline: none;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0px;
-        }
-
-        .dropdown:hover .dropbtn i {
-            animation: rotate-up 500ms;
-            transform: rotate(225deg);
-        }
-
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #FFFFFF;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        /* Change the link color to grey on hover */
-        nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
-            background-color: #F5F5F5;
-        }
-
-        /* Add a grey background color to dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #F5F5F5;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            animation: drop-in 500ms;
-            display: block;
-        }
-
-        /* End of Navbar styling */
-
-        /* Animation */
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @keyframes drop-in {
-            from {
-                transform: translateY(-30%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0%);
-                opacity: 1;
-            }
-        }
-
-        @keyframes rotate-up {
-            from {
-                transform:rotate(45deg);
-            }
-            to {
-                transform: rotate(225deg);
-            }
-        }
-        /* End of Animation */
         /* Container styling */
         .container {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
+            align-items: flex-start;
             justify-content: center;
             margin-bottom: 100px;
+            max-width: 1200px;
         }
 
         .food-banner {
             cursor: pointer;
             /* flex: 0 0 16%; */
             margin: 15px;
-            /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
             box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
             border-radius: 10px;
-            height:auto;
+            height: 380px;
             width: 250px;
             background-color:white;
         }
@@ -200,49 +43,62 @@
         .food-banner .text h2{
             color: #808080;
             font-size: 30px;
+            padding-bottom: 5px;
         }
 
         .food-banner .text p{
             font-size: 18px;
+            color: black;
         }
 
-        .food-banner .price {
-            padding: 0 10%;
-            width:80%;
+        /* Price text container */
+        .price-container {
+            width:100%;
             display:flex;
+            padding-top: 10px;
         }
-
-        .food-banner .price .addtocart {
-            background-color: lightgrey;
-            width: 60%;
-            height: 25%;
-            text-align: center;
-            font-size: 18px;
-            border: 1px solid green;
-            margin: 20px 0px 5px 35px;
-            border-radius: 5px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .food-banner .price .addtocart a {
-            text-decoration: none;
-        }
-
-        .food-banner .price p{
-            font-size: 20px;
-            text-align: left;
-            padding-left: 10px;
-        }
-
-        /* .food-banner .price a{
-            font-size: 15px;
-            text-align: center;
-            text-decoration: none;
-            margin-left: 30%;
-        } */
 
         .price {
+            display:block;
+            padding: 0 10%;
+        }
+
+        .price p{
+            font-size: 23px;
+            font-weight: 550;
+            text-align: left;
             color: purple;
+        }
+
+        .button-col {
+            padding: 0 5%;
+            /* flex:1; */
+        }
+
+        .addtocart {
+            background: none;
+            color: white;
+            font-family: "Roboto", sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: 500;
+            border: 1px solid transparent;
+            display: inline-block;
+            padding: 5px 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: 500ms;
+        }
+
+        .food-banner:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .food-banner:hover .addtocart {
+            color: #131230;
+            background: #ffb606;
+            display: inline-block;
+            animation: fade 500ms;
         }
 
         footer {
@@ -252,147 +108,81 @@
             color: #000000;
             padding: 20px 10px 20px 0px;
         }
+
         #pizzaname{
             font-size: 20px;
         }
+
         #pizzasize{
             margin: 0px 15px 5px 0px;
-            padding: 0px 10px 5px 0px;
+            padding: 0px 40px 50px 0px;
             min-width: 90px;
             min-height: 90px;
             display: flex;
             flex-wrap: wrap;
         }
+
         .size{
             padding: 0px 110px 0px 110px;
             text-align: center;
         }
+
         #sizepic{
             padding-bottom: 20px;
         }
+        
         #sizepic2{
             padding-bottom: 10px;
-        }
-
-        /*styling the counter box*/
-        .counter{
-            height: 30px;
-            width: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgb(239, 145, 145);
-            border-radius: 12px;
-            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
-            /* margin: auto; */
-        }
-
-        .counter span{
-            width: 30px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: 60;
-            cursor: pointer;
-        }
-
-        .counter span num{
-            font-size: 50px;
-            border-right: 2px solid rgba(0,0,0,0.2);
-            border-left: 2px solid rgba(0,0,0,0.2);
-            pointer-events: none;
-        }
-
-        .counter1{
-            height: 30px;
-            width: 80px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgb(234, 216, 216);
-            border-radius: 12px;
-            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
-            margin: auto;
-        }
-
-        .counter1 span{
-            width: 30px;
-            text-align: center;
-            font-size: 20px;
-            font-weight: 60;
-            cursor: pointer;
-        }
-
-        .counter1 span num{
-            font-size: 50px;
-            border-right: 2px solid rgba(0,0,0,0.2);
-            border-left: 2px solid rgba(0,0,0,0.2);
-            pointer-events: none;
-        }
-
-        .choice{
-            /* position: relative; */
-            /* align-content: center; */
-            /* float:none;
-            width:35%;
-            margin: 0;
-            transform: translateY(-150%);
-            display: none;
-            z-index: 1; */
-            /* display: none; */
-            position:absolute;
-            left: 56%;
-            /* transform: translateY(-150%); */
-            z-index: 1;
-        }
-
-        .counter1{
-            margin: 0px 0px 5px 0px;
-        }
-
-        .addcart{
-            position: absolute;
-            top: 70px;
-            left: 160px;
-        }
-
-        .food-banner:hover .choice {
-            display: block;
-            animation: fade 500ms;
         }
 
         #wrapper .title{
             font-size: 30px;
             text-align: center;
         }
+
+        .single-line {
+            padding-bottom: 35px;
+        }
+
+        .double-line {
+            padding-bottom: 3px;
+        }
+
+        .triple-line {
+            padding-bottom: 10px;
+        }
+
     </style>
 </head>
 
 <body>
     <div id="wrapper">
         <!-- Make 2 versions of wrapper: small & big screen -->
-        <nav>
-            <div id="left-nav">
-                <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
-            </div>
-            <ul>
-                <li class="dropdown">
-                    <a class="active" href="pizza.php" class="dropbtn">Pizza<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
-                    <div class="dropdown-content">
-                        <a href="menu.php">Menu</a>
-                        <a href="pasta.php">Pasta</a>
-                        <a href="sides.php">Sides</a>
-                        <a href="beverages.php">Beverages</a>
-                    </div>
-                </li>
-                <li><a href="hotDeals.html">Hot Deals</a></li>
-                <li><a href="aboutUs.html">About Us</a></li>
-                <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                <li style="float:right;"><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
+        <div class="nav-container">
+            <nav>
+                <div id="left-nav">
+                    <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
+                </div>
+                <ul>
+                    <li class="dropdown">
+                        <a class="active" href="pizza.php" class="dropbtn">Pizza<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                        <div class="dropdown-content">
+                            <a href="menu.php">Menu</a>
+                            <a href="pasta.php">Pasta</a>
+                            <a href="sides.php">Sides</a>
+                            <a href="beverages.php">Beverages</a>
+                        </div>
+                    </li>
+                    <li><a href="hotDeals.html">Hot Deals</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
+                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="login.html">Login</a></li>
+                </ul>
+            </nav>
+        </div>
         <br>
         <div>
-            <h3>Pizza size</h3>
+            <h2 class="title">Pizza size</h2>
             <div id="pizzasize">
                 <div class="size">
                     <img src="images/pizza (3).png" width="70px" height="70px" id="sizepic">
@@ -414,100 +204,134 @@
             </div>
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/menu/1.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Meatzza</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=1?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/1.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Meatzza</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p>
+                        </div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/menu/2.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Quattro Fiesta</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=2?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/2.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Quattro Fiesta</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=2?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
                     <img src="images/menu/3.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Extravaganza</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=3?">Add to cart</a>
+                    <div>
+                        <div class="text" id="pizzaname">
+                            <h2>Extravaganza</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/4.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Chicken Temptation</h2>
-                        <p>Made with pork, beef, salt and natural spices such a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=4?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/4.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Chicken Temptation</h2>
+                            <p class="double-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p>
+                        </div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/5.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Chili Beef</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=5?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/5.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Chili Beef</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/menu/6.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Parmagiana Chicken</h2>
-                        <p>Made with pork, beef, salt and natural spices such as a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=6?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/6.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Parmagiana Chicken</h2>
+                            <p class="double-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/7.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Smoky Meatilicious</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=7?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/7.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Smoky Meatilicious</h2>
+                            <p class="double-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/8.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Diavola Beef</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=8?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/8.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Diavola Beef</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -517,109 +341,200 @@
             </div>
             <div class="container">
                 <div class="food-banner">
-                    <img src="images/menu/9.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Haiwaiian Paradise</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=9?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/9.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Haiwaiian Paradise</h2>
+                            <p class="double-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/menu/10.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Classified Chicken</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=10?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/10.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Classified Chicken</h2>
+                            <p class="double-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/11.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Classic Pepperoni</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=11?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/11.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Classic Pepperoni</h2>
+                            <p class="double-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/12.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Smoky Pepperoni & Mushroom</h2>
-                        <p>Made with pork, beef, salt and natural spices such a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=12?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/12.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Smoky Pepperoni & Mushroom</h2>
+                            <p class="triple-line">Made with pork, beef, salt and natural spices such a</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/13.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Simply Cheese</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=13?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/13.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Simply Cheese</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
             
                 <div class="food-banner">
-                    <img src="images/menu/14.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>The Big BBQ</h2>
-                        <p>Made with pork, beef, salt and natural spices such as a</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=14?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/14.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>The Big BBQ</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/15.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Very Veggie</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=15?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/15.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Very Veggie</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <div class="food-banner">
-                    <img src="images/menu/16.png"  alt="d1">
-                    <div class="text" id="pizzaname">
-                        <h2>Classy Chic</h2>
-                        <p>Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
-                    <div class="price">
-                        <p>$12.00</p>
-                        <div class="addtocart">
-                            <a href="main.php?page=product&id=16?">Add to cart</a>
+                    <div>
+                        <img src="images/menu/16.png"  alt="d1">
+                        <div class="text" id="pizzaname">
+                            <h2>Classy Chic</h2>
+                            <p class="single-line">Made with pork, beef, salt and natural spices such as paprika, rosemary and cinnamon.</p></div>
+                    </div>
+                    <div class="price-container">
+                        <div class="price">
+                            <p class="float-left">$12.00</p>
+                        </div>
+                        <div class="button-col">
+                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
                 <script src="js/plus_n_minus.js"></script>
+        </div>
+
+        <!-- Footer Area -->
+        <div class="footer-container">
+            <div class="three-columns footer-padding">
+                <div class="row">
+                    <div class="col">
+                        <div class="logo-content">
+                            <a href="index.html"><img src="images/logo_v2.png"  width=90px height=75px alt=""></a>
+                        </div>
+                        <div class="logo-content">
+                            <p>Best pizza store in town.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Contact Us</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td><img src="images/location.png" width="22px" height="22px"></td>
+                                    <td>
+                                        50 Nanyang Ave, Singapore 639798
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/contact.png" width="20px" height="20px"></td>
+                                    <td>(+65) 89002643</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/email.png" width="22px" height="22px"></td>
+                                    <td>
+                                        order@lapizzaria.com
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Opening Hours</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td>Monday.............Closed</td>
+                                </tr>
+                                <tr>
+                                    <td>Tue-Fri.........10am - 12pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Sat-Sun..........8am - 11pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Holidays........10am - 12pm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </div>
     </div>
-    <footer>
-        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
-    </footer>
 </body>
 
 </html>
