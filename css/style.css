@@ -11,7 +11,8 @@
     /* background-color: #FFFFFF; */
     margin: auto;
     min-width: 800px;
-    background-image: url("images/background.jpg");
+    /* background-image: url("images/background.jpg"); */
+    background-image: url("../images/bg-02.jpg");
 }
 
 /* Create arrow symbol */
@@ -259,6 +260,7 @@ p {
     font-size: 15px;
 }
 
+/* Unified button design */
 .button {
     color: #131230;
     background: #ffb606;
@@ -282,22 +284,13 @@ p {
     border: 1px solid #ffb606
 }
 
-/* footer {
-    text-align: center;
-    color: #000000;
-    margin: auto;
-    max-width: 1300px;
-    width: 100%;
-} */
-
-.footer-padding {
-    padding-top: 15px;
-}
-
-
 .footer-container {
     background-color: white;
     box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
+}
+
+.footer-padding {
+    padding-top: 15px;
 }
 
 .three-columns {
@@ -306,7 +299,7 @@ p {
 }
 
 .row {
-    padding: 0 10%;
+    padding: 0 8%;
     display: flex;
     align-items: center;
 }
@@ -342,12 +335,12 @@ p {
     padding-left: 30%;
 }
 
-table {
+.footer-container table {
     text-align: left;
     border-spacing: 0 0px;
 }
 
-td {
+.footer-container td {
     padding-left: 10px;
     font-size: 14px;
 }

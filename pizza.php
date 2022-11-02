@@ -9,6 +9,7 @@
             width: 80%;
             margin: auto;
             min-width: 800px;
+            background-image: url("images/bg-02.jpg");
         }
 
         /* Create arrow symbol */
@@ -31,6 +32,7 @@
             max-width: 1300px;
             overflow: hidden;
             width: 100%;
+            background-color: white;
         }
 
         /* make image float on the left-side */
@@ -179,6 +181,7 @@
             border-radius: 10px;
             height:auto;
             width: 250px;
+            background-color:white;
         }
 
         .food-banner img, .hover-banner img {
