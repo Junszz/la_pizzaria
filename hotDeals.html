@@ -4,262 +4,8 @@
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Eliminate spaces on the sides */
-        * { 
-            margin: auto;
-            padding: auto; 
-            box-sizing: border-box;
-        }
-
-        #wrapper {
-            /* background-color: #FFFFFF; */
-            margin: auto;
-            min-width: 800px;
-            background-image: url("images/bg-02.jpg");
-        }
-
-        /* Create arrow symbol */
-        .arrow {
-            border: solid #000000;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 3px;
-        }
-
-        .down {
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-        }
-        /* End of creating arrow symbol */
-
-        .nav-container {
-            background-color: white;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        /* Navbar styling */
-        nav {
-            margin: auto;
-            max-width: 1300px;
-            overflow: hidden;
-            width: 100%;
-            background-color: white;
-        }
-
-        /* make image float on the left-side */
-        #left-nav {
-            margin: 10px 30px 15px 10px;
-            float: left;
-        }
-
-        #right-nav {
-            margin: 10px 30px 15px 10px;
-            float: right;
-        }
-
-        nav ul {
-            font-size: 24px;
-            font-weight: 600;
-            list-style-type: none;
-            margin: 0;
-            padding: 15px 0px 5px 0px;
-            overflow: hidden;
-            /* background-color: #F5F5F5; */
-        }
-
-        nav li {
-            float: left;
-        }
-
-        /* Display menu horizontally */
-        nav li a {
-            display: block;
-            color: #000000;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: 500ms;
-        }
-
-        .active {
-            background-color: #04AA6D;
-        }
-
-        /* Dropdown bar */
-        .dropdown {
-            float: left;
-        }
-
-        .dropdown .dropbtn {
-            cursor: pointer;
-            font-size: inherit;
-            border: none;
-            outline: none;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0px;
-        }
-
-        .dropdown:hover .dropbtn i {
-            animation: rotate-up 500ms;
-            transform: rotate(225deg);
-        }
-
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #FFFFFF;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        /* Change the link color to grey on hover */
-        nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
-            background-color: #F5F5F5;
-        }
-
-        /* Add a grey background color to dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #F5F5F5;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            animation: drop-in 500ms;
-            display: block;
-        }
-
-        /* End of Navbar styling */
-
-        /* Animation */
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @keyframes drop-in {
-            from {
-                transform: translateY(-30%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0%);
-                opacity: 1;
-            }
-        }
-
-        @keyframes rotate-up {
-            from {
-                transform:rotate(45deg);
-            }
-            to {
-                transform: rotate(225deg);
-            }
-        }
-        /* End of Animation */
-
-        /* Container styling */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 100px;
-            max-width: 1300px;
-        }
-
-        .banner {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
-            margin: 15px;
-            padding: 0px 0px 5px 0px;
-            border-radius: 5px;
-            min-width: 450px;
-            background-color: white;
-        }
-
-        .footer-container {
-            background-color: white;
-            box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
-        }
-
-        .footer-padding {
-            padding-top: 15px;
-        }
-
-        .three-columns {
-            background-color: white;
-            max-width: 1300px;
-        }
-
-        .row {
-            padding: 0 8%;
-            display: flex;
-            align-items: center;
-        }
-
-        .col {
-            -ms-flex: 0 0 33.333333%;
-            flex: 0 0 33.333333%;
-            max-width: 33.333333%;
-            height: 150px;
-        }
-
-        .logo-content {
-            display: flex;
-            align-content: center;
-        }
-
-        .logo-content img {
-            margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        .col-content {
-            margin-top: 5px;
-            display: flex;
-            align-content: flex-start;
-        }
-
-        .col-content h2 {
-            margin-bottom: 8px;
-        }
-
-        .padding-left {
-            padding-left: 30%;
-        }
-
-        table {
-            text-align: left;
-            border-spacing: 0 0px;
-        }
-
-        td {
-            padding-left: 10px;
-            font-size: 14px;
-        }
-
-        .three-columns p {
-            font-size: 14px;
-            color: #000000;
-        }
         .container {
             display: flex;
             flex-wrap: wrap;
@@ -277,7 +23,7 @@
             text-align: center;
             border-radius: 10px;
             height:auto;
-            width: 40%;
+            width: 35%;
             background-color: #FFFFFF;
         }
 
@@ -298,6 +44,7 @@
             padding: 0 0;
             text-align: center;
             font-size: 20px;
+            color: black;
         }
         .btn {
             text-decoration: none;
@@ -320,7 +67,7 @@
         <div class="nav-container">
             <nav>
                 <div id="left-nav">
-                    <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
+                    <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
                 </div>
                 <ul>
                     <li class="dropdown">
@@ -332,7 +79,7 @@
                             <a href="main.php?page=beverages">Beverages</a>
                         </div>
                     </li>
-                    <li><a class="active" href="hotDeals.html">Hot Deals</a></li>
+                    <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
                     <li style="float:right;"><a href="login.html">Login</a></li>
@@ -347,41 +94,72 @@
                 <div class="description">
                     <p>57% Off 1 Regular Cheesy Pizza</p>
                     <div class="apply">
-                        <input type="submit" value="Apply" class='btn'></div>
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
                 </div>
             </div>
-
-            <div class="banner">
-                <img src="images/deal1.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal2.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
-            <div class="banner">
-                <img src="images/deal2.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal1.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
-            <div class="banner">
-                <img src="images/deal1.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal2.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
-            <div class="banner">
-                <img src="images/deal2.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal1.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
-            <div class="banner">
-                <img src="images/deal1.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal2.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
-            <div class="banner">
-                <img src="images/deal2.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal1.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
-            <div class="banner">
-                <img src="images/deal1.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
-            </div>
-            <div class="banner">
-                <img src="images/deal2.png" width="300" height="180" alt="d1" style="width: 100%;">
-                <div class="text">57% Off 1 Regular Cheesy Pizza</div>
+            <div class="food-banner">
+                <img src="images/deal2.png"  alt="d1" style="width: 100%;">
+                <div class="description">
+                    <p>57% Off 1 Regular Cheesy Pizza</p>
+                    <div class="apply">
+                        <input type="submit" value="Apply" class='btn'>
+                    </div>
+                </div>
             </div>
         </div>
 

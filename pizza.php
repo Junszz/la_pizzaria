@@ -53,7 +53,7 @@
 
             <!-- Create container here -->
             <div class="title">
-                <h2><span id="orange">Original</span></h2>
+                <h2><span>Original</span></h2>
             </div>
             <div class="container">
                 <div class="food-banner">
@@ -190,7 +190,7 @@
                 </div>
             </div>
             <div class="title"> 
-                <h2><span id="orange">Special</span></h2>
+                <h2><span>Special</span></h2>
             </div>
             <div class="container">
                 <div class="food-banner">
