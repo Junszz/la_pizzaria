@@ -1,3 +1,12 @@
+<?php
+    $login_status = isset($_SESSION['user']) ? $_SESSION['user'] : array();
+    if($login_status){
+        $username = $_SESSION['user']['firstname'];
+    }
+    else{
+        $username = 'Login';
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +22,7 @@
         <div class="nav-container">
             <nav>
                 <div id="left-nav">
-                    <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
+                    <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
                 </div>
                 <ul>
                     <li class="dropdown">
@@ -28,7 +37,12 @@
                     <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a href="aboutUs.html">About Us</a></li>
                     <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                    <li style="float:right;"><a href="login.html">Login</a></li>
+                    <li class="login-bar">
+                        <a class="login-btn" href="main.php?page=login"><?=$username?></a>
+                        <div class="login-dropdown">
+                            <a href="">Log Out</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>

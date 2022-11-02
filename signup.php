@@ -193,8 +193,8 @@
         <div class="container">
             <div class="login-container">
                 <div class="details">
-                    <a href="login.html">Login</a>
-                    <a class="login-active" href="signup.html">Signup</a>
+                    <a href="main.php?page=login">Login</a>
+                    <a class="login-active" href="main.php?page=signup">Signup</a>
                 </div>
             </div>
 

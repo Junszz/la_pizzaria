@@ -292,6 +292,48 @@ nav li a:hover,
 	text-align: center;
 }
 
+.login-bar {
+    float:right;
+}
+
+.login-bar .login-btn {
+    cursor: pointer;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    padding: 14px 14px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0px;
+}
+
+.login-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #F5F5F5;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.login-dropdown a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.login-bar:hover .login-dropdown {
+    animation: drop-in 500ms;
+    display: block;
+}
+
+.login-dropdown a:hover {
+    background-color: red;
+}
+
 /* Animation */
 @keyframes fade {
     from {

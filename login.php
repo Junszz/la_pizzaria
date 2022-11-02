@@ -1,6 +1,39 @@
+<?php
+    if (isset($_POST['email']) && isset($_POST['password']))
+    {
+        // if the user has just tried to log in
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+
+        $password = md5($password);
+
+        // echo $email;
+        // echo $password;
+
+        $query = 'select * from member '
+                ."where email='$email' "
+                ." and pwd='$password'";
+        // // echo "<br>" .$query. "<br>";
+        $stmt = $db->query($query);
+        $row = $stmt->fetch();
+        if (!$row)
+        {
+            exit("User doesn't exist! Please proceed to sign up");
+            echo "Failed";
+        }
+        else {
+            // if they are in the database register the user id
+            $_SESSION['user'] = $row;    
+            echo "Login successful!";
+        }
+    // Prevent form submission
+    header('location: main.php?page=login');
+    exit;
+    }
+
+?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <title>La Pizzaria</title>
     <script type = "text/javascript"  src = "js/validator.js" ></script>
@@ -162,7 +195,7 @@
         <div class="nav-container">
             <nav>
                 <div id="left-nav">
-                    <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
+                    <a href="index.php"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
                 </div>
                 <ul>
                     <li class="dropdown">
@@ -174,10 +207,10 @@
                             <a href="beverages.php">Beverages</a>
                         </div>
                     </li>
-                    <li><a href="hotDeals.html">Hot Deals</a></li>
-                    <li><a href="aboutUs.html">About Us</a></li>
-                    <li style="float:right;"><a href="cart.php"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                    <li style="float:right;"><a class="active" href="login.html">Login</a></li>
+                    <li><a href="hotDeals.php">Hot Deals</a></li>
+                    <li><a href="aboutUs.php">About Us</a></li>
+                    <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                    <li style="float:right;"><a href="main.php?page=login">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -185,8 +218,8 @@
         <div class="container">
             <div class="login-container">
                 <div class="details">
-                    <a class="login-active" href="login.html">Login</a>
-                    <a href="signup.html">Signup</a>
+                    <a class="login-active" href="main.php?page=login">Login</a>
+                    <a href="main.php?page=signup">Signup</a>
                 </div>
             </div>
 
