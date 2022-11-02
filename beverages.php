@@ -276,6 +276,38 @@
                     </div>
                 </div>
             </div>
+            <div class="bev-banner">
+                <div>
+                    <img src="images/menu/43.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Mint Choco Chip Iced Frappe</h2>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <div class="price">
+                        <p class="float-left">$6.60</p>
+                    </div>
+                    <div class="button-col">
+                        <a href="main.php?page=product&id=43?" class="addtocart">Add to cart</a>
+                    </div>
+                </div>
+            </div>
+            <div class="bev-banner">
+                <div>
+                    <img src="images/menu/44.png"  alt="d1">
+                    <div class="text" id="pizzaname">
+                        <h2>Rasperry Ripple Iced Cooler</h2>
+                    </div>
+                </div>
+                <div class="price-container">
+                    <div class="price">
+                        <p class="float-left">$6.60</p>
+                    </div>
+                    <div class="button-col">
+                        <a href="main.php?page=product&id=44?" class="addtocart">Add to cart</a>
+                    </div>
+                </div>
+            </div>
             <script src="js/plus_n_minus.js"></script>
         </div>
         <!-- Footer Area -->
