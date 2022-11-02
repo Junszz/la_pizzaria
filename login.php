@@ -135,7 +135,7 @@
         .button1{
             text-align: center;
             width: 150px;
-            margin-right: 340px;
+            margin-right: 550px;
             margin-bottom: 10px;
         }
 
@@ -195,7 +195,7 @@
         <div class="nav-container">
             <nav>
                 <div id="left-nav">
-                    <a href="index.php"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
+                    <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
                 </div>
                 <ul>
                     <li class="dropdown">
@@ -207,10 +207,10 @@
                             <a href="beverages.php">Beverages</a>
                         </div>
                     </li>
-                    <li><a href="hotDeals.php">Hot Deals</a></li>
-                    <li><a href="aboutUs.php">About Us</a></li>
+                    <li><a href="hotDeals.html">Hot Deals</a></li>
+                    <li><a href="aboutUs.html">About Us</a></li>
                     <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                    <li style="float:right;"><a href="main.php?page=login">Login</a></li>
+                    <li style="float:right;"><a class="active" href="main.php?page=login">Login</a></li>
                 </ul>
             </nav>
         </div>
@@ -242,8 +242,6 @@
             </div>
 
             <input type="submit" value="Login/Signup" class="button1">
-
-
             
         </div>
         <div class="footer-padding"></div>

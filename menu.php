@@ -4,211 +4,57 @@
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
     <style>
-        #wrapper {
-            /* background-color: #FFFFFF; */
-            width: 80%;
-            margin: auto;
-            min-width: 800px;
-        }
-
-        /* Create arrow symbol */
-        .arrow {
-            border: solid #000000;
-            border-width: 0 3px 3px 0;
-            display: inline-block;
-            padding: 3px;
-        }
-
-        .down {
-            transform: rotate(45deg);
-            -webkit-transform: rotate(45deg);
-        }
-        /* End of creating arrow symbol */
-
-        /* Navbar styling */
-        nav {
-            margin: auto;
-            max-width: 1300px;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        /* make image float on the left-side */
-        #left-nav {
-            margin: 10px 30px 15px 10px;
-            float: left;
-        }
-
-        #right-nav {
-            margin: 10px 30px 15px 10px;
-            float: right;
-        }
-
-        nav ul {
-            font-size: 20px;
-            font-weight: 600;
-            list-style-type: none;
-            margin: 0;
-            padding: 10px 0px 5px 0px;
-            overflow: hidden;
-            /* background-color: #F5F5F5; */
-        }
-
-        nav li {
-            float: left;
-        }
-
-        /* Display menu horizontally */
-        nav li a {
-            display: block;
-            color: #000000;
+        #wrapper .title1{
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 55px;
+            font-weight: 450;
+            font-style: italic;
             text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            transition: 500ms;
-        }
-
-        .active {
-            background-color: #04AA6D;
-        }
-
-        /* Dropdown bar */
-        .dropdown {
-            float: left;
-        }
-
-        .dropdown .dropbtn {
-            cursor: pointer;
-            font-size: inherit;
-            border: none;
-            outline: none;
-            padding: 14px 16px;
-            background-color: inherit;
-            font-family: inherit;
-            margin: 0px;
-        }
-
-        .dropdown:hover .dropbtn i {
-            animation: rotate-up 500ms;
-            transform: rotate(225deg);
-        }
-
-        .dropdown-content a {
-            float: none;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #FFFFFF;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-            z-index: 1;
-        }
-
-        /* Change the link color to grey on hover */
-        nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
-            background-color: #F5F5F5;
-        }
-
-        /* Add a grey background color to dropdown links on hover */
-        .dropdown-content a:hover {
-            background-color: #F5F5F5;
-        }
-
-        /* Show the dropdown menu on hover */
-        .dropdown:hover .dropdown-content {
-            animation: drop-in 500ms;
-            display: block;
-        }
-
-        /* End of Navbar styling */
-
-        /* Animation */
-        @keyframes fade {
-            from {
-                opacity: .4
-            }
-
-            to {
-                opacity: 1
-            }
-        }
-
-        @keyframes drop-in {
-            from {
-                transform: translateY(-30%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0%);
-                opacity: 1;
-            }
-        }
-
-        @keyframes rotate-up {
-            from {
-                transform:rotate(45deg);
-            }
-            to {
-                transform: rotate(225deg);
-            }
+            margin-bottom: 50px;
         }
         /* End of Animation */
         /* Container styling */
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 100px;
-        }
-
-        .banner {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            text-align: center;
+        .food-banner1 {
+            cursor: pointer;
+            /* flex: 0 0 16%; */
             margin: 15px;
-            padding: 0px 0px 0px 0px;
-            border-radius: 5px;
-            min-width: 400px;
-            min-height: 200px;
-        }
-        footer {
-			font-size: 11px;
+            box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
             text-align: center;
-            background-color: #d1b38e;
-            color: #000000;
-            padding: 20px 10px 20px 0px;
+            border-radius: 10px;
+            height: 230px;
+            width: 200px;
+            background-color:white;
+            margin-bottom: 10px;
         }
-        #pizzaname{
+        .food-banner1 img, .hover-banner img {
+            margin-top: 15px;
+            width: 90%;
+            border-radius: 10px;
+            height: 150px;
+        }
+
+        .food-banner1 .text {
+            padding: 0 10%;
+            text-align: left;
+            height: 60%;
+            margin-top: 25px;
+        }
+
+        .food-banner1 .text h2{
+            color: #808080;
             font-size: 20px;
-
-        }
-        #pizzasize{
-            margin: 0px 15px 5px 0px;
-            padding: 0px 10px 5px 0px;
-            min-width: 90px;
-            min-height: 90px;
-            display: flex;
-            flex-wrap: wrap;
-        }
-        .size{
-            padding: 0px 110px 0px 110px;
+            padding-bottom: 5px;
             text-align: center;
         }
-        #sizepic{
-            padding-bottom: 20px;
-        }
-        #sizepic2{
-            padding-bottom: 10px;
-        }
 
+        .food-banner1 .text p{
+            font-size: 18px;
+            color: black;
+        }
         /*styling the counter box*/
         .counter{
             height: 30px;
@@ -303,32 +149,44 @@
         </nav>
         <br>
         <div>
-            <h3>Pizza size</h3>
-            <div id="pizzasize">
-                <div class="size">
-                    <img src="images/pizza (3).png" width="70px" height="70px" id="sizepic">
-                    <div class="text"><strong>PERSONAL <br> 6 inch</strong></div>
-                </div>
-                <div class="size">
-                    <img src="images/pizza (2).png" width="80px" height="80px" id="sizepic2">
-                    <div class="text"><strong>REGULAR <br> 9 inch</strong></div>
-                </div>
-                <div class="size">
-                    <img src="images/pizza (2).png" width="90px" height="90px">
-                    <div class="text"><strong>LARGE <br> 12 inch</strong></div>
-                </div>
-            </div>
-
             <!-- Create container here -->
-            <h2>Menu</h2>
-            <!-- <div class="counter">
-                <span class="minus">-</span>
-                <span class="num">01</span>
-                <span class="plus">+</span>
-            </div> -->
-        <form method="post" action="menu.php" id="form">  
+            <div class="title1">
+                <h2>Menu</h2>
+            </div> 
             <div class="container">
-                <div class="banner">
+                <div class="food-banner1">
+                    <div>
+                        <a href="main.php?page=pizza"><img src="images/pizza (1).png"  alt="d1"></a>
+                        <div class="text" id="pizzaname">
+                            <h2>Pizza</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner1">
+                    <div>
+                        <a href="main.php?page=pasta"><img src="images/pasta.png"  alt="d1"></a>
+                        <div class="text" id="pizzaname">
+                            <h2>Pasta</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner1">
+                    <div>
+                        <a href="main.php?page=sides"><img src="images/fried-chicken.png"  alt="d1"></a>
+                        <div class="text" id="pizzaname">
+                            <h2>Sides</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="food-banner1">
+                    <div>
+                        <a href="main.php?page=beverages"><img src="images/drinks.png"  alt="d1"></a>
+                        <div class="text" id="pizzaname">
+                            <h2>Beverages</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="banner">
                     <div class="text" id="pizzaname">Peperoni</div>
                     <div class="choice">
                         <img src="images/peperoni.jpg" width="150" height="180" alt="d1" style="width: 100%;">
@@ -366,13 +224,71 @@
                         <span class="plus4">+</span>
                     </div>
                 </div>
-                <script src="js/plus_n_minus.js"></script>
-        </form>
+                <script src="js/plus_n_minus.js"></script> 
+        </form>-->
         </div>
     </div>
-    <footer>
-        <small><i>Copyright &copy; 2022 Meitong & JunZe</i></small>
-    </footer>
+    <!-- Footer Area -->
+    <div class="footer-container">
+            <div class="three-columns footer-padding">
+                <div class="row">
+                    <div class="col">
+                        <div class="logo-content">
+                            <a href="index.html"><img src="images/logo_v2.png"  width=90px height=75px alt=""></a>
+                        </div>
+                        <div class="logo-content">
+                            <p>Best pizza store in town.</p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Contact Us</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td><img src="images/location.png" width="22px" height="22px"></td>
+                                    <td>
+                                        50 Nanyang Ave, Singapore 639798
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/contact.png" width="20px" height="20px"></td>
+                                    <td>(+65) 89002643</td>
+                                </tr>
+                                <tr>
+                                    <td><img src="images/email.png" width="22px" height="22px"></td>
+                                    <td>
+                                        order@lapizzaria.com
+                                    </td>   
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="col-content">
+                            <h2>Opening Hours</h2>
+                        </div>
+                        <div class="col-content">
+                            <table>
+                                <tr>
+                                    <td>Monday.............Closed</td>
+                                </tr>
+                                <tr>
+                                    <td>Tue-Fri.........10am - 12pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Sat-Sun..........8am - 11pm</td>
+                                </tr>
+                                <tr>
+                                    <td>Holidays........10am - 12pm</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
