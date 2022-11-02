@@ -113,31 +113,59 @@
             font-size: 20px;
         }
 
-        #pizzasize{
-            margin: 0px 15px 5px 0px;
-            padding: 0px 40px 50px 0px;
-            min-width: 90px;
-            min-height: 90px;
+        .size-container {
+            align-items: center;
+            justify-content: center;
+            max-width: 1200px;
+        }
+
+        .size-container h2 {
+            text-align: center;
+            padding: 15px 0;
+            /* color: #fff;
+            font-family: "Playfair Display", serif; */
+            font-size: 55px;
+            font-weight: 600;
+        }
+
+        .linetext {
+            display: flex;
+            align-items: center;
+        }
+
+        .linetext .line{
+            height: 1.5px;
+            flex: 1;
+            background-color: black;
+        }
+
+        .linetext h2 {
+            padding: 0 2rem;
+        }
+
+        #pizzasize {
             display: flex;
             flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
         }
 
         .size{
-            padding: 0px 110px 0px 110px;
+            margin: 0 100px;
             text-align: center;
-        }
-
-        #sizepic{
-            padding-bottom: 20px;
-        }
-        
-        #sizepic2{
-            padding-bottom: 10px;
         }
 
         #wrapper .title{
-            font-size: 30px;
+            color: #fff;
+            font-family: "Playfair Display", serif;
+            font-size: 55px;
+            font-weight: 450;
+            font-style: italic;
             text-align: center;
+        }
+
+        #orange {
+            color: #ff8c00;
         }
 
         .single-line {
@@ -182,25 +210,26 @@
         </div>
         <br>
         <div>
-            <h2 class="title">Pizza size</h2>
-            <div id="pizzasize">
-                <div class="size">
-                    <img src="images/pizza (3).png" width="70px" height="70px" id="sizepic">
-                    <div class="text"><strong>PERSONAL <br> 6 inch</strong></div>
-                </div>
-                <div class="size">
-                    <img src="images/pizza (2).png" width="80px" height="80px" id="sizepic2">
-                    <div class="text"><strong>REGULAR <br> 9 inch</strong></div>
-                </div>
-                <div class="size">
-                    <img src="images/pizza (2).png" width="90px" height="90px">
-                    <div class="text"><strong>LARGE <br> 12 inch</strong></div>
+            <div class="size-container">
+                <div id="pizzasize">
+                    <div class="size">
+                        <img src="images/pizza (3).png" width="100px" height="100px">
+                        <div class="text"><strong>PERSONAL <br> 6 inch</strong></div>
+                    </div>
+                    <div class="size">
+                        <img src="images/pizza (2).png" width="150px" height="150px">
+                        <div class="text"><strong>REGULAR <br> 9 inch</strong></div>
+                    </div>
+                    <div class="size">
+                        <img src="images/pizza (2).png" width="200px" height="200px">
+                        <div class="text"><strong>LARGE <br> 12 inch</strong></div>
+                    </div>
                 </div>
             </div>
 
             <!-- Create container here -->
             <div class="title">
-                <h2>Original Pizza</h2>
+                <h2><span id="orange">Original</span></h2>
             </div>
             <div class="container">
                 <div class="food-banner">
@@ -249,7 +278,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=3?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -266,7 +295,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=4?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -282,7 +311,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=5?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -299,7 +328,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=6?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -315,7 +344,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=7?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -331,13 +360,13 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=8?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="title"> 
-                <h2>Special Pizza</h2>
+                <h2><span id="orange">Special</span></h2>
             </div>
             <div class="container">
                 <div class="food-banner">
@@ -352,7 +381,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=9?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -369,7 +398,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=10?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -385,7 +414,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=11?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -401,7 +430,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=12?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -417,7 +446,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=13?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -434,7 +463,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=14?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -450,7 +479,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=15?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
@@ -466,7 +495,7 @@
                             <p class="float-left">$12.00</p>
                         </div>
                         <div class="button-col">
-                            <a href="main.php?page=product&id=1?" class="addtocart">Add to cart</a>
+                            <a href="main.php?page=product&id=16?" class="addtocart">Add to cart</a>
                         </div>
                     </div>
                 </div>
