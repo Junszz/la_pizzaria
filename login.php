@@ -56,8 +56,8 @@
             flex-wrap: wrap;
             align-items: center;
             justify-content: center;
-            margin-top: 20px;
-            margin-bottom: 50px;
+            margin-top: 50px;
+            margin-bottom: 230px;
             width: 65%;
             /* border: 1px solid black; */
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
@@ -230,7 +230,6 @@
                 </ul>
             </nav>
         </div>
-
         <div class="container">
             <div class="login-container">
                 <div class="details">

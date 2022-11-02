@@ -15,6 +15,7 @@
             font-style: italic;
             text-align: center;
             margin-bottom: 50px;
+            color: orange;
         }
         /* End of Animation */
         /* Container styling */
@@ -119,7 +120,6 @@
             top: 70px;
             left: 90px;
         }
-        
 
     </style>
 </head>
