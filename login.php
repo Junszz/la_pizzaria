@@ -10,7 +10,7 @@
             $password = md5($password);
 
             // echo $email;
-            // echo $password;
+            echo $password;
 
             $query = 'select * from member '
                     ."where email='$email' "
@@ -40,6 +40,15 @@
     }
     else{
         $username = 'Login';
+    }
+
+    if (isset($_POST['logout']) && isset($_SESSION['cart'])) {
+        // logged out and removed user data
+        $_SESSION['user'] = array();
+        
+        // Prevent form submission
+        header('location: main.php?page=login');
+        exit;
     }
 
 ?>
@@ -210,12 +219,12 @@
                 </div>
                 <ul>
                     <li class="dropdown">
-                        <a href="pizza.php" class="dropbtn">Pizza<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                        <a href="main.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
                         <div class="dropdown-content">
-                            <a href="menu.php">Menu</a>
-                            <a href="pasta.php">Pasta</a>
-                            <a href="sides.php">Sides</a>
-                            <a href="beverages.php">Beverages</a>
+                            <a href="main.php?page=pizza">Pizza</a>
+                            <a href="main.php?page=pasta">Pasta</a>
+                            <a href="main.php?page=sides">Sides</a>
+                            <a href="main.php?page=beverages">Beverages</a>
                         </div>
                     </li>
                     <li><a href="hotDeals.html">Hot Deals</a></li>
@@ -224,7 +233,7 @@
                     <li class="login-bar">
                         <a class="login-btn" href="main.php?page=login"><?=$username?></a>
                         <div class="login-dropdown">
-                            <a href="">Log Out</a>
+                            <form action='main.php?page=login' method='post'><input type="submit" value="Logout" name="logout"></form>
                         </div>
                     </li>
                 </ul>

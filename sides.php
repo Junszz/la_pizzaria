@@ -6,6 +6,15 @@
     else{
         $username = 'Login';
     }
+    
+    if (isset($_POST['logout']) && isset($_SESSION['cart'])) {
+        // logged out and removed user data
+        $_SESSION['user'] = array();
+        
+        // Prevent form submission
+        header('location: main.php?page=sides');
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +49,7 @@
                     <li class="login-bar">
                         <a class="login-btn" href="main.php?page=login"><?=$username?></a>
                         <div class="login-dropdown">
-                            <a href="">Log Out</a>
+                            <form action='main.php?page=pizza' method='post'><input type="submit" value="Logout" name="logout"></form>
                         </div>
                     </li>
                 </ul>
