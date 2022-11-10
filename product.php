@@ -92,6 +92,61 @@ if (isset($_GET['id'])) {
             flex: 1;
         }
 
+        /*styling the counter box*/
+        .counter{
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(239, 145, 145);
+            border-radius: 12px;
+            /* box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); */
+            /* margin: auto; */
+        }
+
+        .counter span{
+            width: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 60;
+            cursor: pointer;
+        }
+
+        .counter span num{
+            font-size: 50px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
+        .counter1{
+            height: 30px;
+            width: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgb(234, 216, 216);
+            border-radius: 12px;
+            /*box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);*/
+            margin: auto;
+        }
+
+        .counter1 span{
+            width: 30px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 60;
+            cursor: pointer;
+        }
+
+        .counter1 span num{
+            font-size: 50px;
+            border-right: 2px solid rgba(0,0,0,0.2);
+            border-left: 2px solid rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+
     </style>
 </head>
 
@@ -115,7 +170,7 @@ if (isset($_GET['id'])) {
                     <li><a href="hotDeals.html">Hot Deals</a></li>
                     <li><a class="active" href="aboutUs.html">About Us</a></li>
                     <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-                    <li style="float:right;"><a href="login.html">Login</a></li>
+                    <li style="float:right;"><a href="main.php?page=login">Login</a></li>
                 </ul>   
             </nav>
         </div>
@@ -124,7 +179,7 @@ if (isset($_GET['id'])) {
         <div class="product-container">
             <div class="image-col">
                 <div class="product-images">
-                    <img src='images/peperoni.jpg' width:'350' height='350'>
+                    <img src='images/menu/<?=$product['foodid']?>.png' width:'350' height='350'>
                 </div>
             </div>
 

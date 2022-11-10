@@ -46,14 +46,16 @@ insert into menu values
     (31, 'Golden Roasted Wings', 'Sides', "Regular", 0, 10.00),
     (32, 'Chocolate Roasted Wings', 'Sides', "Regular", 0, 12.00), 
 
-    (33, 'Coca-Cola', 'Beverage', "Canned", 0, 6.00),
-    (34, 'Coca-Cola Zero Sugar', 'Beverage', "Canned", 0, 5.00), 
-    (35, 'Sprite', 'Beverage', "Canned", 0, 8.00),
-    (36, 'Heaven&Earth Iced Lemon Tea', 'Beverage', "Canned", 0, 8.00), 
-    (37, 'Heaven&Earth Jasmine Green Tea', 'Beverage', "Canned", 0, 12.00), 
-    (38, 'Coca-Cola', 'Beverage', "Bottle", 0, 10.00),
-    (39, 'Coca-Cola Zero Sugar', 'Beverage', "Bottle", 0, 10.00), 
-    (40, 'Sprite', 'Beverage', "Bottle", 0, 12.00),
-    (41, 'Heaven&Earth Iced Lemon Tea', 'Beverage', "Bottle", 0, 12.00), 
-    (42, 'Heaven&Earth Jasmine Green Tea', 'Beverage', "Bottle", 0, 12.00); 
+    (33, 'Coca-Cola', 'Beverage', "Canned", 0, 3.20),
+    (34, 'Coca-Cola Zero Sugar', 'Beverage', "Canned", 0, 3.20), 
+    (35, 'Sprite', 'Beverage', "Canned", 0, 3.20),
+    (36, 'Heaven&Earth Iced Lemon Tea', 'Beverage', "Canned", 0, 3.40), 
+    (37, 'Heaven&Earth Jasmine Green Tea', 'Beverage', "Canned", 0, 3.40), 
+    (38, 'Coca-Cola', 'Beverage', "Bottle", 0, 4.30),
+    (39, 'Coca-Cola Zero Sugar', 'Beverage', "Bottle", 0, 4.30), 
+    (40, 'Sprite', 'Beverage', "Bottle", 0, 4.30),
+    (41, 'Heaven&Earth Iced Lemon Tea', 'Beverage', "Bottle", 0, 4.60), 
+    (42, 'Heaven&Earth Jasmine Green Tea', 'Beverage', "Bottle", 0, 4.60),
+    (43, 'Mint Choco Chip Iced Frappe', 'Beverage', "Bottle", 0, 6.60), 
+    (44, 'Rasperry Ripple Iced Cooler', 'Beverage', "Bottle", 0, 6.60); 
 

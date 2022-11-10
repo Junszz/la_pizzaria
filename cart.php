@@ -83,150 +83,168 @@
             $subtotal += (float)$product['price'] * (int)$products_in_cart[$product['foodid']];
         }
     }
+
+    // Check login status
+    $login_status = isset($_SESSION['user']) ? $_SESSION['user'] : array();
+    if($login_status){
+        $username = $_SESSION['user']['firstname'];
+    }
+    else{
+        $username = 'Login';
+    }
 ?>
 
 <head>
     <title>La Pizzaria</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-    <!-- Make 2 versions of wrapper: small & big screen -->
-    <nav>
-        <div id="left-nav">
-            <a href="index.html"><img src="images/logo_v2.png" width="80" height="50" alt="logo"></a>
+    <div id="wrapper">
+        <!-- Make 2 versions of wrapper: small & big screen -->
+        <div class="nav-container">
+                <nav>
+                    <div id="left-nav">
+                        <a href="index.html"><img src="images/logo_v2.png" width="85" height="60" alt="logo"></a>
+                    </div>
+                    <ul>
+                        <li class="dropdown">
+                            <a class="active" href="main.php?page=pizza" class="dropbtn">Pizza<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
+                            <div class="dropdown-content">
+                                <a href="main.php">Menu</a>
+                                <a href="main.php?page=pasta">Pasta</a>
+                                <a href="main.php?page=sides">Sides</a>
+                                <a href="main.php?page=beverages">Beverages</a>
+                            </div>
+                        </li>
+                        <li><a href="hotDeals.html">Hot Deals</a></li>
+                        <li><a href="aboutUs.html">About Us</a></li>
+                        <li style="float:right;"><a href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
+                        <li class="login-bar">
+                            <a class="login-btn" href="main.php?page=login"><?=$username?></a>
+                            <div class="login-dropdown">
+                                <form action='main.php?page=pizza' method='post'><input type="submit" value="Logout" name="logout"></form>
+                            </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <ul>
-            <li class="dropdown">
-                <a href="main.php" class="dropbtn">Menu<span style="padding-left: 10px;"><i class="arrow down"></i></span></a>
-                <div class="dropdown-content">
-                    <a href="main.php?page=pizza">Pizza</a>
-                    <a href="main.php?page=pasta">Pasta</a>
-                    <a href="main.php?page=sides">Sides</a>
-                    <a href="main.php?page=beverages">Beverages</a>
-                </div>
-            </li>
-            <li><a href="hotDeals.html">Hot Deals</a></li>
-            <li><a href="aboutUs.html">About Us</a></li>
-            <li style="float:right;"><a class="active" href="main.php?page=cart"><img src="images/carts.png" width="30" height="30" alt="carts"></a></li>
-            <li style="float:right;"><a href="login.html">Login</a></li>
-        </ul>   
-    </nav>
 
-    <div class="cart content-wrapper">
-        <h1>Shopping Cart</h1>
-        <form action="main.php?page=cart" method="post">
-            <table>
-                <thead>
-                    <tr>
-                        <td colspan="2">Product</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Total</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <?php if (empty($products)): ?>
-                    <tr>
-                        <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
-                    </tr>
-                    <?php else: ?>
-                    <?php foreach ($products as $product): ?>
-                    <tr>
-                        <td class="img">
-                            <a href="main.php?page=product&id=<?=$product['foodid']?>">
-                                <img src="images/peperoni.jpg" width="50" height="50" alt="<?=$product['foodname']?>">
-                            </a>
-                        </td>
-                        <td>
-                            <a href="main.php?page=product&id=<?=$product['foodid']?>"><?=$product['foodname']?></a>
-                            <br>
-                            <a href="main.php?page=cart&remove=<?=$product['foodid']?>" class="remove">Remove</a>
-                        </td>
-                        <td class="price">&dollar;<?=$product['price']?></td>
-                        <td class="quantity">
-                            <input type="number" name="quantity-<?=$product['foodid']?>" value="<?=$products_in_cart[$product['foodid']]?>" placeholder="Quantity" required>
-                        </td>
-                        <td class="price">&dollar;<?=$product['price'] * $products_in_cart[$product['foodid']]?></td>
-                    </tr>
-                    <?php endforeach; ?>
-                    <?php endif; ?>
-                </tbody>
-            </table>
-            <div class="subtotal">
-                <span class="text">Subtotal</span>
-                <span class="price">&dollar;<?=$subtotal?></span>
-            </div>
-            <div class="buttons">
-                <input type="submit" value="Update" name="update">
-                <input type="submit" value="Place Order" name="placeorder">
-            </div>
-        </form>
-    </div>
+        <div class="cart content-wrapper">
+            <div class='title'><h2>Shopping Cart</h2></div>
+            <form action="main.php?page=cart" method="post">
+                <table>
+                    <thead>
+                        <tr>
+                            <td colspan="2">Product</td>
+                            <td>Price</td>
+                            <td>Quantity</td>
+                            <td>Total</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($products)): ?>
+                        <tr>
+                            <td colspan="5" style="text-align:center;">You have no products added in your Shopping Cart</td>
+                        </tr>
+                        <?php else: ?>
+                        <?php foreach ($products as $product): ?>
+                        <tr>
+                            <td class="img">
+                                <a href="main.php?page=product&id=<?=$product['foodid']?>">
+                                    <img src="images/menu/<?=$product['foodid']?>.png" width="50" height="50" alt="<?=$product['foodname']?>">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="main.php?page=product&id=<?=$product['foodid']?>"><?=$product['foodname']?></a>
+                                <br>
+                                <a href="main.php?page=cart&remove=<?=$product['foodid']?>" class="remove">Remove</a>
+                            </td>
+                            <td class="price">&dollar;<?=$product['price']?></td>
+                            <td class="quantity">
+                                <input type="number" name="quantity-<?=$product['foodid']?>" value="<?=$products_in_cart[$product['foodid']]?>" placeholder="Quantity" required>
+                            </td>
+                            <td class="price">&dollar;<?=$product['price'] * $products_in_cart[$product['foodid']]?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+                <div class="subtotal">
+                    <span class="text">Subtotal</span>
+                    <span class="price">&dollar;<?=$subtotal?></span>
+                </div>
+                <div class="buttons">
+                    <input type="submit" value="Update" name="update">
+                    <input type="submit" value="Place Order" name="placeorder">
+                </div>
+            </form>
+        </div>
 
-    <!-- Footer section -->
-    <footer class="footer-padding">
-        <div class="footer-container">
-            <div class="row">
-                <div class="col">
-                    <div class="logo-content">
-                        <a href="index.html"><img src="images/logo_v2.png"  width=50px height=50px alt=""></a>
-                    </div>
-                    <div class="logo-content">
-                        <p>Best pizza store in town.</p>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="col-content">
-                        <h2>Contact Us</h2>
-                    </div>
-                    <div class="col-content">
-                        <table>
-                            <tr>
-                                <td><img src="images/location.png" width="22px" height="22px"></td>
-                                <td>
-                                    50 Nanyang Ave, Singapore 639798
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><img src="images/contact.png" width="20px" height="20px"></td>
-                                <td>(+65) 89002643</td>
-                            </tr>
-                            <tr>
-                                <td><img src="images/email.png" width="22px" height="22px"></td>
-                                <td>
-                                    order@lapizzaria.com
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="col-content">
-                        <h2>Contact Us</h2>
-                    </div>
-                    <div class="col-content">
-                        <table>
-                            <tr>
-                                <td>Monday.............Closed</td>
-                            </tr>
-                            <tr>
-                                <td>Tue-Fri.........10am - 12pm</td>
-                            </tr>
-                            <tr>
-                                <td>Sat-Sun..........8am - 11pm</td>
-                            </tr>
-                            <tr>
-                                <td>Holidays........10am - 12pm</td>
-                            </tr>
-                        </table>
+            <!-- Footer Area -->
+            <div class="footer-container">
+                <div class="three-columns footer-padding">
+                    <div class="row">
+                        <div class="col">
+                            <div class="logo-content">
+                                <a href="index.html"><img src="images/logo_v2.png"  width=90px height=75px alt=""></a>
+                            </div>
+                            <div class="logo-content">
+                                <p>Best pizza store in town.</p>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-content">
+                                <h2>Contact Us</h2>
+                            </div>
+                            <div class="col-content">
+                                <table>
+                                    <tr>
+                                        <td><img src="images/location.png" width="22px" height="22px"></td>
+                                        <td>
+                                            50 Nanyang Ave, Singapore 639798
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/contact.png" width="20px" height="20px"></td>
+                                        <td>(+65) 89002643</td>
+                                    </tr>
+                                    <tr>
+                                        <td><img src="images/email.png" width="22px" height="22px"></td>
+                                        <td>
+                                            order@lapizzaria.com
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="col-content">
+                                <h2>Opening Hours</h2>
+                            </div>
+                            <div class="col-content">
+                                <table>
+                                    <tr>
+                                        <td>Monday.............Closed</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tue-Fri.........10am - 12pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sat-Sun..........8am - 11pm</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Holidays........10am - 12pm</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
-    <!-- End of footer section -->
 </body>
 
 </html>

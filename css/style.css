@@ -11,7 +11,8 @@
     /* background-color: #FFFFFF; */
     margin: auto;
     min-width: 800px;
-    background-image: url("images/background.jpg");
+    /* background-image: url("images/background.jpg"); */
+    background-image: url("../images/bg-02.jpg");
 }
 
 /* Create arrow symbol */
@@ -169,6 +170,8 @@ nav li a:hover, .dropdown:hover .dropbtn, .dropbtn:focus{
         transform: rotate(225deg);
     }
 }
+
+
 /* End of Animation */
 
 /* Container styling */
@@ -259,6 +262,7 @@ p {
     font-size: 15px;
 }
 
+/* Unified button design */
 .button {
     color: #131230;
     background: #ffb606;
@@ -282,22 +286,13 @@ p {
     border: 1px solid #ffb606
 }
 
-/* footer {
-    text-align: center;
-    color: #000000;
-    margin: auto;
-    max-width: 1300px;
-    width: 100%;
-} */
-
-.footer-padding {
-    padding-top: 15px;
-}
-
-
 .footer-container {
     background-color: white;
     box-shadow: 0 -4px 8px -4px rgba(0, 0, 0, 0.2), 0 -6px 20px -6px rgba(0, 0, 0, 0.19);
+}
+
+.footer-padding {
+    padding-top: 15px;
 }
 
 .three-columns {
@@ -306,7 +301,7 @@ p {
 }
 
 .row {
-    padding: 0 10%;
+    padding: 0 8%;
     display: flex;
     align-items: center;
 }
@@ -342,12 +337,12 @@ p {
     padding-left: 30%;
 }
 
-table {
+.footer-container table {
     text-align: left;
     border-spacing: 0 0px;
 }
 
-td {
+.footer-container td {
     padding-left: 10px;
     font-size: 14px;
 }
@@ -357,3 +352,60 @@ td {
     color: #000000;
     
 }
+
+.login-bar {
+    float:right;
+}
+
+.login-bar .login-btn {
+    cursor: pointer;
+    font-size: inherit;
+    border: none;
+    outline: none;
+    padding: 14px 14px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0px;
+}
+
+.login-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #F5F5F5;
+    min-width: 85px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.login-bar:hover .login-dropdown {
+    animation: drop-in 500ms;
+    display: block;
+}
+
+.login-dropdown input[type="submit"] {
+	padding: 12px 25px;
+	border: 0;
+	background: #4e5c70;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.login-dropdown input:hover {
+	background-color: red;
+}
+
+/* .login-dropdown a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.login-dropdown a:hover {
+    background-color: red;
+} */

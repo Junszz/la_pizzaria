@@ -15,11 +15,16 @@
 
 
 Open-issues:
-1. Pass item-id + qty to cart page
+1. Pass item-id + qty to cart page (solved)
  - Approach 1: Using form submission (Data not being passed without form action)
  - Approach 2: Using session data (succesful with 1 var)
  - Approach 3: Passing multiple session data using ? to concat
 
+ 2. Unify UI design (consolidate style.css)
+
+ 3. Complete login/sign-up page
+
+ 
 Program Flow
 1. Press add to cart
 2. Go to cart page
